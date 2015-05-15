@@ -1,0 +1,137 @@
+
+bc_11114 
+
+Compare compilation parameters.
+
+#############################################################
+Compeltely first, init project with led ON
+#############################################################
+
+
+Settings:
+
+--------------------------------------------------
+MCU C compiler:
+
+Command: arm-none-eabi-gcc
+
+All options:
+
+-DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_LPCOPEN -D__LPC11XX__ -D__REDLIB__ -I"C:\data\HOME\git
+
+\bc_1114_repo\bc_1114\inc" -I"C:\data\HOME\git\bc_1114_repo\bc_1114\src
+
+\lpcexpresso_11c24_board_library\inc" -I"C:\data\HOME\git\bc_1114_repo\bc_1114\src
+
+\lpc_chip_11cxx_library\inc" -O0 -g3 -Wall -c -fmessage-length=0 -fno-builtin -ffunction-sections 
+
+-fdata-sections -mcpu=cortex-m0 -mthumb -specs=redlib.specs
+
+
+Command line patter:  ${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}
+
+
+--------------------------------------------------
+MCU Assembler:
+
+Command: arm-none-eabi-gcc
+
+All options:
+
+-c -x assembler-with-cpp -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_LPCOPEN -D__LPC11XX__ -D__REDLIB__ 
+
+-I"C:\data\HOME\git\bc_1114_repo\bc_1114\inc" -I"C:\data\HOME\git\bc_1114_repo\bc_1114\src
+
+\lpcexpresso_11c24_board_library\inc" -I"C:\data\HOME\git\bc_1114_repo\bc_1114\src
+
+\lpc_chip_11cxx_library\inc" -g3 -mcpu=cortex-m0 -mthumb -specs=redlib.specs
+
+
+Command line patter: ${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}
+
+
+--------------------------------------------------
+MCU Linker:
+
+Command: arm-none-eabi-gcc
+
+
+All options:
+
+-nostdlib -L"C:\lpc750_workspace_lpc1114\nxp_lpcxpresso_11c24_board_lib\Debug" -L"C:
+
+\lpc750_workspace_lpc1114\lpc_chip_11cxx_lib\Debug" -Xlinker -Map="bc_1114.map" -Xlinker --gc-
+
+sections -mcpu=cortex-m0 -mthumb -T "bc_1114_Debug.ld"
+
+
+Command line patter: ${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}
+
+
+#############################################################
+nxp_lpcexpresso_11c24_periph_blinky
+#############################################################
+
+
+MCU C compiler:
+
+Command: arm-none-eabi-gcc
+
+
+All options:
+
+-D__REDLIB__ -DDEBUG -D__CODE_RED -D__USE_LPCOPEN -DCORE_M0 -I"C:
+
+\lpc750_workspace_lpc1114\nxp_lpcxpresso_11c24_periph_blinky\example\inc" -I"C:
+
+\lpc750_workspace_lpc1114\lpc_chip_11cxx_lib\inc" -I"C:
+
+\lpc750_workspace_lpc1114\nxp_lpcxpresso_11c24_board_lib\inc" -O0 -g3 -Wall -c -fmessage-length=0 
+
+-fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m0 -mthumb -D__REDLIB__ -
+
+specs=redlib.specs
+
+
+Command line patter: ${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}
+
+--------------------------------------------------
+
+MCU Assembler:
+
+Command: arm-none-eabi-gcc
+
+
+All options:
+
+-c -x assembler-with-cpp -D__REDLIB__ -DDEBUG -D__CODE_RED -g3 -mcpu=cortex-m0 -mthumb -
+
+D__REDLIB__ -specs=redlib.specs
+
+
+Command line patter: ${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}
+
+--------------------------------------------------
+
+MCU Linker:
+
+Command: arm-none-eabi-gcc
+
+
+All options:
+
+-nostdlib -L"C:\lpc750_workspace_lpc1114\nxp_lpcxpresso_11c24_board_lib\Debug" -L"C:
+
+\lpc750_workspace_lpc1114\lpc_chip_11cxx_lib\Debug" -Xlinker -
+
+Map="nxp_lpcxpresso_11c24_periph_blinky.map" -Xlinker --gc-sections -mcpu=cortex-m0 -mthumb -T 
+
+"nxp_lpcxpresso_11c24_periph_blinky_Debug.ld"
+
+
+Command line patter: ${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}
+
+
+
+
+
