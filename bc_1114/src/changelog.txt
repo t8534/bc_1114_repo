@@ -1,0 +1,11 @@
+This is makefile project based on launchpad arm compiler,
+and examples inside.
+
+The goal  is to:
+
+- start to compile examples.
+- start to compile lpc1114 blinky base project to .axf and flash it up using
+  LPCOpenXpresso tool.
+- Debug using .axf and LPCOpenXpresso tool
+- Debug using gnu openocd
+   
