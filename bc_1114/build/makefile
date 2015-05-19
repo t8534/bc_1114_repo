@@ -84,11 +84,11 @@ USE_SEMIHOST=--specs=rdimon.specs
 USE_NOHOST=--specs=nosys.specs
 
 CORE=CM$(CORTEX_M)
-BASE=../..
+BASE=.
 
 # Compiler & Linker
-CC=arm-none-eabi-gcc
-CXX=arm-none-eabi-g++
+CC=C:\arm\bin\arm-none-eabi-gcc
+CXX=C:\arm\bin\arm-none-eabi-g++
 
 # Options for specific architecture
 ARCH_FLAGS=-mthumb -mcpu=cortex-m$(CORTEX_M)
@@ -118,7 +118,9 @@ LFLAGS=$(USE_NANO) $(USE_NOHOST) $(LDSCRIPTS) $(GC) $(MAP)
 #$(NAME)-$(CORE).axf: $(NAME).c $(STARTUP)
 #	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
 
-$(NAME)-$(CORE).axf: $(NAME).c $(SRCS_CHIP) $(SRCS_BOARD) $(SRCS_SYS) 
+all : $(NAME).axf
+
+$(NAME).axf: $(NAME).c $(SRCS_CHIP) $(SRCS_BOARD) $(SRCS_SYS) 
 	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
 
 
