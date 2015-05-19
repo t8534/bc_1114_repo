@@ -132,8 +132,10 @@ Map="nxp_lpcxpresso_11c24_periph_blinky.map" -Xlinker --gc-sections -mcpu=cortex
 Command line patter: ${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}
 
 
+!!!!!! see
+Nonrecursive make example:
 
-
+http://evbergen.home.xs4all.nl/nonrecursive-make.html
 
 
 
