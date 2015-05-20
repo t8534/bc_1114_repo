@@ -4,7 +4,7 @@ bc_11114
 Compare compilation parameters.
 
 #############################################################
-Compeltely first, init project with led ON
+Completely first, init project with led ON
 #############################################################
 
 
@@ -30,6 +30,27 @@ All options:
 
 Command line patter:  ${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}
 
+Summary MCU C compiler:
+
+-DDEBUG
+-D__CODE_RED
+-DCORE_M0
+-D__USE_LPCOPEN
+-D__LPC11XX__
+-D__REDLIB__
+
+-O0
+-g3
+-Wall
+-c
+-fmessage-length=0
+-fno-builtin
+-ffunction-sections
+
+-fdata-sections
+-mcpu=cortex-m0
+-mthumb
+-specs=redlib.specs
 
 --------------------------------------------------
 MCU Assembler:
@@ -50,6 +71,22 @@ All options:
 Command line patter: ${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}
 
 
+Summary MCU Assembler:
+
+-c
+-x assembler-with-cpp
+-DDEBUG
+-D__CODE_RED
+-DCORE_M0
+-D__USE_LPCOPEN
+-D__LPC11XX__
+-D__REDLIB__ 
+
+-g3
+-mcpu=cortex-m0
+-mthumb
+-specs=redlib.specs
+
 --------------------------------------------------
 MCU Linker:
 
@@ -66,6 +103,17 @@ sections -mcpu=cortex-m0 -mthumb -T "bc_1114_Debug.ld"
 
 
 Command line patter: ${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}
+
+
+Summary MCU Linker:
+ 
+-nostdlib
+-Xlinker
+-Map="bc_1114.map"
+-Xlinker --gc-sections 
+-mcpu=cortex-m0 
+-mthumb 
+-T "bc_1114_Debug.ld"
 
 
 #############################################################
@@ -95,6 +143,30 @@ specs=redlib.specs
 
 Command line patter: ${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}
 
+
+Summary MCU C compiler:
+
+-D__REDLIB__
+-DDEBUG
+-D__CODE_RED
+-D__USE_LPCOPEN
+-DCORE_M0
+
+-O0
+-g3
+-Wall
+-c
+-fmessage-length=0
+
+-fno-builtin
+-ffunction-sections
+-fdata-sections
+-mcpu=cortex-m0
+-mthumb
+-D__REDLIB__
+-specs=redlib.specs
+
+
 --------------------------------------------------
 
 MCU Assembler:
@@ -110,6 +182,21 @@ D__REDLIB__ -specs=redlib.specs
 
 
 Command line patter: ${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}
+
+
+Summary MCU Assembler:
+
+-c
+-x assembler-with-cpp
+-D__REDLIB__
+-DDEBUG
+-D__CODE_RED
+-g3
+-mcpu=cortex-m0
+-mthumb
+-D__REDLIB__
+-specs=redlib.specs
+
 
 --------------------------------------------------
 
@@ -131,6 +218,20 @@ Map="nxp_lpcxpresso_11c24_periph_blinky.map" -Xlinker --gc-sections -mcpu=cortex
 
 Command line patter: ${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}
 
+
+Summary MCU Linker:
+
+-nostdlib
+-Xlinker
+-Map="nxp_lpcxpresso_11c24_periph_blinky.map"
+-Xlinker --gc-sections
+-mcpu=cortex-m0
+-mthumb
+-T"nxp_lpcxpresso_11c24_periph_blinky_Debug.ld"
+
+
+
+-----------------------------------------------------
 
 !!!!!! see
 Nonrecursive make example:

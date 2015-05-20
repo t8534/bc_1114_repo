@@ -12,7 +12,7 @@
 # the same directory.
 #
 
-IDIRS = -I. -I../src -I../src/lpc_chip_11cxx_library/inc -I../src/lpcexpresso_11c24_board_library/inc  -I../sys
+IDIRS = -I. -I../src -I../src/sys -I../src/lpc_chip_11cxx_library/inc -I../src/lpcexpresso_11c24_board_library/inc
 
 
 SRCS_CHIP =    adc_11xx.c            \
@@ -31,21 +31,21 @@ SRCS_CHIP =    adc_11xx.c            \
                sysinit_11xx.c        \
                timer_11xx.c          \
                uart_11xx.c           \
-               wwdt_11xx.c           \
+               wwdt_11xx.c           
                
 
 SRCS_BOARD =   board_sysinit.c       \
-               board.c               \
+               board.c               
 
 SRCS_SYS =     cr_startup_lpc11xx.c  \
                crp.c                 \
-               sysinit.c             \   
+               sysinit.c               
 
 
 # maybe not needed, because .o are build in ./build
-OBJ_DIR = . 
-
-OBJ_CHIP =     adc_11xx.o            \
+#OBJ_DIR = . 
+#
+#OBJ_CHIP =     adc_11xx.o            \
                chip_11xx.o           \
                clock_11xx.o          \
                gpio_11xx_1.o         \
@@ -61,16 +61,86 @@ OBJ_CHIP =     adc_11xx.o            \
                sysinit_11xx.o        \
                timer_11xx.o          \
                uart_11xx.o           \
-               wwdt_11xx.o           \
+               wwdt_11xx.o           
                
 
-OBJ_BOARD =    board_sysinit.o       \
-               board.o               \
+#OBJ_BOARD =    board_sysinit.o       \
+               board.o               
 
-OBJ_SYS =      cr_startup_lpc11xx.o  \
+#OBJ_SYS =      cr_startup_lpc11xx.o  \
                crp.o                 \
-               sysinit.o             \   
+               sysinit.o                
 
+
+VPATH = ../src ../src/sys ../src/lpc_chip_11cxx_library/src ../src/lpcexpresso_11c24_board_library/src  
+
+
+# Flags specified for LPCXpresso code.
+#
+
+# For references, from orig blinky project
+#
+#Summary MCU C compiler:
+#
+#-D__REDLIB__
+#-DDEBUG
+#-D__CODE_RED
+#-D__USE_LPCOPEN
+#-DCORE_M0
+#
+#-O0
+#-g3
+#-Wall
+#-c
+#-fmessage-length=0
+#
+#-fno-builtin
+#-ffunction-sections
+#-fdata-sections
+#-mcpu=cortex-m0
+#-mthumb
+#-D__REDLIB__
+#-specs=redlib.specs
+
+#Summary MCU Assembler:
+#
+#-c
+#-x assembler-with-cpp
+#-D__REDLIB__
+#-DDEBUG
+#-D__CODE_RED
+#-g3
+#-mcpu=cortex-m0
+#-mthumb
+#-D__REDLIB__
+#-specs=redlib.specs
+
+#Summary MCU Linker:
+#
+#-nostdlib
+#-Xlinker
+#-Map="nxp_lpcxpresso_11c24_periph_blinky.map"
+#-Xlinker --gc-sections
+#-mcpu=cortex-m0
+#-mthumb
+#-T"nxp_lpcxpresso_11c24_periph_blinky_Debug.ld"
+
+
+
+# -D__CODE_RED - Use bool redefinition and open to use "Enable Code Read Protect"
+
+# -DCORE_M0 - only warns in LPC code that M0 is not set for compiler.
+#             Set here for keep compatibility.
+#
+# -D__USE_LPCOPEN - If also not defined NO_BOARD_LIB it inlcude board.h
+#
+# -D__REDLIB__ - Define the entry point for the application.
+#                If define it means: __main() is the entry point for Redlib
+#                based applications.
+#                The main() is the entry point for Newlib based applications
+#                We use newlib
+# 
+LPC_FLAGS = -DCORE_M0 -D__USE_LPCOPEN 
 
 
 # Selecting Core
@@ -98,7 +168,7 @@ ARCH_FLAGS=-mthumb -mcpu=cortex-m$(CORTEX_M)
 STARTUP=$(BASE)/startup/startup_ARM$(CORE).S
 
 # -Os -flto -ffunction-sections -fdata-sections to compile for code size
-CFLAGS=$(ARCH_FLAGS) $(STARTUP_DEFS) -Os -flto -ffunction-sections -fdata-sections
+CFLAGS=$(ARCH_FLAGS) $(STARTUP_DEFS) $(IDIRS) $(LPC_FLAGS) -Os -flto -ffunction-sections -fdata-sections
 CXXFLAGS=$(CFLAGS)
 
 # Link for code size
@@ -115,13 +185,34 @@ STARTUP_DEFS=-D__STARTUP_CLEAR_BSS -D__START=main
 LDSCRIPTS=-L. -L$(BASE)/ldscripts -T nokeep.ld
 LFLAGS=$(USE_NANO) $(USE_NOHOST) $(LDSCRIPTS) $(GC) $(MAP)
 
+# This is original launchpad approach. from .c to .axf without
+# specify .o files.
+#
 #$(NAME)-$(CORE).axf: $(NAME).c $(STARTUP)
 #	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
 
 all : $(NAME).axf
 
-$(NAME).axf: $(NAME).c $(SRCS_CHIP) $(SRCS_BOARD) $(SRCS_SYS) 
+#$(NAME).axf: $(NAME).c $(SRCS_SYS) $(SRCS_CHIP) $(SRCS_BOARD)
+#	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
+$(NAME).axf: $(NAME).c $(SRCS_SYS) $(SRCS_CHIP) $(SRCS_BOARD)
 	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
+
+
+# bc_pc_emu_c make based approach
+#all : $(NAME).axf
+
+#%.o: %.c 
+#	$(CC) $(CFLAGS) -o $@ -c $<
+
+#%.o: $(NAME).c $(SRCS_CHIP) $(SRCS_BOARD) $(SRCS_SYS)
+#	$(CC) $(CFLAGS) -c $<
+
+#$(NAME).axf: $(NAME).o $(OBJ_CHIP) $(OBJ_BOARD) $(OBJ_SYS) 
+#	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
+
+
+
 
 
 clean: 

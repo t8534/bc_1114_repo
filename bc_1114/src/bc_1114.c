@@ -21,7 +21,13 @@ This is base template for future changes.
 #endif
 #endif
 
-#include <cr_section_macros.h>
+
+//todo temp only
+#include "board.h"
+
+
+//todo arek clarify where is it used on lpcxpresso
+//#include <cr_section_macros.h>
 
 
 /*****************************************************************************

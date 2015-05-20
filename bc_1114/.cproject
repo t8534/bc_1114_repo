@@ -19,7 +19,7 @@
 					<folderInfo id="com.crt.advproject.config.exe.debug.1847434494." name="/" resourcePath="">
 						<toolChain id="com.crt.advproject.toolchain.exe.debug.1495222669" name="Code Red MCU Tools">
 							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.GNU_ELF" id="com.crt.advproject.platform.exe.debug.137096608" name="ARM-based MCU (Debug)"/>
-							<builder buildPath="${workspace_loc:/bc_1114}/build" command="C:\MinGW\bin\mingw32-make.exe" id="com.crt.advproject.builder.exe.debug.1986147877" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder"/>
+							<builder arguments="" buildPath="${workspace_loc:/bc_1114}/build" command="C:\MinGW\bin\mingw32-make.exe" id="com.crt.advproject.builder.exe.debug.1986147877" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder"/>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>

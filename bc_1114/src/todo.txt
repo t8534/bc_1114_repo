@@ -1,0 +1,11 @@
+
+1.
+Where this label is defined at the LPCXpresso object.
+Seems to be urgent, but seems to be not set ?
+
+CHIP_LPC11CXX - but this is for CAN
+Seems to be if no any CHIP_LPC11CXX family is defined this is simply LPC1114
+
+2.
+Check init, in depend on define settings on launchpad. 
+-D__STARTUP_CLEAR_BSS -D__START=main 
