@@ -30,8 +30,11 @@ warning: cannot find entry symbol Reset_Handler; not setting start address
 
 replace it with "ResetISR" which is used in LPC code.
 
+Replaced and get result:
 
-5.
-Linker message:
+Undefined reference to __data_section_table
+This is at cr_startup_lp11xx.c
+Probably names are different in linker scripts.
+Compare linker scripts.
 
 

@@ -42,7 +42,7 @@ MEMORY
  *   __StackTop
  *   __stack
  */
-ENTRY(Reset_Handler)
+ENTRY(ResetISR)
 
 SECTIONS
 {
