@@ -157,8 +157,8 @@ CORE=CM$(CORTEX_M)
 BASE=.
 
 # Compiler & Linker
-CC=C:\arm\bin\arm-none-eabi-gcc
-CXX=C:\arm\bin\arm-none-eabi-g++
+CC=C:\arm\launchpad\bin\arm-none-eabi-gcc
+CXX=C:\arm\launchpad\bin\arm-none-eabi-g++
 
 # Options for specific architecture
 ARCH_FLAGS=-mthumb -mcpu=cortex-m$(CORTEX_M)
@@ -187,7 +187,8 @@ NAME=bc_1114
 # examples initialization.
 #STARTUP_DEFS=-D__STARTUP_CLEAR_BSS -D__START=main
 
-LDSCRIPTS=-L. -L$(BASE)/ldscripts -T nokeep.ld
+#LDSCRIPTS=-L. -L$(BASE)/ldscripts -T nokeep.ld
+LDSCRIPTS=-L. -L$(BASE)/ldscripts -T bc_1114_Debug.ld
 LFLAGS=$(USE_NANO) $(USE_NOHOST) $(LDSCRIPTS) $(GC) $(MAP)
 
 # This is original launchpad approach. from .c to .axf without
