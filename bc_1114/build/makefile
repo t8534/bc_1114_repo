@@ -165,10 +165,12 @@ ARCH_FLAGS=-mthumb -mcpu=cortex-m$(CORTEX_M)
 
 #todo arek probably to remove
 # Startup code
-STARTUP=$(BASE)/startup/startup_ARM$(CORE).S
+# STARTUP=$(BASE)/startup/startup_ARM$(CORE).S
 
 # -Os -flto -ffunction-sections -fdata-sections to compile for code size
-CFLAGS=$(ARCH_FLAGS) $(STARTUP_DEFS) $(IDIRS) $(LPC_FLAGS) -Os -flto -ffunction-sections -fdata-sections
+#CFLAGS=$(ARCH_FLAGS) $(STARTUP_DEFS) $(IDIRS) $(LPC_FLAGS) -Os -flto -ffunction-sections -fdata-sections
+# No $(STARTUP_DEFS)
+CFLAGS=$(ARCH_FLAGS) $(IDIRS) $(LPC_FLAGS) -Os -flto -ffunction-sections -fdata-sections
 CXXFLAGS=$(CFLAGS)
 
 # Link for code size
@@ -180,7 +182,10 @@ MAP=-Wl,-Map=$(NAME).map
 
 
 NAME=bc_1114
-STARTUP_DEFS=-D__STARTUP_CLEAR_BSS -D__START=main
+
+# After analize seems to be not necessary. This is specific for launchpad
+# examples initialization.
+#STARTUP_DEFS=-D__STARTUP_CLEAR_BSS -D__START=main
 
 LDSCRIPTS=-L. -L$(BASE)/ldscripts -T nokeep.ld
 LFLAGS=$(USE_NANO) $(USE_NOHOST) $(LDSCRIPTS) $(GC) $(MAP)

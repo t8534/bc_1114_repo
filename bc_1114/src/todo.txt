@@ -6,6 +6,32 @@ Seems to be urgent, but seems to be not set ?
 CHIP_LPC11CXX - but this is for CAN
 Seems to be if no any CHIP_LPC11CXX family is defined this is simply LPC1114
 
-2.
+2.### DONE
 Check init, in depend on define settings on launchpad. 
--D__STARTUP_CLEAR_BSS -D__START=main 
+-D__STARTUP_CLEAR_BSS -D__START=main
+
+Check is BSS area cleared.
+Check what about main() call and is initialization correct, in compare
+to launchpad shared one.
+
+A: 
+After analyze seems to be both are not necessery, and related only
+to initialization specific for launchpad examples.
+Done.
+
+3.
+Update linker script area memory
+
+4.
+Look for the rest of flags in makefile
+
+c:/arm/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/bin/ld.exe:
+warning: cannot find entry symbol Reset_Handler; not setting start address
+
+replace it with "ResetISR" which is used in LPC code.
+
+
+5.
+Linker message:
+
+
