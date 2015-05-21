@@ -11,6 +11,56 @@
 # using VPATH. This works best if all object files are supposed to end up in
 # the same directory.
 #
+# 3.
+# Options:
+#
+# -nostartfiles
+# -nodefaultlibs
+# -nostdlib
+# -pie
+# -Wl option
+# -Xlinker option
+#
+#
+# 4.
+# Generate source listing, c and asm
+#
+# -Wa,-adhln -g
+#
+# The options:
+# -g: Produce debugging information
+# -Wa,option: Pass option as an option to the assembler
+#
+# -adhln:
+#  a: turn on listings
+#  d: omit debugging directives; n: omit forms processing
+#  h: include high-level source
+#  l: include assembly
+#
+#
+# Or another approach:
+# We know that -S option makes gcc output assembly code in a .s file so we
+# can examine. I'd like to know can I have gcc generate .s file with
+# original C/C++ source code listed side by side(but in comment blocks)
+# with assembly code. The benefit for this is the reader can easily know
+# which  C/C++ statement corresponds to which assembly(assembler) code.
+# 
+# Is there any options to enable this? If yes, since what version of gcc
+# is it supported?
+#
+#All of them.
+#
+#-g -Wa,-adhls
+#
+
+
+# TODO
+#
+# 1.
+# Maybe you have to add 
+# STARTUP_DEFS=-D__STARTUP_CLEAR_BSS -D__START=main
+# if use standard lib or init srcipts ?
+
 
 IDIRS = -I. -I../src -I../src/sys -I../src/lpc_chip_11cxx_library/inc -I../src/lpcexpresso_11c24_board_library/inc
 
@@ -143,6 +193,10 @@ VPATH = ../src ../src/sys ../src/lpc_chip_11cxx_library/src ../src/lpcexpresso_1
 LPC_FLAGS = -DCORE_M0 -D__USE_LPCOPEN 
 
 
+# Soruce listing
+#SRC_LIST = -Wa,-adhln -g
+SRC_LIST = -Wa,-adhln -g
+
 # Selecting Core
 CORTEX_M=0
 
@@ -152,6 +206,16 @@ USE_NANO=--specs=nano.specs
 # Use seimhosting or not
 USE_SEMIHOST=--specs=rdimon.specs
 USE_NOHOST=--specs=nosys.specs
+
+# -nostartfiles
+# -nodefaultlibs
+# -nostdlib
+# USE_NO = -nostartfiles -nodefaultlibs -nostdlib 
+# USE_NO = -nostartfiles  # ok
+# USE_NO = -nostdlib # undefined reference to `__aeabi_uidiv'
+# USE_NO = -nodefaultlibs # undefined reference to `__aeabi_uidiv'
+USE_NO =
+
 
 CORE=CM$(CORTEX_M)
 BASE=.
@@ -170,7 +234,7 @@ ARCH_FLAGS=-mthumb -mcpu=cortex-m$(CORTEX_M)
 # -Os -flto -ffunction-sections -fdata-sections to compile for code size
 #CFLAGS=$(ARCH_FLAGS) $(STARTUP_DEFS) $(IDIRS) $(LPC_FLAGS) -Os -flto -ffunction-sections -fdata-sections
 # No $(STARTUP_DEFS)
-CFLAGS=$(ARCH_FLAGS) $(IDIRS) $(LPC_FLAGS) -Os -flto -ffunction-sections -fdata-sections
+CFLAGS=$(ARCH_FLAGS) $(IDIRS) $(LPC_FLAGS) $(SRC_LIST) -Os -flto -ffunction-sections -fdata-sections
 CXXFLAGS=$(CFLAGS)
 
 # Link for code size
@@ -189,20 +253,36 @@ NAME=bc_1114
 
 #LDSCRIPTS=-L. -L$(BASE)/ldscripts -T nokeep.ld
 LDSCRIPTS=-L. -L$(BASE)/ldscripts -T bc_1114_Debug.ld
-LFLAGS=$(USE_NANO) $(USE_NOHOST) $(LDSCRIPTS) $(GC) $(MAP)
+# works: LFLAGS=$(USE_NANO) $(USE_NOHOST) $(LDSCRIPTS) $(GC) $(MAP) 
+LFLAGS=$(USE_NANO) $(USE_NOHOST) $(USE_NO) $(LDSCRIPTS) $(GC) $(MAP)
 
 # This is original launchpad approach. from .c to .axf without
 # specify .o files.
 #
 #$(NAME)-$(CORE).axf: $(NAME).c $(STARTUP)
 #	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
-
+#
+# Working. There is no separate .o visible.
 all : $(NAME).axf
-
-#$(NAME).axf: $(NAME).c $(SRCS_SYS) $(SRCS_CHIP) $(SRCS_BOARD)
-#	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
+#
 $(NAME).axf: $(NAME).c $(SRCS_SYS) $(SRCS_CHIP) $(SRCS_BOARD)
 	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
+
+
+
+# Try separate line for .o
+#all : $(NAME).axf
+#
+#%.o: %.c 
+#	$(CC) $(CFLAGS) -o $@ -c $<
+#
+#%.o: $(SRCS_SYS) $(SRCS_BOARD) $(SRCS_CHIP) $(NAME).c 
+#	$(CC) $(CFLAGS) -c $<
+#
+#$(NAME).axf: $(NAME).o $(OBJ_CHIP) $(OBJ_BOARD) $(OBJ_SYS) 
+#	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
+
+
 
 
 # bc_pc_emu_c make based approach

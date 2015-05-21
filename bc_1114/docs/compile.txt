@@ -240,3 +240,62 @@ http://evbergen.home.xs4all.nl/nonrecursive-make.html
 
 
 
+==================================================================
+
+[150521_1046]
+
+C:\arm\launchpad\bin\arm-none-eabi-gcc 
+
+../src/bc_1114.c 
+../src/sys/cr_startup_lpc11xx.c 
+../src/sys/crp.c 
+../src/sys/sysinit.c 
+../src/lpc_chip_11cxx_library/src/adc_11xx.c 
+../src/lpc_chip_11cxx_library/src/chip_11xx.c 
+../src/lpc_chip_11cxx_library/src/clock_11xx.c 
+../src/lpc_chip_11cxx_library/src/gpio_11xx_1.c 
+../src/lpc_chip_11cxx_library/src/gpio_11xx_2.c 
+../src/lpc_chip_11cxx_library/src/gpiogroup_11xx.c 
+../src/lpc_chip_11cxx_library/src/i2c_11xx.c 
+../src/lpc_chip_11cxx_library/src/iocon_11xx.c 
+../src/lpc_chip_11cxx_library/src/pinint_11xx.c 
+../src/lpc_chip_11cxx_library/src/pmu_11xx.c 
+../src/lpc_chip_11cxx_library/src/ring_buffer.c 
+../src/lpc_chip_11cxx_library/src/ssp_11xx.c 
+../src/lpc_chip_11cxx_library/src/sysctl_11xx.c 
+../src/lpc_chip_11cxx_library/src/sysinit_11xx.c 
+../src/lpc_chip_11cxx_library/src/timer_11xx.c 
+../src/lpc_chip_11cxx_library/src/uart_11xx.c 
+../src/lpc_chip_11cxx_library/src/wwdt_11xx.c 
+../src/lpcexpresso_11c24_board_library/src/board_sysinit.c 
+../src/lpcexpresso_11c24_board_library/src/board.c
+
+-mthumb 
+-mcpu=cortex-m0 
+
+-I. 
+-I../src 
+-I../src/sys 
+-I../src/lpc_chip_11cxx_library/inc 
+-I../src/lpcexpresso_11c24_board_library/inc 
+
+-DCORE_M0 
+-D__USE_LPCOPEN  
+
+-Os 
+-flto 
+-ffunction-sections 
+-fdata-sections --specs=nano.specs --specs=nosys.specs 
+
+-L. 
+-L./ldscripts 
+
+-T bc_1114_Debug.ld 
+
+-Wl,--gc-sections 
+-Wl,
+-Map=bc_1114.map 
+-o bc_1114.axf
+
+
+
