@@ -253,8 +253,12 @@ NAME=bc_1114
 
 #LDSCRIPTS=-L. -L$(BASE)/ldscripts -T nokeep.ld
 LDSCRIPTS=-L. -L$(BASE)/ldscripts -T bc_1114_Debug.ld
+<<<<<<< HEAD
 # works: LFLAGS=$(USE_NANO) $(USE_NOHOST) $(LDSCRIPTS) $(GC) $(MAP) 
 LFLAGS=$(USE_NANO) $(USE_NOHOST) $(USE_NO) $(LDSCRIPTS) $(GC) $(MAP)
+=======
+LFLAGS=$(USE_NANO) $(USE_NOHOST) $(LDSCRIPTS) $(GC) $(MAP)
+>>>>>>> refs/remotes/origin/devel_make
 
 # This is original launchpad approach. from .c to .axf without
 # specify .o files.
