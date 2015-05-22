@@ -297,5 +297,75 @@ C:\arm\launchpad\bin\arm-none-eabi-gcc
 -Map=bc_1114.map 
 -o bc_1114.axf
 
+----------------------------------------------------------------------------
+
+[150522]
+
+####
+Removing -o $@ you and add option -c you can see all .o created.
+####
+
+Note from https://answers.launchpad.net/gcc-arm-embedded/+question/219962
+
+First apology that I am not familiar with avr-gcc.
+With our toolchain, you can specify below command line option to generate
+c+assembly code lst file:
+
+-Wa,-adhlns=xxx.lst
+
+As for using it in Coocox, you should refer to their manual about how to pass
+option in the IDE.
+
+Hoping this can help.
+
+
+In the mean time i found that solution for me is tool known as
+"arm-none-eabi-objdump.exe". I use it like this:
+
+arm-none-eabi-objdump.exe -D filename.elf > xxx.lst.
+
+And that's all. After this i got file containing exactly what i wont.
+The only problem i got now is how to use this tool via compiler or linker
+scripts. For now I created a simple *.bat file which do every thing
+so basically my problem is solved but i try to ask of CooCox forum how to do it
+with scripts, and let You know about possibilities.
+
+
+
+Yes, it helps. After -Wa,-adhlns=xxx.lst it not generate c plus assembly code.
+
+But here, we get assembly code. But below, we get. 
+arm-none-eabi-objdump.exe -D filename.axf > xxx.lst.
+
+In addition, how it is made in LPCXpresso, which options ?
+
+Also see here:
+
+http://stackoverflow.com/questions/3655606/how-do-i-get-full-assembler-output-in-gcc
+
+And if you've built with debugging symbols (i.e. compiled with -g), 
+and you replace the -dr with -Srl, it will attempt to annotate the output with the
+corresponding source lines.
+
+objdump --prefix-addresses --show-raw-insn -dr file.o
+
+
+####
+Ok, working, finally if you want to get listing C and asm you have to compile
+with -g (for C listing), and call objdump:
+
+C:\arm\launchpad\bin\arm-none-eabi-objdump.exe -Srl minimum-CM0.axf > list_obj.lst
+####
+ 
+
+Ready for tests.
+Maybe was not working because no -g option, and code was uploaded in debug mode ?
+Or should be compiled to for non-debug and upload in any non-debug flash way.
+
+Also maybe should be compiled in no nano options ?
+
+
+
+
 
 

@@ -195,7 +195,9 @@ LPC_FLAGS = -DCORE_M0 -D__USE_LPCOPEN
 
 # Soruce listing
 #SRC_LIST = -Wa,-adhln -g
-SRC_LIST = -Wa,-adhln -g
+#SRC_LIST = -Wa,-adhln -g
+# -g to get C source listing by objdump.
+SRC_LIST = -g
 
 # Selecting Core
 CORTEX_M=0
@@ -234,7 +236,7 @@ ARCH_FLAGS=-mthumb -mcpu=cortex-m$(CORTEX_M)
 # -Os -flto -ffunction-sections -fdata-sections to compile for code size
 #CFLAGS=$(ARCH_FLAGS) $(STARTUP_DEFS) $(IDIRS) $(LPC_FLAGS) -Os -flto -ffunction-sections -fdata-sections
 # No $(STARTUP_DEFS)
-CFLAGS=$(ARCH_FLAGS) $(IDIRS) $(LPC_FLAGS) $(SRC_LIST) -Os -flto -ffunction-sections -fdata-sections
+CFLAGS=$(ARCH_FLAGS) $(IDIRS) $(LPC_FLAGS) $(SRC_LIST) -flto -ffunction-sections -fdata-sections
 CXXFLAGS=$(CFLAGS)
 
 # Link for code size
@@ -253,12 +255,9 @@ NAME=bc_1114
 
 #LDSCRIPTS=-L. -L$(BASE)/ldscripts -T nokeep.ld
 LDSCRIPTS=-L. -L$(BASE)/ldscripts -T bc_1114_Debug.ld
-<<<<<<< HEAD
 # works: LFLAGS=$(USE_NANO) $(USE_NOHOST) $(LDSCRIPTS) $(GC) $(MAP) 
 LFLAGS=$(USE_NANO) $(USE_NOHOST) $(USE_NO) $(LDSCRIPTS) $(GC) $(MAP)
-=======
-LFLAGS=$(USE_NANO) $(USE_NOHOST) $(LDSCRIPTS) $(GC) $(MAP)
->>>>>>> refs/remotes/origin/devel_make
+
 
 # This is original launchpad approach. from .c to .axf without
 # specify .o files.
