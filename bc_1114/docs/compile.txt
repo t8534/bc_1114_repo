@@ -363,6 +363,8 @@ Maybe was not working because no -g option, and code was uploaded in debug mode 
 Or should be compiled to for non-debug and upload in any non-debug flash way.
 
 Also maybe should be compiled in no nano options ?
+Also check rom and ram size at bc_1114_Debug_mem.ld
+
 
 
 

@@ -203,11 +203,26 @@ SRC_LIST = -g
 CORTEX_M=0
 
 # Use newlib-nano. To disable it, specify USE_NANO=
-USE_NANO=--specs=nano.specs
+# arek: seems to be use or not nano change nothing if you not use call to nano.
+#USE_NANO=--specs=nano.specs
+USE_NANO=
 
 # Use seimhosting or not
-USE_SEMIHOST=--specs=rdimon.specs
-USE_NOHOST=--specs=nosys.specs
+# Users can choose to use or not use semihosting by following instructions.
+# semihosting
+# If you need semihosting, linking like:
+#$ arm-none-eabi-gcc --specs=rdimon.specs $(OTHER_LINK_OPTIONS)
+#
+# non-semihosting/retarget
+# If you are using retarget, linking like:
+#$ arm-none-eabi-gcc --specs=nosys.specs $(OTHER_LINK_OPTIONS)
+
+#USE_SEMIHOST=--specs=rdimon.specs
+#USE_NOHOST=--specs=nosys.specs
+USE_SEMIHOST=
+USE_NOHOST=
+
+
 
 # -nostartfiles
 # -nodefaultlibs
@@ -270,6 +285,11 @@ all : $(NAME).axf
 #
 $(NAME).axf: $(NAME).c $(SRCS_SYS) $(SRCS_CHIP) $(SRCS_BOARD)
 	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
+
+
+
+
+
 
 
 
