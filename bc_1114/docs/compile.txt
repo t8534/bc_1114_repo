@@ -383,8 +383,16 @@ But this is working.
 And optimisation is disabled in both cases.
 
 TODO:
+1#
 Compare and analyse source files.
 
+2#
+Why RingBuffer is building if it use stdlib.h and we not build with nano-libs ?
+
+3#
+Ring buffer is used by UART but Ring Buffer Init is never call.
+
+4#
 Make buiding .o inside of ./build, in place of temporary outside of the project.
 
  
