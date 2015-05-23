@@ -1,0 +1,2649 @@
+
+bc_1114.axf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <g_pfnVectors>:
+$d():
+   0:	00 20 00 10 49 01 00 00 cd 01 00 00 d5 01 00 00     . ..I...........
+	...
+  2c:	dd 01 00 00 00 00 00 00 00 00 00 00 e5 01 00 00     ................
+  3c:	e5 0a 00 00 f5 01 00 00 f5 01 00 00 f5 01 00 00     ................
+  4c:	f5 01 00 00 f5 01 00 00 f5 01 00 00 f5 01 00 00     ................
+  5c:	f5 01 00 00 f5 01 00 00 f5 01 00 00 f5 01 00 00     ................
+  6c:	f5 01 00 00 f5 01 00 00 f5 01 00 00 f5 01 00 00     ................
+  7c:	f5 01 00 00 f5 01 00 00 f5 01 00 00 f5 0a 00 00     ................
+  8c:	f5 01 00 00 f5 01 00 00 f5 01 00 00 00 00 00 00     ................
+  9c:	00 00 00 00 f5 01 00 00 f5 01 00 00 f5 01 00 00     ................
+  ac:	00 00 00 00 f5 01 00 00 f5 01 00 00 f5 01 00 00     ................
+  bc:	f5 01 00 00                                         ....
+
+000000c0 <__data_section_table>:
+__section_table_start():
+  c0:	00000ca8 	.word	0x00000ca8
+  c4:	10000000 	.word	0x10000000
+  c8:	00000000 	.word	0x00000000
+
+000000cc <__bss_section_table>:
+__data_section_table_end():
+  cc:	10000000 	.word	0x10000000
+  d0:	00000004 	.word	0x00000004
+
+000000d4 <data_init>:
+data_init():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:198
+// are written as separate functions rather than being inlined within the
+// ResetISR() function in order to cope with MCUs with multiple banks of
+// memory.
+//*****************************************************************************
+__attribute__ ((section(".after_vectors")))
+void data_init(unsigned int romstart, unsigned int start, unsigned int len) {
+  d4:	b580      	push	{r7, lr}
+  d6:	b088      	sub	sp, #32
+  d8:	af00      	add	r7, sp, #0
+  da:	60f8      	str	r0, [r7, #12]
+  dc:	60b9      	str	r1, [r7, #8]
+  de:	607a      	str	r2, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:199
+    unsigned int *pulDest = (unsigned int*) start;
+  e0:	68bb      	ldr	r3, [r7, #8]
+  e2:	61fb      	str	r3, [r7, #28]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:200
+    unsigned int *pulSrc = (unsigned int*) romstart;
+  e4:	68fb      	ldr	r3, [r7, #12]
+  e6:	61bb      	str	r3, [r7, #24]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:202
+    unsigned int loop;
+    for (loop = 0; loop < len; loop = loop + 4)
+  e8:	2300      	movs	r3, #0
+  ea:	617b      	str	r3, [r7, #20]
+  ec:	e00a      	b.n	104 <data_init+0x30>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:203 (discriminator 2)
+        *pulDest++ = *pulSrc++;
+  ee:	69fb      	ldr	r3, [r7, #28]
+  f0:	1d1a      	adds	r2, r3, #4
+  f2:	61fa      	str	r2, [r7, #28]
+  f4:	69ba      	ldr	r2, [r7, #24]
+  f6:	1d11      	adds	r1, r2, #4
+  f8:	61b9      	str	r1, [r7, #24]
+  fa:	6812      	ldr	r2, [r2, #0]
+  fc:	601a      	str	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:202 (discriminator 2)
+__attribute__ ((section(".after_vectors")))
+void data_init(unsigned int romstart, unsigned int start, unsigned int len) {
+    unsigned int *pulDest = (unsigned int*) start;
+    unsigned int *pulSrc = (unsigned int*) romstart;
+    unsigned int loop;
+    for (loop = 0; loop < len; loop = loop + 4)
+  fe:	697b      	ldr	r3, [r7, #20]
+ 100:	3304      	adds	r3, #4
+ 102:	617b      	str	r3, [r7, #20]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:202 (discriminator 1)
+ 104:	697a      	ldr	r2, [r7, #20]
+ 106:	687b      	ldr	r3, [r7, #4]
+ 108:	429a      	cmp	r2, r3
+ 10a:	d3f0      	bcc.n	ee <data_init+0x1a>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:204
+        *pulDest++ = *pulSrc++;
+}
+ 10c:	46bd      	mov	sp, r7
+ 10e:	b008      	add	sp, #32
+ 110:	bd80      	pop	{r7, pc}
+ 112:	46c0      	nop			; (mov r8, r8)
+
+00000114 <bss_init>:
+bss_init():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:207
+
+__attribute__ ((section(".after_vectors")))
+void bss_init(unsigned int start, unsigned int len) {
+ 114:	b580      	push	{r7, lr}
+ 116:	b084      	sub	sp, #16
+ 118:	af00      	add	r7, sp, #0
+ 11a:	6078      	str	r0, [r7, #4]
+ 11c:	6039      	str	r1, [r7, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:208
+    unsigned int *pulDest = (unsigned int*) start;
+ 11e:	687b      	ldr	r3, [r7, #4]
+ 120:	60fb      	str	r3, [r7, #12]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:210
+    unsigned int loop;
+    for (loop = 0; loop < len; loop = loop + 4)
+ 122:	2300      	movs	r3, #0
+ 124:	60bb      	str	r3, [r7, #8]
+ 126:	e007      	b.n	138 <bss_init+0x24>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:211 (discriminator 2)
+        *pulDest++ = 0;
+ 128:	68fb      	ldr	r3, [r7, #12]
+ 12a:	1d1a      	adds	r2, r3, #4
+ 12c:	60fa      	str	r2, [r7, #12]
+ 12e:	2200      	movs	r2, #0
+ 130:	601a      	str	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:210 (discriminator 2)
+
+__attribute__ ((section(".after_vectors")))
+void bss_init(unsigned int start, unsigned int len) {
+    unsigned int *pulDest = (unsigned int*) start;
+    unsigned int loop;
+    for (loop = 0; loop < len; loop = loop + 4)
+ 132:	68bb      	ldr	r3, [r7, #8]
+ 134:	3304      	adds	r3, #4
+ 136:	60bb      	str	r3, [r7, #8]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:210 (discriminator 1)
+ 138:	68ba      	ldr	r2, [r7, #8]
+ 13a:	683b      	ldr	r3, [r7, #0]
+ 13c:	429a      	cmp	r2, r3
+ 13e:	d3f3      	bcc.n	128 <bss_init+0x14>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:212
+        *pulDest++ = 0;
+}
+ 140:	46bd      	mov	sp, r7
+ 142:	b004      	add	sp, #16
+ 144:	bd80      	pop	{r7, pc}
+ 146:	46c0      	nop			; (mov r8, r8)
+
+00000148 <ResetISR>:
+ResetISR():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:233
+// Sets up a simple runtime environment and initializes the C/C++
+// library.
+//*****************************************************************************
+__attribute__ ((section(".after_vectors")))
+void
+ResetISR(void) {
+ 148:	b580      	push	{r7, lr}
+ 14a:	b084      	sub	sp, #16
+ 14c:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:242
+    //
+    unsigned int LoadAddr, ExeAddr, SectionLen;
+    unsigned int *SectionTableAddr;
+
+    // Load base address of Global Section Table
+    SectionTableAddr = &__data_section_table;
+ 14e:	4b1c      	ldr	r3, [pc, #112]	; (1c0 <ResetISR+0x78>)
+ 150:	60fb      	str	r3, [r7, #12]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:245
+
+    // Copy the data sections from flash to SRAM.
+    while (SectionTableAddr < &__data_section_table_end) {
+ 152:	e016      	b.n	182 <ResetISR+0x3a>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:246
+        LoadAddr = *SectionTableAddr++;
+ 154:	68fb      	ldr	r3, [r7, #12]
+ 156:	1d1a      	adds	r2, r3, #4
+ 158:	60fa      	str	r2, [r7, #12]
+ 15a:	681b      	ldr	r3, [r3, #0]
+ 15c:	60bb      	str	r3, [r7, #8]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:247
+        ExeAddr = *SectionTableAddr++;
+ 15e:	68fb      	ldr	r3, [r7, #12]
+ 160:	1d1a      	adds	r2, r3, #4
+ 162:	60fa      	str	r2, [r7, #12]
+ 164:	681b      	ldr	r3, [r3, #0]
+ 166:	607b      	str	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:248
+        SectionLen = *SectionTableAddr++;
+ 168:	68fb      	ldr	r3, [r7, #12]
+ 16a:	1d1a      	adds	r2, r3, #4
+ 16c:	60fa      	str	r2, [r7, #12]
+ 16e:	681b      	ldr	r3, [r3, #0]
+ 170:	603b      	str	r3, [r7, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:249
+        data_init(LoadAddr, ExeAddr, SectionLen);
+ 172:	68b9      	ldr	r1, [r7, #8]
+ 174:	687a      	ldr	r2, [r7, #4]
+ 176:	683b      	ldr	r3, [r7, #0]
+ 178:	1c08      	adds	r0, r1, #0
+ 17a:	1c11      	adds	r1, r2, #0
+ 17c:	1c1a      	adds	r2, r3, #0
+ 17e:	f7ff ffa9 	bl	d4 <data_init>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:245 (discriminator 1)
+
+    // Load base address of Global Section Table
+    SectionTableAddr = &__data_section_table;
+
+    // Copy the data sections from flash to SRAM.
+    while (SectionTableAddr < &__data_section_table_end) {
+ 182:	68fa      	ldr	r2, [r7, #12]
+ 184:	4b0f      	ldr	r3, [pc, #60]	; (1c4 <ResetISR+0x7c>)
+ 186:	429a      	cmp	r2, r3
+ 188:	d3e4      	bcc.n	154 <ResetISR+0xc>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:253
+        SectionLen = *SectionTableAddr++;
+        data_init(LoadAddr, ExeAddr, SectionLen);
+    }
+    // At this point, SectionTableAddr = &__bss_section_table;
+    // Zero fill the bss segment
+    while (SectionTableAddr < &__bss_section_table_end) {
+ 18a:	e00f      	b.n	1ac <ResetISR+0x64>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:254
+        ExeAddr = *SectionTableAddr++;
+ 18c:	68fb      	ldr	r3, [r7, #12]
+ 18e:	1d1a      	adds	r2, r3, #4
+ 190:	60fa      	str	r2, [r7, #12]
+ 192:	681b      	ldr	r3, [r3, #0]
+ 194:	607b      	str	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:255
+        SectionLen = *SectionTableAddr++;
+ 196:	68fb      	ldr	r3, [r7, #12]
+ 198:	1d1a      	adds	r2, r3, #4
+ 19a:	60fa      	str	r2, [r7, #12]
+ 19c:	681b      	ldr	r3, [r3, #0]
+ 19e:	603b      	str	r3, [r7, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:256
+        bss_init(ExeAddr, SectionLen);
+ 1a0:	687a      	ldr	r2, [r7, #4]
+ 1a2:	683b      	ldr	r3, [r7, #0]
+ 1a4:	1c10      	adds	r0, r2, #0
+ 1a6:	1c19      	adds	r1, r3, #0
+ 1a8:	f7ff ffb4 	bl	114 <bss_init>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:253 (discriminator 1)
+        SectionLen = *SectionTableAddr++;
+        data_init(LoadAddr, ExeAddr, SectionLen);
+    }
+    // At this point, SectionTableAddr = &__bss_section_table;
+    // Zero fill the bss segment
+    while (SectionTableAddr < &__bss_section_table_end) {
+ 1ac:	68fa      	ldr	r2, [r7, #12]
+ 1ae:	4b06      	ldr	r3, [pc, #24]	; (1c8 <ResetISR+0x80>)
+ 1b0:	429a      	cmp	r2, r3
+ 1b2:	d3eb      	bcc.n	18c <ResetISR+0x44>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:260
+        SectionLen = *SectionTableAddr++;
+        bss_init(ExeAddr, SectionLen);
+    }
+
+#if defined (__USE_CMSIS) || defined (__USE_LPCOPEN)
+    SystemInit();
+ 1b4:	f000 fcfa 	bl	bac <SystemInit>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:272
+    __libc_init_array();
+#endif
+
+#if defined (__REDLIB__)
+    // Call the Redlib library, which in turn calls main()
+    __main() ;
+ 1b8:	f000 fcfe 	bl	bb8 <__weak_main>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:281 (discriminator 1)
+    //
+    // main() shouldn't return, but if it does, we'll just enter an infinite loop
+    //
+    while (1) {
+        ;
+    }
+ 1bc:	e7fe      	b.n	1bc <ResetISR+0x74>
+ 1be:	46c0      	nop			; (mov r8, r8)
+ 1c0:	000000c0 	.word	0x000000c0
+ 1c4:	000000cc 	.word	0x000000cc
+ 1c8:	000000d4 	.word	0x000000d4
+
+000001cc <NMI_Handler>:
+NMI_Handler():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:290
+// Default exception handlers. Override the ones here by defining your own
+// handler routines in your application code.
+//*****************************************************************************
+__attribute__ ((section(".after_vectors")))
+void NMI_Handler(void)
+{
+ 1cc:	b580      	push	{r7, lr}
+ 1ce:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:293 (discriminator 1)
+    while(1)
+    {
+    }
+ 1d0:	e7fe      	b.n	1d0 <NMI_Handler+0x4>
+ 1d2:	46c0      	nop			; (mov r8, r8)
+
+000001d4 <HardFault_Handler>:
+HardFault_Handler():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:297
+}
+__attribute__ ((section(".after_vectors")))
+void HardFault_Handler(void)
+{
+ 1d4:	b580      	push	{r7, lr}
+ 1d6:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:300 (discriminator 1)
+    while(1)
+    {
+    }
+ 1d8:	e7fe      	b.n	1d8 <HardFault_Handler+0x4>
+ 1da:	46c0      	nop			; (mov r8, r8)
+
+000001dc <SVC_Handler>:
+SVC_Handler():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:304
+}
+__attribute__ ((section(".after_vectors")))
+void SVC_Handler(void)
+{
+ 1dc:	b580      	push	{r7, lr}
+ 1de:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:307 (discriminator 1)
+    while(1)
+    {
+    }
+ 1e0:	e7fe      	b.n	1e0 <SVC_Handler+0x4>
+ 1e2:	46c0      	nop			; (mov r8, r8)
+
+000001e4 <PendSV_Handler>:
+PendSV_Handler():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:311
+}
+__attribute__ ((section(".after_vectors")))
+void PendSV_Handler(void)
+{
+ 1e4:	b580      	push	{r7, lr}
+ 1e6:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:314 (discriminator 1)
+    while(1)
+    {
+    }
+ 1e8:	e7fe      	b.n	1e8 <PendSV_Handler+0x4>
+ 1ea:	46c0      	nop			; (mov r8, r8)
+SysTick_Handler():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:318
+}
+__attribute__ ((section(".after_vectors")))
+void SysTick_Handler(void)
+{
+ 1ec:	b580      	push	{r7, lr}
+ 1ee:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:321 (discriminator 1)
+    while(1)
+    {
+    }
+ 1f0:	e7fe      	b.n	1f0 <PendSV_Handler+0xc>
+PendSV_Handler():
+ 1f2:	46c0      	nop			; (mov r8, r8)
+
+000001f4 <ADC_IRQHandler>:
+IntDefaultHandler():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:332
+// handler is not present in the application code.
+//
+//*****************************************************************************
+__attribute__ ((section(".after_vectors")))
+void IntDefaultHandler(void)
+{
+ 1f4:	b580      	push	{r7, lr}
+ 1f6:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/cr_startup_lpc11xx.c:335 (discriminator 1)
+    while(1)
+    {
+    }
+ 1f8:	e7fe      	b.n	1f8 <ADC_IRQHandler+0x4>
+TIMER16_0_IRQHandler():
+ 1fa:	46c0      	nop			; (mov r8, r8)
+
+000001fc <Chip_GPIO_SetPinState>:
+Chip_GPIO_SetPinState():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/gpio_11xx_2.h:103
+ * @param	setting	: true for high, false for low
+ * @return	Nothing
+ * @note	This function replaces Chip_GPIO_WritePortBit()
+ */
+STATIC INLINE void Chip_GPIO_SetPinState(LPC_GPIO_T *pGPIO, uint8_t port, uint8_t pin, bool setting)
+{
+ 1fc:	b590      	push	{r4, r7, lr}
+ 1fe:	b083      	sub	sp, #12
+ 200:	af00      	add	r7, sp, #0
+ 202:	6078      	str	r0, [r7, #4]
+ 204:	1c08      	adds	r0, r1, #0
+ 206:	1c11      	adds	r1, r2, #0
+ 208:	1c1a      	adds	r2, r3, #0
+ 20a:	1cfb      	adds	r3, r7, #3
+ 20c:	7018      	strb	r0, [r3, #0]
+ 20e:	1cbb      	adds	r3, r7, #2
+ 210:	7019      	strb	r1, [r3, #0]
+ 212:	1c7b      	adds	r3, r7, #1
+ 214:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/gpio_11xx_2.h:104
+	pGPIO[port].DATA[1 << pin] = setting << pin;
+ 216:	1cfb      	adds	r3, r7, #3
+ 218:	781b      	ldrb	r3, [r3, #0]
+ 21a:	041b      	lsls	r3, r3, #16
+ 21c:	687a      	ldr	r2, [r7, #4]
+ 21e:	18d3      	adds	r3, r2, r3
+ 220:	1cba      	adds	r2, r7, #2
+ 222:	7812      	ldrb	r2, [r2, #0]
+ 224:	2101      	movs	r1, #1
+ 226:	1c08      	adds	r0, r1, #0
+ 228:	4090      	lsls	r0, r2
+ 22a:	1c02      	adds	r2, r0, #0
+ 22c:	1c79      	adds	r1, r7, #1
+ 22e:	7808      	ldrb	r0, [r1, #0]
+ 230:	1cb9      	adds	r1, r7, #2
+ 232:	7809      	ldrb	r1, [r1, #0]
+ 234:	1c04      	adds	r4, r0, #0
+ 236:	408c      	lsls	r4, r1
+ 238:	1c21      	adds	r1, r4, #0
+ 23a:	0092      	lsls	r2, r2, #2
+ 23c:	50d1      	str	r1, [r2, r3]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/gpio_11xx_2.h:105
+}
+ 23e:	46bd      	mov	sp, r7
+ 240:	b003      	add	sp, #12
+ 242:	bd90      	pop	{r4, r7, pc}
+
+00000244 <Chip_GPIO_SetPinDIROutput>:
+Chip_GPIO_SetPinDIROutput():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/gpio_11xx_2.h:154
+ * @param	port	: Port number
+ * @param	pin		: GPIO pin to set direction on as output
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_GPIO_SetPinDIROutput(LPC_GPIO_T *pGPIO, uint8_t port, uint8_t pin)
+{
+ 244:	b590      	push	{r4, r7, lr}
+ 246:	b083      	sub	sp, #12
+ 248:	af00      	add	r7, sp, #0
+ 24a:	6078      	str	r0, [r7, #4]
+ 24c:	1cfb      	adds	r3, r7, #3
+ 24e:	7019      	strb	r1, [r3, #0]
+ 250:	1cbb      	adds	r3, r7, #2
+ 252:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/gpio_11xx_2.h:155
+	pGPIO[port].DIR |= (1UL << pin);
+ 254:	1cfb      	adds	r3, r7, #3
+ 256:	781b      	ldrb	r3, [r3, #0]
+ 258:	041b      	lsls	r3, r3, #16
+ 25a:	687a      	ldr	r2, [r7, #4]
+ 25c:	18d2      	adds	r2, r2, r3
+ 25e:	1cfb      	adds	r3, r7, #3
+ 260:	781b      	ldrb	r3, [r3, #0]
+ 262:	041b      	lsls	r3, r3, #16
+ 264:	6879      	ldr	r1, [r7, #4]
+ 266:	18c9      	adds	r1, r1, r3
+ 268:	2380      	movs	r3, #128	; 0x80
+ 26a:	021b      	lsls	r3, r3, #8
+ 26c:	58c9      	ldr	r1, [r1, r3]
+ 26e:	1cbb      	adds	r3, r7, #2
+ 270:	781b      	ldrb	r3, [r3, #0]
+ 272:	2001      	movs	r0, #1
+ 274:	1c04      	adds	r4, r0, #0
+ 276:	409c      	lsls	r4, r3
+ 278:	1c23      	adds	r3, r4, #0
+ 27a:	4319      	orrs	r1, r3
+ 27c:	2380      	movs	r3, #128	; 0x80
+ 27e:	021b      	lsls	r3, r3, #8
+ 280:	50d1      	str	r1, [r2, r3]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/gpio_11xx_2.h:156
+}
+ 282:	46bd      	mov	sp, r7
+ 284:	b003      	add	sp, #12
+ 286:	bd90      	pop	{r4, r7, pc}
+
+00000288 <Board_LED_Init>:
+Board_LED_Init():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board.c:104
+#endif
+}
+
+/* Initializes board LED(s) */
+static void Board_LED_Init(void)
+{
+ 288:	b580      	push	{r7, lr}
+ 28a:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board.c:106
+	/* Set the PIO_7 as output */
+	Chip_GPIO_SetPinDIROutput(LPC_GPIO, 0, 7);
+ 28c:	23a0      	movs	r3, #160	; 0xa0
+ 28e:	05db      	lsls	r3, r3, #23
+ 290:	1c18      	adds	r0, r3, #0
+ 292:	2100      	movs	r1, #0
+ 294:	2207      	movs	r2, #7
+ 296:	f7ff ffd5 	bl	244 <Chip_GPIO_SetPinDIROutput>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board.c:107
+}
+ 29a:	46bd      	mov	sp, r7
+ 29c:	bd80      	pop	{r7, pc}
+ 29e:	46c0      	nop			; (mov r8, r8)
+
+000002a0 <Board_LED_Set>:
+Board_LED_Set():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board.c:111
+
+/* Sets the state of a board LED to on or off */
+void Board_LED_Set(uint8_t LEDNumber, bool On)
+{
+ 2a0:	b580      	push	{r7, lr}
+ 2a2:	b082      	sub	sp, #8
+ 2a4:	af00      	add	r7, sp, #0
+ 2a6:	1c0a      	adds	r2, r1, #0
+ 2a8:	1dfb      	adds	r3, r7, #7
+ 2aa:	1c01      	adds	r1, r0, #0
+ 2ac:	7019      	strb	r1, [r3, #0]
+ 2ae:	1dbb      	adds	r3, r7, #6
+ 2b0:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board.c:112
+	if(LEDNumber == 0) {
+ 2b2:	1dfb      	adds	r3, r7, #7
+ 2b4:	781b      	ldrb	r3, [r3, #0]
+ 2b6:	2b00      	cmp	r3, #0
+ 2b8:	d108      	bne.n	2cc <Board_LED_Set+0x2c>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board.c:113
+		Chip_GPIO_SetPinState(LPC_GPIO, 0, 7, On);
+ 2ba:	23a0      	movs	r3, #160	; 0xa0
+ 2bc:	05da      	lsls	r2, r3, #23
+ 2be:	1dbb      	adds	r3, r7, #6
+ 2c0:	781b      	ldrb	r3, [r3, #0]
+ 2c2:	1c10      	adds	r0, r2, #0
+ 2c4:	2100      	movs	r1, #0
+ 2c6:	2207      	movs	r2, #7
+ 2c8:	f7ff ff98 	bl	1fc <Chip_GPIO_SetPinState>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board.c:115
+	}
+}
+ 2cc:	46bd      	mov	sp, r7
+ 2ce:	b002      	add	sp, #8
+ 2d0:	bd80      	pop	{r7, pc}
+ 2d2:	46c0      	nop			; (mov r8, r8)
+
+000002d4 <Board_Init>:
+Board_Init():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board.c:132
+}
+
+/* Set up and initialize all required blocks and functions related to the
+   board hardware */
+void Board_Init(void)
+{
+ 2d4:	b580      	push	{r7, lr}
+ 2d6:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board.c:137
+	/* Sets up DEBUG UART */
+	DEBUGINIT();
+
+	/* Initialize GPIO */
+	Chip_GPIO_Init(LPC_GPIO);
+ 2d8:	23a0      	movs	r3, #160	; 0xa0
+ 2da:	05db      	lsls	r3, r3, #23
+ 2dc:	1c18      	adds	r0, r3, #0
+ 2de:	f000 f9f7 	bl	6d0 <Chip_GPIO_Init>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board.c:140
+
+	/* Initialize LEDs */
+	Board_LED_Init();
+ 2e2:	f7ff ffd1 	bl	288 <Board_LED_Init>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board.c:141
+}
+ 2e6:	46bd      	mov	sp, r7
+ 2e8:	bd80      	pop	{r7, pc}
+ 2ea:	46c0      	nop			; (mov r8, r8)
+
+000002ec <Chip_FMC_SetFLASHAccess>:
+Chip_FMC_SetFLASHAccess():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/fmc_11xx.h:86
+ * @return	Nothing
+ * @note	For CPU speed up to 20MHz, use a value of 0. For up to 40MHz, use
+ * a value of 1. For up to 50MHz, use a value of 2.
+ */
+STATIC INLINE void Chip_FMC_SetFLASHAccess(FMC_FLASHTIM_T clks)
+{
+ 2ec:	b580      	push	{r7, lr}
+ 2ee:	b084      	sub	sp, #16
+ 2f0:	af00      	add	r7, sp, #0
+ 2f2:	1c02      	adds	r2, r0, #0
+ 2f4:	1dfb      	adds	r3, r7, #7
+ 2f6:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/fmc_11xx.h:87
+	uint32_t tmp = LPC_FMC->FLASHTIM & (~(0x3));
+ 2f8:	4b06      	ldr	r3, [pc, #24]	; (314 <Chip_FMC_SetFLASHAccess+0x28>)
+ 2fa:	691b      	ldr	r3, [r3, #16]
+ 2fc:	2203      	movs	r2, #3
+ 2fe:	4393      	bics	r3, r2
+ 300:	60fb      	str	r3, [r7, #12]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/fmc_11xx.h:90
+
+	/* Don't alter upper bits */
+	LPC_FMC->FLASHTIM = tmp | clks;
+ 302:	4b04      	ldr	r3, [pc, #16]	; (314 <Chip_FMC_SetFLASHAccess+0x28>)
+ 304:	1dfa      	adds	r2, r7, #7
+ 306:	7811      	ldrb	r1, [r2, #0]
+ 308:	68fa      	ldr	r2, [r7, #12]
+ 30a:	430a      	orrs	r2, r1
+ 30c:	611a      	str	r2, [r3, #16]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/fmc_11xx.h:91
+}
+ 30e:	46bd      	mov	sp, r7
+ 310:	b004      	add	sp, #16
+ 312:	bd80      	pop	{r7, pc}
+ 314:	4003c000 	.word	0x4003c000
+
+00000318 <Chip_Clock_SetupSystemPLL>:
+Chip_Clock_SetupSystemPLL():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:55
+ * @param	psel    : PLL post divider value. P =  (1<<psel).
+ * @return	Nothing
+ * @note	See the user manual for how to setup the PLL.
+ */
+STATIC INLINE void Chip_Clock_SetupSystemPLL(uint8_t msel, uint8_t psel)
+{
+ 318:	b580      	push	{r7, lr}
+ 31a:	b082      	sub	sp, #8
+ 31c:	af00      	add	r7, sp, #0
+ 31e:	1c0a      	adds	r2, r1, #0
+ 320:	1dfb      	adds	r3, r7, #7
+ 322:	1c01      	adds	r1, r0, #0
+ 324:	7019      	strb	r1, [r3, #0]
+ 326:	1dbb      	adds	r3, r7, #6
+ 328:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:56
+	LPC_SYSCTL->SYSPLLCTRL = (msel & 0x1F) | ((psel & 0x3) << 5);
+ 32a:	4b07      	ldr	r3, [pc, #28]	; (348 <Chip_Clock_SetupSystemPLL+0x30>)
+ 32c:	1dfa      	adds	r2, r7, #7
+ 32e:	7811      	ldrb	r1, [r2, #0]
+ 330:	221f      	movs	r2, #31
+ 332:	4011      	ands	r1, r2
+ 334:	1dba      	adds	r2, r7, #6
+ 336:	7810      	ldrb	r0, [r2, #0]
+ 338:	2203      	movs	r2, #3
+ 33a:	4002      	ands	r2, r0
+ 33c:	0152      	lsls	r2, r2, #5
+ 33e:	430a      	orrs	r2, r1
+ 340:	609a      	str	r2, [r3, #8]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:57
+}
+ 342:	46bd      	mov	sp, r7
+ 344:	b002      	add	sp, #8
+ 346:	bd80      	pop	{r7, pc}
+ 348:	40048000 	.word	0x40048000
+
+0000034c <Chip_Clock_IsSystemPLLLocked>:
+Chip_Clock_IsSystemPLLLocked():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:64
+/**
+ * @brief	Read System PLL lock status
+ * @return	true of the PLL is locked. false if not locked
+ */
+STATIC INLINE bool Chip_Clock_IsSystemPLLLocked(void)
+{
+ 34c:	b580      	push	{r7, lr}
+ 34e:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:65
+	return (bool) ((LPC_SYSCTL->SYSPLLSTAT & 1) != 0);
+ 350:	4b04      	ldr	r3, [pc, #16]	; (364 <Chip_Clock_IsSystemPLLLocked+0x18>)
+ 352:	68da      	ldr	r2, [r3, #12]
+ 354:	2301      	movs	r3, #1
+ 356:	4013      	ands	r3, r2
+ 358:	1e5a      	subs	r2, r3, #1
+ 35a:	4193      	sbcs	r3, r2
+ 35c:	b2db      	uxtb	r3, r3
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:66
+}
+ 35e:	1c18      	adds	r0, r3, #0
+ 360:	46bd      	mov	sp, r7
+ 362:	bd80      	pop	{r7, pc}
+ 364:	40048000 	.word	0x40048000
+
+00000368 <Chip_Clock_SetSysClockDiv>:
+Chip_Clock_SetSysClockDiv():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:221
+ * @return	Nothing
+ * @note	Use 0 to disable, or a divider value of 1 to 255. The system clock
+ * rate is the main system clock divided by this value.
+ */
+STATIC INLINE void Chip_Clock_SetSysClockDiv(uint32_t div)
+{
+ 368:	b580      	push	{r7, lr}
+ 36a:	b082      	sub	sp, #8
+ 36c:	af00      	add	r7, sp, #0
+ 36e:	6078      	str	r0, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:222
+	LPC_SYSCTL->SYSAHBCLKDIV  = div;
+ 370:	4b02      	ldr	r3, [pc, #8]	; (37c <Chip_Clock_SetSysClockDiv+0x14>)
+ 372:	687a      	ldr	r2, [r7, #4]
+ 374:	679a      	str	r2, [r3, #120]	; 0x78
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:223
+}
+ 376:	46bd      	mov	sp, r7
+ 378:	b002      	add	sp, #8
+ 37a:	bd80      	pop	{r7, pc}
+ 37c:	40048000 	.word	0x40048000
+
+00000380 <Chip_Clock_EnablePeriphClock>:
+Chip_Clock_EnablePeriphClock():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:296
+ * @brief	Enable a system or peripheral clock
+ * @param	clk	: Clock to enable
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_Clock_EnablePeriphClock(CHIP_SYSCTL_CLOCK_T clk)
+{
+ 380:	b590      	push	{r4, r7, lr}
+ 382:	b083      	sub	sp, #12
+ 384:	af00      	add	r7, sp, #0
+ 386:	1c02      	adds	r2, r0, #0
+ 388:	1dfb      	adds	r3, r7, #7
+ 38a:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:297
+	LPC_SYSCTL->SYSAHBCLKCTRL |= (1 << clk);
+ 38c:	4a07      	ldr	r2, [pc, #28]	; (3ac <Chip_Clock_EnablePeriphClock+0x2c>)
+ 38e:	4907      	ldr	r1, [pc, #28]	; (3ac <Chip_Clock_EnablePeriphClock+0x2c>)
+ 390:	2380      	movs	r3, #128	; 0x80
+ 392:	58c9      	ldr	r1, [r1, r3]
+ 394:	1dfb      	adds	r3, r7, #7
+ 396:	781b      	ldrb	r3, [r3, #0]
+ 398:	2001      	movs	r0, #1
+ 39a:	1c04      	adds	r4, r0, #0
+ 39c:	409c      	lsls	r4, r3
+ 39e:	1c23      	adds	r3, r4, #0
+ 3a0:	4319      	orrs	r1, r3
+ 3a2:	2380      	movs	r3, #128	; 0x80
+ 3a4:	50d1      	str	r1, [r2, r3]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:298
+}
+ 3a6:	46bd      	mov	sp, r7
+ 3a8:	b003      	add	sp, #12
+ 3aa:	bd90      	pop	{r4, r7, pc}
+ 3ac:	40048000 	.word	0x40048000
+
+000003b0 <Chip_IOCON_PinMuxSet>:
+Chip_IOCON_PinMuxSet():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/iocon_11xx.h:250
+ * @param	pin			: GPIO pin to mux
+ * @param	modefunc	: OR'ed values or type IOCON_*
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_IOCON_PinMuxSet(LPC_IOCON_T *pIOCON, CHIP_IOCON_PIO_T pin, uint32_t modefunc)
+{
+ 3b0:	b580      	push	{r7, lr}
+ 3b2:	b084      	sub	sp, #16
+ 3b4:	af00      	add	r7, sp, #0
+ 3b6:	60f8      	str	r0, [r7, #12]
+ 3b8:	607a      	str	r2, [r7, #4]
+ 3ba:	1c3b      	adds	r3, r7, #0
+ 3bc:	330b      	adds	r3, #11
+ 3be:	1c0a      	adds	r2, r1, #0
+ 3c0:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/iocon_11xx.h:251
+	pIOCON->REG[pin] = modefunc;
+ 3c2:	1c3b      	adds	r3, r7, #0
+ 3c4:	330b      	adds	r3, #11
+ 3c6:	781a      	ldrb	r2, [r3, #0]
+ 3c8:	68fb      	ldr	r3, [r7, #12]
+ 3ca:	0092      	lsls	r2, r2, #2
+ 3cc:	6879      	ldr	r1, [r7, #4]
+ 3ce:	50d1      	str	r1, [r2, r3]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/iocon_11xx.h:252
+}
+ 3d0:	46bd      	mov	sp, r7
+ 3d2:	b004      	add	sp, #16
+ 3d4:	bd80      	pop	{r7, pc}
+ 3d6:	46c0      	nop			; (mov r8, r8)
+
+000003d8 <SystemSetupClocking>:
+SystemSetupClocking():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:74
+ * Private functions
+ ****************************************************************************/
+
+/* Setup system clocking */
+STATIC void SystemSetupClocking(void)
+{
+ 3d8:	b580      	push	{r7, lr}
+ 3da:	b082      	sub	sp, #8
+ 3dc:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:78
+	volatile int i;
+
+	/* Powerup main oscillator */
+	Chip_SYSCTL_PowerUp(SYSCTL_POWERDOWN_SYSOSC_PD);
+ 3de:	2020      	movs	r0, #32
+ 3e0:	f000 f99e 	bl	720 <Chip_SYSCTL_PowerUp>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:82
+
+	/* Wait 200us for OSC to be stablized, no status
+	   indication, dummy wait. */
+	for (i = 0; i < 0x100; i++) {}
+ 3e4:	2300      	movs	r3, #0
+ 3e6:	607b      	str	r3, [r7, #4]
+ 3e8:	e002      	b.n	3f0 <SystemSetupClocking+0x18>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:82 (discriminator 2)
+ 3ea:	687b      	ldr	r3, [r7, #4]
+ 3ec:	3301      	adds	r3, #1
+ 3ee:	607b      	str	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:82 (discriminator 1)
+ 3f0:	687b      	ldr	r3, [r7, #4]
+ 3f2:	2bff      	cmp	r3, #255	; 0xff
+ 3f4:	ddf9      	ble.n	3ea <SystemSetupClocking+0x12>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:85
+
+	/* Set system PLL input to main oscillator */
+	Chip_Clock_SetSystemPLLSource(SYSCTL_PLLCLKSRC_MAINOSC);
+ 3f6:	2001      	movs	r0, #1
+ 3f8:	f000 f8a2 	bl	540 <Chip_Clock_SetSystemPLLSource>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:88
+
+	/* Power down PLL to change the PLL divider ratio */
+	Chip_SYSCTL_PowerDown(SYSCTL_POWERDOWN_SYSPLL_PD);
+ 3fc:	2080      	movs	r0, #128	; 0x80
+ 3fe:	f000 f971 	bl	6e4 <Chip_SYSCTL_PowerDown>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:94
+
+	/* Setup PLL for main oscillator rate (FCLKIN = 12MHz) * 4 = 48MHz
+	   MSEL = 3 (this is pre-decremented), PSEL = 1 (for P = 2)
+	   FCLKOUT = FCLKIN * (MSEL + 1) = 12MHz * 4 = 48MHz
+	   FCCO = FCLKOUT * 2 * P = 48MHz * 2 * 2 = 192MHz (within FCCO range) */
+	Chip_Clock_SetupSystemPLL(3, 1);
+ 402:	2003      	movs	r0, #3
+ 404:	2101      	movs	r1, #1
+ 406:	f7ff ff87 	bl	318 <Chip_Clock_SetupSystemPLL>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:97
+
+	/* Powerup system PLL */
+	Chip_SYSCTL_PowerUp(SYSCTL_POWERDOWN_SYSPLL_PD);
+ 40a:	2080      	movs	r0, #128	; 0x80
+ 40c:	f000 f988 	bl	720 <Chip_SYSCTL_PowerUp>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:100
+
+	/* Wait for PLL to lock */
+	while (!Chip_Clock_IsSystemPLLLocked()) {}
+ 410:	46c0      	nop			; (mov r8, r8)
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:100 (discriminator 1)
+ 412:	f7ff ff9b 	bl	34c <Chip_Clock_IsSystemPLLLocked>
+ 416:	1c03      	adds	r3, r0, #0
+ 418:	2201      	movs	r2, #1
+ 41a:	4053      	eors	r3, r2
+ 41c:	b2db      	uxtb	r3, r3
+ 41e:	2b00      	cmp	r3, #0
+ 420:	d1f7      	bne.n	412 <SystemSetupClocking+0x3a>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:103
+
+	/* Set system clock divider to 1 */
+	Chip_Clock_SetSysClockDiv(1);
+ 422:	2001      	movs	r0, #1
+ 424:	f7ff ffa0 	bl	368 <Chip_Clock_SetSysClockDiv>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:106
+
+	/* Setup FLASH access to 3 clocks */
+	Chip_FMC_SetFLASHAccess(FLASHTIM_50MHZ_CPU);
+ 428:	2002      	movs	r0, #2
+ 42a:	f7ff ff5f 	bl	2ec <Chip_FMC_SetFLASHAccess>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:110
+
+	/* Set main clock source to the system PLL. This will drive 48MHz
+	   for the main clock and 48MHz for the system clock */
+	Chip_Clock_SetMainClockSource(SYSCTL_MAINCLKSRC_PLLOUT);
+ 42e:	2003      	movs	r0, #3
+ 430:	f000 f89c 	bl	56c <Chip_Clock_SetMainClockSource>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:111
+}
+ 434:	46bd      	mov	sp, r7
+ 436:	b002      	add	sp, #8
+ 438:	bd80      	pop	{r7, pc}
+ 43a:	46c0      	nop			; (mov r8, r8)
+
+0000043c <SystemSetupMuxing>:
+SystemSetupMuxing():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:115
+
+/* Sets up system pin muxing */
+STATIC void SystemSetupMuxing(void)
+{
+ 43c:	b580      	push	{r7, lr}
+ 43e:	b082      	sub	sp, #8
+ 440:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:119
+	int i;
+
+	/* Enable IOCON clock */
+	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_IOCON);
+ 442:	2010      	movs	r0, #16
+ 444:	f7ff ff9c 	bl	380 <Chip_Clock_EnablePeriphClock>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:121
+
+	for (i = 0; i < (sizeof(pinmuxing) / sizeof(PINMUX_GRP_T)); i++) {
+ 448:	2300      	movs	r3, #0
+ 44a:	607b      	str	r3, [r7, #4]
+ 44c:	e011      	b.n	472 <SystemSetupMuxing+0x36>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:122 (discriminator 2)
+		Chip_IOCON_PinMuxSet(LPC_IOCON, (CHIP_IOCON_PIO_T) pinmuxing[i].pin,
+ 44e:	4b0c      	ldr	r3, [pc, #48]	; (480 <SystemSetupMuxing+0x44>)
+ 450:	687a      	ldr	r2, [r7, #4]
+ 452:	0092      	lsls	r2, r2, #2
+ 454:	5cd2      	ldrb	r2, [r2, r3]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:123 (discriminator 2)
+			pinmuxing[i].modefunc);
+ 456:	4b0a      	ldr	r3, [pc, #40]	; (480 <SystemSetupMuxing+0x44>)
+ 458:	6879      	ldr	r1, [r7, #4]
+ 45a:	0089      	lsls	r1, r1, #2
+ 45c:	58cb      	ldr	r3, [r1, r3]
+ 45e:	0a1b      	lsrs	r3, r3, #8
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:122 (discriminator 2)
+
+	/* Enable IOCON clock */
+	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_IOCON);
+
+	for (i = 0; i < (sizeof(pinmuxing) / sizeof(PINMUX_GRP_T)); i++) {
+		Chip_IOCON_PinMuxSet(LPC_IOCON, (CHIP_IOCON_PIO_T) pinmuxing[i].pin,
+ 460:	4908      	ldr	r1, [pc, #32]	; (484 <SystemSetupMuxing+0x48>)
+ 462:	1c08      	adds	r0, r1, #0
+ 464:	1c11      	adds	r1, r2, #0
+ 466:	1c1a      	adds	r2, r3, #0
+ 468:	f7ff ffa2 	bl	3b0 <Chip_IOCON_PinMuxSet>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:121 (discriminator 2)
+	int i;
+
+	/* Enable IOCON clock */
+	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_IOCON);
+
+	for (i = 0; i < (sizeof(pinmuxing) / sizeof(PINMUX_GRP_T)); i++) {
+ 46c:	687b      	ldr	r3, [r7, #4]
+ 46e:	3301      	adds	r3, #1
+ 470:	607b      	str	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:121 (discriminator 1)
+ 472:	687b      	ldr	r3, [r7, #4]
+ 474:	2b09      	cmp	r3, #9
+ 476:	d9ea      	bls.n	44e <SystemSetupMuxing+0x12>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:125
+		Chip_IOCON_PinMuxSet(LPC_IOCON, (CHIP_IOCON_PIO_T) pinmuxing[i].pin,
+			pinmuxing[i].modefunc);
+	}
+}
+ 478:	46bd      	mov	sp, r7
+ 47a:	b002      	add	sp, #8
+ 47c:	bd80      	pop	{r7, pc}
+ 47e:	46c0      	nop			; (mov r8, r8)
+ 480:	00000c40 	.word	0x00000c40
+ 484:	40044000 	.word	0x40044000
+
+00000488 <Board_SystemInit>:
+Board_SystemInit():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:133
+ * Public functions
+ ****************************************************************************/
+
+/* Set up and initialize hardware prior to call to main */
+void Board_SystemInit(void)
+{
+ 488:	b580      	push	{r7, lr}
+ 48a:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:135
+	/* Setup system clocking and muxing */
+	SystemSetupClocking();
+ 48c:	f7ff ffa4 	bl	3d8 <SystemSetupClocking>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:136
+	SystemSetupMuxing();
+ 490:	f7ff ffd4 	bl	43c <SystemSetupMuxing>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:137
+}
+ 494:	46bd      	mov	sp, r7
+ 496:	bd80      	pop	{r7, pc}
+
+00000498 <SystemCoreClockUpdate>:
+SystemCoreClockUpdate():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/chip_11xx.c:56
+ ****************************************************************************/
+
+/* Update system core clock rate, should be called if the system has
+   a clock rate change */
+void SystemCoreClockUpdate(void)
+{
+ 498:	b580      	push	{r7, lr}
+ 49a:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/chip_11xx.c:58
+	/* CPU core speed */
+	SystemCoreClock = Chip_Clock_GetSystemClockRate();
+ 49c:	f000 f8ee 	bl	67c <Chip_Clock_GetSystemClockRate>
+ 4a0:	1c02      	adds	r2, r0, #0
+ 4a2:	4b02      	ldr	r3, [pc, #8]	; (4ac <SystemCoreClockUpdate+0x14>)
+ 4a4:	601a      	str	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/chip_11xx.c:59
+}
+ 4a6:	46bd      	mov	sp, r7
+ 4a8:	bd80      	pop	{r7, pc}
+ 4aa:	46c0      	nop			; (mov r8, r8)
+ 4ac:	10000000 	.word	0x10000000
+
+000004b0 <Chip_Clock_GetMainOscRate>:
+Chip_Clock_GetMainOscRate():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:457
+/**
+ * @brief	Returns the main oscillator clock rate
+ * @return	main oscillator clock rate
+ */
+STATIC INLINE uint32_t Chip_Clock_GetMainOscRate(void)
+{
+ 4b0:	b580      	push	{r7, lr}
+ 4b2:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:458
+	return OscRateIn;
+ 4b4:	4b02      	ldr	r3, [pc, #8]	; (4c0 <Chip_Clock_GetMainOscRate+0x10>)
+ 4b6:	681b      	ldr	r3, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:459
+}
+ 4b8:	1c18      	adds	r0, r3, #0
+ 4ba:	46bd      	mov	sp, r7
+ 4bc:	bd80      	pop	{r7, pc}
+ 4be:	46c0      	nop			; (mov r8, r8)
+ 4c0:	00000c3c 	.word	0x00000c3c
+
+000004c4 <Chip_Clock_GetIntOscRate>:
+Chip_Clock_GetIntOscRate():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:466
+/**
+ * @brief	Returns the internal oscillator (IRC) clock rate
+ * @return	internal oscillator (IRC) clock rate
+ */
+STATIC INLINE uint32_t Chip_Clock_GetIntOscRate(void)
+{
+ 4c4:	b580      	push	{r7, lr}
+ 4c6:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:467
+	return SYSCTL_IRC_FREQ;
+ 4c8:	4b01      	ldr	r3, [pc, #4]	; (4d0 <Chip_Clock_GetIntOscRate+0xc>)
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:468
+}
+ 4ca:	1c18      	adds	r0, r3, #0
+ 4cc:	46bd      	mov	sp, r7
+ 4ce:	bd80      	pop	{r7, pc}
+ 4d0:	00b71b00 	.word	0x00b71b00
+
+000004d4 <Chip_Clock_GetWDTLFORate>:
+Chip_Clock_GetWDTLFORate():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:65
+ * Private functions
+ ****************************************************************************/
+
+/* Compute a WDT or LFO rate */
+STATIC uint32_t Chip_Clock_GetWDTLFORate(uint32_t reg)
+{
+ 4d4:	b580      	push	{r7, lr}
+ 4d6:	b084      	sub	sp, #16
+ 4d8:	af00      	add	r7, sp, #0
+ 4da:	6078      	str	r0, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:70
+	uint32_t div;
+	CHIP_WDTLFO_OSC_T clk;
+
+	/* Get WDT oscillator settings */
+	clk = (CHIP_WDTLFO_OSC_T) ((reg >> 5) & 0xF);
+ 4dc:	687b      	ldr	r3, [r7, #4]
+ 4de:	095b      	lsrs	r3, r3, #5
+ 4e0:	b2d9      	uxtb	r1, r3
+ 4e2:	1c3b      	adds	r3, r7, #0
+ 4e4:	330f      	adds	r3, #15
+ 4e6:	220f      	movs	r2, #15
+ 4e8:	400a      	ands	r2, r1
+ 4ea:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:71
+	div = reg & 0x1F;
+ 4ec:	687a      	ldr	r2, [r7, #4]
+ 4ee:	231f      	movs	r3, #31
+ 4f0:	4013      	ands	r3, r2
+ 4f2:	60bb      	str	r3, [r7, #8]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:74
+
+	/* Compute clock rate and divided by divde value */
+	return wdtOSCRate[clk] / ((div + 1) << 1);
+ 4f4:	1c3b      	adds	r3, r7, #0
+ 4f6:	330f      	adds	r3, #15
+ 4f8:	781a      	ldrb	r2, [r3, #0]
+ 4fa:	4b07      	ldr	r3, [pc, #28]	; (518 <Chip_Clock_GetWDTLFORate+0x44>)
+ 4fc:	0092      	lsls	r2, r2, #2
+ 4fe:	58d2      	ldr	r2, [r2, r3]
+ 500:	68bb      	ldr	r3, [r7, #8]
+ 502:	3301      	adds	r3, #1
+ 504:	005b      	lsls	r3, r3, #1
+ 506:	1c10      	adds	r0, r2, #0
+ 508:	1c19      	adds	r1, r3, #0
+ 50a:	f000 fb5c 	bl	bc6 <__aeabi_uidiv>
+ 50e:	1c03      	adds	r3, r0, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:75
+}
+ 510:	1c18      	adds	r0, r3, #0
+ 512:	46bd      	mov	sp, r7
+ 514:	b004      	add	sp, #16
+ 516:	bd80      	pop	{r7, pc}
+ 518:	00000c68 	.word	0x00000c68
+
+0000051c <Chip_Clock_GetPLLFreq>:
+Chip_Clock_GetPLLFreq():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:79
+
+/* Compute a PLL frequency */
+STATIC uint32_t Chip_Clock_GetPLLFreq(uint32_t PLLReg, uint32_t inputRate)
+{
+ 51c:	b580      	push	{r7, lr}
+ 51e:	b084      	sub	sp, #16
+ 520:	af00      	add	r7, sp, #0
+ 522:	6078      	str	r0, [r7, #4]
+ 524:	6039      	str	r1, [r7, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:80
+	uint32_t msel = ((PLLReg & 0x1F) + 1);
+ 526:	687a      	ldr	r2, [r7, #4]
+ 528:	231f      	movs	r3, #31
+ 52a:	4013      	ands	r3, r2
+ 52c:	3301      	adds	r3, #1
+ 52e:	60fb      	str	r3, [r7, #12]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:82
+
+	return inputRate * msel;
+ 530:	683b      	ldr	r3, [r7, #0]
+ 532:	68fa      	ldr	r2, [r7, #12]
+ 534:	4353      	muls	r3, r2
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:83
+}
+ 536:	1c18      	adds	r0, r3, #0
+ 538:	46bd      	mov	sp, r7
+ 53a:	b004      	add	sp, #16
+ 53c:	bd80      	pop	{r7, pc}
+ 53e:	46c0      	nop			; (mov r8, r8)
+
+00000540 <Chip_Clock_SetSystemPLLSource>:
+Chip_Clock_SetSystemPLLSource():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:91
+ * Public functions
+ ****************************************************************************/
+
+/* Set System PLL clock source */
+void Chip_Clock_SetSystemPLLSource(CHIP_SYSCTL_PLLCLKSRC_T src)
+{
+ 540:	b580      	push	{r7, lr}
+ 542:	b082      	sub	sp, #8
+ 544:	af00      	add	r7, sp, #0
+ 546:	1c02      	adds	r2, r0, #0
+ 548:	1dfb      	adds	r3, r7, #7
+ 54a:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:92
+	LPC_SYSCTL->SYSPLLCLKSEL  = (uint32_t) src;
+ 54c:	4b06      	ldr	r3, [pc, #24]	; (568 <Chip_Clock_SetSystemPLLSource+0x28>)
+ 54e:	1dfa      	adds	r2, r7, #7
+ 550:	7812      	ldrb	r2, [r2, #0]
+ 552:	641a      	str	r2, [r3, #64]	; 0x40
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:93
+	LPC_SYSCTL->SYSPLLCLKUEN  = 0;
+ 554:	4b04      	ldr	r3, [pc, #16]	; (568 <Chip_Clock_SetSystemPLLSource+0x28>)
+ 556:	2200      	movs	r2, #0
+ 558:	645a      	str	r2, [r3, #68]	; 0x44
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:94
+	LPC_SYSCTL->SYSPLLCLKUEN  = 1;
+ 55a:	4b03      	ldr	r3, [pc, #12]	; (568 <Chip_Clock_SetSystemPLLSource+0x28>)
+ 55c:	2201      	movs	r2, #1
+ 55e:	645a      	str	r2, [r3, #68]	; 0x44
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:95
+}
+ 560:	46bd      	mov	sp, r7
+ 562:	b002      	add	sp, #8
+ 564:	bd80      	pop	{r7, pc}
+ 566:	46c0      	nop			; (mov r8, r8)
+ 568:	40048000 	.word	0x40048000
+
+0000056c <Chip_Clock_SetMainClockSource>:
+Chip_Clock_SetMainClockSource():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:125
+
+#endif
+
+/* Set main system clock source */
+void Chip_Clock_SetMainClockSource(CHIP_SYSCTL_MAINCLKSRC_T src)
+{
+ 56c:	b580      	push	{r7, lr}
+ 56e:	b082      	sub	sp, #8
+ 570:	af00      	add	r7, sp, #0
+ 572:	1c02      	adds	r2, r0, #0
+ 574:	1dfb      	adds	r3, r7, #7
+ 576:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:126
+	LPC_SYSCTL->MAINCLKSEL  = (uint32_t) src;
+ 578:	4b06      	ldr	r3, [pc, #24]	; (594 <Chip_Clock_SetMainClockSource+0x28>)
+ 57a:	1dfa      	adds	r2, r7, #7
+ 57c:	7812      	ldrb	r2, [r2, #0]
+ 57e:	671a      	str	r2, [r3, #112]	; 0x70
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:127
+	LPC_SYSCTL->MAINCLKUEN  = 0;
+ 580:	4b04      	ldr	r3, [pc, #16]	; (594 <Chip_Clock_SetMainClockSource+0x28>)
+ 582:	2200      	movs	r2, #0
+ 584:	675a      	str	r2, [r3, #116]	; 0x74
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:128
+	LPC_SYSCTL->MAINCLKUEN  = 1;
+ 586:	4b03      	ldr	r3, [pc, #12]	; (594 <Chip_Clock_SetMainClockSource+0x28>)
+ 588:	2201      	movs	r2, #1
+ 58a:	675a      	str	r2, [r3, #116]	; 0x74
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:129
+}
+ 58c:	46bd      	mov	sp, r7
+ 58e:	b002      	add	sp, #8
+ 590:	bd80      	pop	{r7, pc}
+ 592:	46c0      	nop			; (mov r8, r8)
+ 594:	40048000 	.word	0x40048000
+
+00000598 <Chip_Clock_GetWDTOSCRate>:
+Chip_Clock_GetWDTOSCRate():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:169
+
+#endif
+
+/* Return estimated watchdog oscillator rate */
+uint32_t Chip_Clock_GetWDTOSCRate(void)
+{
+ 598:	b580      	push	{r7, lr}
+ 59a:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:170
+	return Chip_Clock_GetWDTLFORate(LPC_SYSCTL->WDTOSCCTRL);
+ 59c:	4b04      	ldr	r3, [pc, #16]	; (5b0 <Chip_Clock_GetWDTOSCRate+0x18>)
+ 59e:	6a5b      	ldr	r3, [r3, #36]	; 0x24
+ 5a0:	1c18      	adds	r0, r3, #0
+ 5a2:	f7ff ff97 	bl	4d4 <Chip_Clock_GetWDTLFORate>
+ 5a6:	1c03      	adds	r3, r0, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:171
+}
+ 5a8:	1c18      	adds	r0, r3, #0
+ 5aa:	46bd      	mov	sp, r7
+ 5ac:	bd80      	pop	{r7, pc}
+ 5ae:	46c0      	nop			; (mov r8, r8)
+ 5b0:	40048000 	.word	0x40048000
+
+000005b4 <Chip_Clock_GetSystemPLLInClockRate>:
+Chip_Clock_GetSystemPLLInClockRate():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:184
+
+#endif
+
+/* Return System PLL input clock rate */
+uint32_t Chip_Clock_GetSystemPLLInClockRate(void)
+{
+ 5b4:	b580      	push	{r7, lr}
+ 5b6:	b082      	sub	sp, #8
+ 5b8:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:187
+	uint32_t clkRate;
+
+	switch ((CHIP_SYSCTL_PLLCLKSRC_T) (LPC_SYSCTL->SYSPLLCLKSEL & 0x3)) {
+ 5ba:	4b0d      	ldr	r3, [pc, #52]	; (5f0 <Chip_Clock_GetSystemPLLInClockRate+0x3c>)
+ 5bc:	6c1b      	ldr	r3, [r3, #64]	; 0x40
+ 5be:	b2db      	uxtb	r3, r3
+ 5c0:	1c1a      	adds	r2, r3, #0
+ 5c2:	2303      	movs	r3, #3
+ 5c4:	4013      	ands	r3, r2
+ 5c6:	d002      	beq.n	5ce <Chip_Clock_GetSystemPLLInClockRate+0x1a>
+ 5c8:	2b01      	cmp	r3, #1
+ 5ca:	d005      	beq.n	5d8 <Chip_Clock_GetSystemPLLInClockRate+0x24>
+ 5cc:	e009      	b.n	5e2 <Chip_Clock_GetSystemPLLInClockRate+0x2e>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:189
+	case SYSCTL_PLLCLKSRC_IRC:
+		clkRate = Chip_Clock_GetIntOscRate();
+ 5ce:	f7ff ff79 	bl	4c4 <Chip_Clock_GetIntOscRate>
+ 5d2:	1c03      	adds	r3, r0, #0
+ 5d4:	607b      	str	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:190
+		break;
+ 5d6:	e006      	b.n	5e6 <Chip_Clock_GetSystemPLLInClockRate+0x32>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:193
+
+	case SYSCTL_PLLCLKSRC_MAINOSC:
+		clkRate = Chip_Clock_GetMainOscRate();
+ 5d8:	f7ff ff6a 	bl	4b0 <Chip_Clock_GetMainOscRate>
+ 5dc:	1c03      	adds	r3, r0, #0
+ 5de:	607b      	str	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:194
+		break;
+ 5e0:	e001      	b.n	5e6 <Chip_Clock_GetSystemPLLInClockRate+0x32>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:203
+		clkRate = Chip_Clock_GetExtClockInRate();
+		break;
+#endif
+
+	default:
+		clkRate = 0;
+ 5e2:	2300      	movs	r3, #0
+ 5e4:	607b      	str	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:206
+	}
+
+	return clkRate;
+ 5e6:	687b      	ldr	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:207
+}
+ 5e8:	1c18      	adds	r0, r3, #0
+ 5ea:	46bd      	mov	sp, r7
+ 5ec:	b002      	add	sp, #8
+ 5ee:	bd80      	pop	{r7, pc}
+ 5f0:	40048000 	.word	0x40048000
+
+000005f4 <Chip_Clock_GetSystemPLLOutClockRate>:
+Chip_Clock_GetSystemPLLOutClockRate():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:211
+
+/* Return System PLL output clock rate */
+uint32_t Chip_Clock_GetSystemPLLOutClockRate(void)
+{
+ 5f4:	b598      	push	{r3, r4, r7, lr}
+ 5f6:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:212
+	return Chip_Clock_GetPLLFreq(LPC_SYSCTL->SYSPLLCTRL,
+ 5f8:	4b06      	ldr	r3, [pc, #24]	; (614 <Chip_Clock_GetSystemPLLOutClockRate+0x20>)
+ 5fa:	689c      	ldr	r4, [r3, #8]
+ 5fc:	f7ff ffda 	bl	5b4 <Chip_Clock_GetSystemPLLInClockRate>
+ 600:	1c03      	adds	r3, r0, #0
+ 602:	1c20      	adds	r0, r4, #0
+ 604:	1c19      	adds	r1, r3, #0
+ 606:	f7ff ff89 	bl	51c <Chip_Clock_GetPLLFreq>
+ 60a:	1c03      	adds	r3, r0, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:214
+								 Chip_Clock_GetSystemPLLInClockRate());
+}
+ 60c:	1c18      	adds	r0, r3, #0
+ 60e:	46bd      	mov	sp, r7
+ 610:	bd98      	pop	{r3, r4, r7, pc}
+ 612:	46c0      	nop			; (mov r8, r8)
+ 614:	40048000 	.word	0x40048000
+
+00000618 <Chip_Clock_GetMainClockRate>:
+Chip_Clock_GetMainClockRate():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:249
+
+#endif
+
+/* Return main clock rate */
+uint32_t Chip_Clock_GetMainClockRate(void)
+{
+ 618:	b580      	push	{r7, lr}
+ 61a:	b082      	sub	sp, #8
+ 61c:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:250
+	uint32_t clkRate = 0;
+ 61e:	2300      	movs	r3, #0
+ 620:	607b      	str	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:252
+
+	switch ((CHIP_SYSCTL_MAINCLKSRC_T) (LPC_SYSCTL->MAINCLKSEL & 0x3)) {
+ 622:	4b15      	ldr	r3, [pc, #84]	; (678 <Chip_Clock_GetMainClockRate+0x60>)
+ 624:	6f1b      	ldr	r3, [r3, #112]	; 0x70
+ 626:	b2db      	uxtb	r3, r3
+ 628:	1c1a      	adds	r2, r3, #0
+ 62a:	2303      	movs	r3, #3
+ 62c:	4013      	ands	r3, r2
+ 62e:	2b01      	cmp	r3, #1
+ 630:	d00d      	beq.n	64e <Chip_Clock_GetMainClockRate+0x36>
+ 632:	dc02      	bgt.n	63a <Chip_Clock_GetMainClockRate+0x22>
+ 634:	2b00      	cmp	r3, #0
+ 636:	d005      	beq.n	644 <Chip_Clock_GetMainClockRate+0x2c>
+ 638:	e018      	b.n	66c <Chip_Clock_GetMainClockRate+0x54>
+ 63a:	2b02      	cmp	r3, #2
+ 63c:	d00c      	beq.n	658 <Chip_Clock_GetMainClockRate+0x40>
+ 63e:	2b03      	cmp	r3, #3
+ 640:	d00f      	beq.n	662 <Chip_Clock_GetMainClockRate+0x4a>
+ 642:	e013      	b.n	66c <Chip_Clock_GetMainClockRate+0x54>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:254
+	case SYSCTL_MAINCLKSRC_IRC:
+		clkRate = Chip_Clock_GetIntOscRate();
+ 644:	f7ff ff3e 	bl	4c4 <Chip_Clock_GetIntOscRate>
+ 648:	1c03      	adds	r3, r0, #0
+ 64a:	607b      	str	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:255
+		break;
+ 64c:	e00e      	b.n	66c <Chip_Clock_GetMainClockRate+0x54>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:258
+
+	case SYSCTL_MAINCLKSRC_PLLIN:
+		clkRate = Chip_Clock_GetSystemPLLInClockRate();
+ 64e:	f7ff ffb1 	bl	5b4 <Chip_Clock_GetSystemPLLInClockRate>
+ 652:	1c03      	adds	r3, r0, #0
+ 654:	607b      	str	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:259
+		break;
+ 656:	e009      	b.n	66c <Chip_Clock_GetMainClockRate+0x54>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:268
+		clkRate = Chip_Clock_GetLFOOSCRate();
+		break;
+
+#else
+	case SYSCTL_MAINCLKSRC_WDTOSC:
+		clkRate = Chip_Clock_GetWDTOSCRate();
+ 658:	f7ff ff9e 	bl	598 <Chip_Clock_GetWDTOSCRate>
+ 65c:	1c03      	adds	r3, r0, #0
+ 65e:	607b      	str	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:269
+		break;
+ 660:	e004      	b.n	66c <Chip_Clock_GetMainClockRate+0x54>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:273
+#endif
+
+	case SYSCTL_MAINCLKSRC_PLLOUT:
+		clkRate = Chip_Clock_GetSystemPLLOutClockRate();
+ 662:	f7ff ffc7 	bl	5f4 <Chip_Clock_GetSystemPLLOutClockRate>
+ 666:	1c03      	adds	r3, r0, #0
+ 668:	607b      	str	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:274
+		break;
+ 66a:	46c0      	nop			; (mov r8, r8)
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:277
+	}
+
+	return clkRate;
+ 66c:	687b      	ldr	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:278
+}
+ 66e:	1c18      	adds	r0, r3, #0
+ 670:	46bd      	mov	sp, r7
+ 672:	b002      	add	sp, #8
+ 674:	bd80      	pop	{r7, pc}
+ 676:	46c0      	nop			; (mov r8, r8)
+ 678:	40048000 	.word	0x40048000
+
+0000067c <Chip_Clock_GetSystemClockRate>:
+Chip_Clock_GetSystemClockRate():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:282
+
+/* Return system clock rate */
+uint32_t Chip_Clock_GetSystemClockRate(void)
+{
+ 67c:	b580      	push	{r7, lr}
+ 67e:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:284
+	/* No point in checking for divide by 0 */
+	return Chip_Clock_GetMainClockRate() / LPC_SYSCTL->SYSAHBCLKDIV;
+ 680:	f7ff ffca 	bl	618 <Chip_Clock_GetMainClockRate>
+ 684:	1c02      	adds	r2, r0, #0
+ 686:	4b05      	ldr	r3, [pc, #20]	; (69c <Chip_Clock_GetSystemClockRate+0x20>)
+ 688:	6f9b      	ldr	r3, [r3, #120]	; 0x78
+ 68a:	1c10      	adds	r0, r2, #0
+ 68c:	1c19      	adds	r1, r3, #0
+ 68e:	f000 fa9a 	bl	bc6 <__aeabi_uidiv>
+ 692:	1c03      	adds	r3, r0, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/clock_11xx.c:285
+}
+ 694:	1c18      	adds	r0, r3, #0
+ 696:	46bd      	mov	sp, r7
+ 698:	bd80      	pop	{r7, pc}
+ 69a:	46c0      	nop			; (mov r8, r8)
+ 69c:	40048000 	.word	0x40048000
+
+000006a0 <Chip_Clock_EnablePeriphClock>:
+Chip_Clock_EnablePeriphClock():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:296
+ * @brief	Enable a system or peripheral clock
+ * @param	clk	: Clock to enable
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_Clock_EnablePeriphClock(CHIP_SYSCTL_CLOCK_T clk)
+{
+ 6a0:	b590      	push	{r4, r7, lr}
+ 6a2:	b083      	sub	sp, #12
+ 6a4:	af00      	add	r7, sp, #0
+ 6a6:	1c02      	adds	r2, r0, #0
+ 6a8:	1dfb      	adds	r3, r7, #7
+ 6aa:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:297
+	LPC_SYSCTL->SYSAHBCLKCTRL |= (1 << clk);
+ 6ac:	4a07      	ldr	r2, [pc, #28]	; (6cc <Chip_Clock_EnablePeriphClock+0x2c>)
+ 6ae:	4907      	ldr	r1, [pc, #28]	; (6cc <Chip_Clock_EnablePeriphClock+0x2c>)
+ 6b0:	2380      	movs	r3, #128	; 0x80
+ 6b2:	58c9      	ldr	r1, [r1, r3]
+ 6b4:	1dfb      	adds	r3, r7, #7
+ 6b6:	781b      	ldrb	r3, [r3, #0]
+ 6b8:	2001      	movs	r0, #1
+ 6ba:	1c04      	adds	r4, r0, #0
+ 6bc:	409c      	lsls	r4, r3
+ 6be:	1c23      	adds	r3, r4, #0
+ 6c0:	4319      	orrs	r1, r3
+ 6c2:	2380      	movs	r3, #128	; 0x80
+ 6c4:	50d1      	str	r1, [r2, r3]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:298
+}
+ 6c6:	46bd      	mov	sp, r7
+ 6c8:	b003      	add	sp, #12
+ 6ca:	bd90      	pop	{r4, r7, pc}
+ 6cc:	40048000 	.word	0x40048000
+
+000006d0 <Chip_GPIO_Init>:
+Chip_GPIO_Init():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/gpio_11xx_2.c:55
+ * Public functions
+ ****************************************************************************/
+
+/* Initialize GPIO block */
+void Chip_GPIO_Init(LPC_GPIO_T *pGPIO)
+{
+ 6d0:	b580      	push	{r7, lr}
+ 6d2:	b082      	sub	sp, #8
+ 6d4:	af00      	add	r7, sp, #0
+ 6d6:	6078      	str	r0, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/gpio_11xx_2.c:56
+	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_GPIO);
+ 6d8:	2006      	movs	r0, #6
+ 6da:	f7ff ffe1 	bl	6a0 <Chip_Clock_EnablePeriphClock>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/gpio_11xx_2.c:57
+}
+ 6de:	46bd      	mov	sp, r7
+ 6e0:	b002      	add	sp, #8
+ 6e2:	bd80      	pop	{r7, pc}
+
+000006e4 <Chip_SYSCTL_PowerDown>:
+Chip_SYSCTL_PowerDown():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:105
+
+#endif
+
+/* Power down one or more blocks or peripherals */
+void Chip_SYSCTL_PowerDown(uint32_t powerdownmask)
+{
+ 6e4:	b580      	push	{r7, lr}
+ 6e6:	b084      	sub	sp, #16
+ 6e8:	af00      	add	r7, sp, #0
+ 6ea:	6078      	str	r0, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:108
+	uint32_t pdrun;
+
+	pdrun = LPC_SYSCTL->PDRUNCFG & PDRUNCFGMASKTMP;
+ 6ec:	4a0b      	ldr	r2, [pc, #44]	; (71c <Chip_SYSCTL_PowerDown+0x38>)
+ 6ee:	238e      	movs	r3, #142	; 0x8e
+ 6f0:	009b      	lsls	r3, r3, #2
+ 6f2:	58d2      	ldr	r2, [r2, r3]
+ 6f4:	23ff      	movs	r3, #255	; 0xff
+ 6f6:	4013      	ands	r3, r2
+ 6f8:	60fb      	str	r3, [r7, #12]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:109
+	pdrun |= (powerdownmask & PDRUNCFGMASKTMP);
+ 6fa:	687a      	ldr	r2, [r7, #4]
+ 6fc:	23ff      	movs	r3, #255	; 0xff
+ 6fe:	4013      	ands	r3, r2
+ 700:	68fa      	ldr	r2, [r7, #12]
+ 702:	4313      	orrs	r3, r2
+ 704:	60fb      	str	r3, [r7, #12]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:111
+
+	LPC_SYSCTL->PDRUNCFG = (pdrun | PDRUNCFGUSEMASK);
+ 706:	4a05      	ldr	r2, [pc, #20]	; (71c <Chip_SYSCTL_PowerDown+0x38>)
+ 708:	68fb      	ldr	r3, [r7, #12]
+ 70a:	21ed      	movs	r1, #237	; 0xed
+ 70c:	0209      	lsls	r1, r1, #8
+ 70e:	4319      	orrs	r1, r3
+ 710:	238e      	movs	r3, #142	; 0x8e
+ 712:	009b      	lsls	r3, r3, #2
+ 714:	50d1      	str	r1, [r2, r3]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:112
+}
+ 716:	46bd      	mov	sp, r7
+ 718:	b004      	add	sp, #16
+ 71a:	bd80      	pop	{r7, pc}
+ 71c:	40048000 	.word	0x40048000
+
+00000720 <Chip_SYSCTL_PowerUp>:
+Chip_SYSCTL_PowerUp():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:116
+
+/* Power up one or more blocks or peripherals */
+void Chip_SYSCTL_PowerUp(uint32_t powerupmask)
+{
+ 720:	b580      	push	{r7, lr}
+ 722:	b084      	sub	sp, #16
+ 724:	af00      	add	r7, sp, #0
+ 726:	6078      	str	r0, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:119
+	uint32_t pdrun;
+
+	pdrun = LPC_SYSCTL->PDRUNCFG & PDRUNCFGMASKTMP;
+ 728:	4a0c      	ldr	r2, [pc, #48]	; (75c <Chip_SYSCTL_PowerUp+0x3c>)
+ 72a:	238e      	movs	r3, #142	; 0x8e
+ 72c:	009b      	lsls	r3, r3, #2
+ 72e:	58d2      	ldr	r2, [r2, r3]
+ 730:	23ff      	movs	r3, #255	; 0xff
+ 732:	4013      	ands	r3, r2
+ 734:	60fb      	str	r3, [r7, #12]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:120
+	pdrun &= ~(powerupmask & PDRUNCFGMASKTMP);
+ 736:	687a      	ldr	r2, [r7, #4]
+ 738:	23ff      	movs	r3, #255	; 0xff
+ 73a:	4013      	ands	r3, r2
+ 73c:	43da      	mvns	r2, r3
+ 73e:	68fb      	ldr	r3, [r7, #12]
+ 740:	4013      	ands	r3, r2
+ 742:	60fb      	str	r3, [r7, #12]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:122
+
+	LPC_SYSCTL->PDRUNCFG = (pdrun | PDRUNCFGUSEMASK);
+ 744:	4a05      	ldr	r2, [pc, #20]	; (75c <Chip_SYSCTL_PowerUp+0x3c>)
+ 746:	68fb      	ldr	r3, [r7, #12]
+ 748:	21ed      	movs	r1, #237	; 0xed
+ 74a:	0209      	lsls	r1, r1, #8
+ 74c:	4319      	orrs	r1, r3
+ 74e:	238e      	movs	r3, #142	; 0x8e
+ 750:	009b      	lsls	r3, r3, #2
+ 752:	50d1      	str	r1, [r2, r3]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:123
+}
+ 754:	46bd      	mov	sp, r7
+ 756:	b004      	add	sp, #16
+ 758:	bd80      	pop	{r7, pc}
+ 75a:	46c0      	nop			; (mov r8, r8)
+ 75c:	40048000 	.word	0x40048000
+
+00000760 <Chip_Clock_EnablePeriphClock>:
+Chip_Clock_EnablePeriphClock():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:296
+ * @brief	Enable a system or peripheral clock
+ * @param	clk	: Clock to enable
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_Clock_EnablePeriphClock(CHIP_SYSCTL_CLOCK_T clk)
+{
+ 760:	b590      	push	{r4, r7, lr}
+ 762:	b083      	sub	sp, #12
+ 764:	af00      	add	r7, sp, #0
+ 766:	1c02      	adds	r2, r0, #0
+ 768:	1dfb      	adds	r3, r7, #7
+ 76a:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:297
+	LPC_SYSCTL->SYSAHBCLKCTRL |= (1 << clk);
+ 76c:	4a07      	ldr	r2, [pc, #28]	; (78c <Chip_Clock_EnablePeriphClock+0x2c>)
+ 76e:	4907      	ldr	r1, [pc, #28]	; (78c <Chip_Clock_EnablePeriphClock+0x2c>)
+ 770:	2380      	movs	r3, #128	; 0x80
+ 772:	58c9      	ldr	r1, [r1, r3]
+ 774:	1dfb      	adds	r3, r7, #7
+ 776:	781b      	ldrb	r3, [r3, #0]
+ 778:	2001      	movs	r0, #1
+ 77a:	1c04      	adds	r4, r0, #0
+ 77c:	409c      	lsls	r4, r3
+ 77e:	1c23      	adds	r3, r4, #0
+ 780:	4319      	orrs	r1, r3
+ 782:	2380      	movs	r3, #128	; 0x80
+ 784:	50d1      	str	r1, [r2, r3]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/clock_11xx.h:298
+}
+ 786:	46bd      	mov	sp, r7
+ 788:	b003      	add	sp, #12
+ 78a:	bd90      	pop	{r4, r7, pc}
+ 78c:	40048000 	.word	0x40048000
+
+00000790 <Chip_TIMER_GetClock>:
+Chip_TIMER_GetClock():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:48
+ * Private functions
+ ****************************************************************************/
+
+/* Returns clock index for a specific timer referenced by IP block address */
+STATIC CHIP_SYSCTL_CLOCK_T Chip_TIMER_GetClock(LPC_TIMER_T *pTMR)
+{
+ 790:	b580      	push	{r7, lr}
+ 792:	b084      	sub	sp, #16
+ 794:	af00      	add	r7, sp, #0
+ 796:	6078      	str	r0, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:50
+  CHIP_SYSCTL_CLOCK_T tmrClk;
+  if (pTMR == LPC_TIMER32_1) {
+ 798:	687a      	ldr	r2, [r7, #4]
+ 79a:	4b12      	ldr	r3, [pc, #72]	; (7e4 <Chip_TIMER_GetClock+0x54>)
+ 79c:	429a      	cmp	r2, r3
+ 79e:	d104      	bne.n	7aa <Chip_TIMER_GetClock+0x1a>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:51
+	  tmrClk = SYSCTL_CLOCK_CT32B1;
+ 7a0:	1c3b      	adds	r3, r7, #0
+ 7a2:	330f      	adds	r3, #15
+ 7a4:	220a      	movs	r2, #10
+ 7a6:	701a      	strb	r2, [r3, #0]
+ 7a8:	e015      	b.n	7d6 <Chip_TIMER_GetClock+0x46>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:53
+  }
+  else if (pTMR == LPC_TIMER16_0) {
+ 7aa:	687a      	ldr	r2, [r7, #4]
+ 7ac:	4b0e      	ldr	r3, [pc, #56]	; (7e8 <Chip_TIMER_GetClock+0x58>)
+ 7ae:	429a      	cmp	r2, r3
+ 7b0:	d104      	bne.n	7bc <Chip_TIMER_GetClock+0x2c>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:54
+	  tmrClk = SYSCTL_CLOCK_CT16B0;
+ 7b2:	1c3b      	adds	r3, r7, #0
+ 7b4:	330f      	adds	r3, #15
+ 7b6:	2207      	movs	r2, #7
+ 7b8:	701a      	strb	r2, [r3, #0]
+ 7ba:	e00c      	b.n	7d6 <Chip_TIMER_GetClock+0x46>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:56
+  }
+  else if (pTMR == LPC_TIMER16_1) {
+ 7bc:	687a      	ldr	r2, [r7, #4]
+ 7be:	4b0b      	ldr	r3, [pc, #44]	; (7ec <Chip_TIMER_GetClock+0x5c>)
+ 7c0:	429a      	cmp	r2, r3
+ 7c2:	d104      	bne.n	7ce <Chip_TIMER_GetClock+0x3e>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:57
+	  tmrClk = SYSCTL_CLOCK_CT16B1;
+ 7c4:	1c3b      	adds	r3, r7, #0
+ 7c6:	330f      	adds	r3, #15
+ 7c8:	2208      	movs	r2, #8
+ 7ca:	701a      	strb	r2, [r3, #0]
+ 7cc:	e003      	b.n	7d6 <Chip_TIMER_GetClock+0x46>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:60
+  }
+  else {
+	  tmrClk = SYSCTL_CLOCK_CT32B0;
+ 7ce:	1c3b      	adds	r3, r7, #0
+ 7d0:	330f      	adds	r3, #15
+ 7d2:	2209      	movs	r2, #9
+ 7d4:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:63
+  }
+
+  return tmrClk;
+ 7d6:	1c3b      	adds	r3, r7, #0
+ 7d8:	330f      	adds	r3, #15
+ 7da:	781b      	ldrb	r3, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:64
+}
+ 7dc:	1c18      	adds	r0, r3, #0
+ 7de:	46bd      	mov	sp, r7
+ 7e0:	b004      	add	sp, #16
+ 7e2:	bd80      	pop	{r7, pc}
+ 7e4:	40018000 	.word	0x40018000
+ 7e8:	4000c000 	.word	0x4000c000
+ 7ec:	40010000 	.word	0x40010000
+
+000007f0 <Chip_TIMER_Init>:
+Chip_TIMER_Init():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:72
+ * Public functions
+ ****************************************************************************/
+
+/* Initialize a timer */
+void Chip_TIMER_Init(LPC_TIMER_T *pTMR)
+{
+ 7f0:	b580      	push	{r7, lr}
+ 7f2:	b082      	sub	sp, #8
+ 7f4:	af00      	add	r7, sp, #0
+ 7f6:	6078      	str	r0, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:73
+	Chip_Clock_EnablePeriphClock(Chip_TIMER_GetClock(pTMR));
+ 7f8:	687b      	ldr	r3, [r7, #4]
+ 7fa:	1c18      	adds	r0, r3, #0
+ 7fc:	f7ff ffc8 	bl	790 <Chip_TIMER_GetClock>
+ 800:	1c03      	adds	r3, r0, #0
+ 802:	1c18      	adds	r0, r3, #0
+ 804:	f7ff ffac 	bl	760 <Chip_Clock_EnablePeriphClock>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:74
+}
+ 808:	46bd      	mov	sp, r7
+ 80a:	b002      	add	sp, #8
+ 80c:	bd80      	pop	{r7, pc}
+ 80e:	46c0      	nop			; (mov r8, r8)
+
+00000810 <Chip_TIMER_Reset>:
+Chip_TIMER_Reset():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:84
+	Chip_Clock_DisablePeriphClock(Chip_TIMER_GetClock(pTMR));
+}
+
+/* Resets the timer terminal and prescale counts to 0 */
+void Chip_TIMER_Reset(LPC_TIMER_T *pTMR)
+{
+ 810:	b580      	push	{r7, lr}
+ 812:	b084      	sub	sp, #16
+ 814:	af00      	add	r7, sp, #0
+ 816:	6078      	str	r0, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:88
+	uint32_t reg;
+
+	/* Disable timer, set terminal count to non-0 */
+	reg = pTMR->TCR;
+ 818:	687b      	ldr	r3, [r7, #4]
+ 81a:	685b      	ldr	r3, [r3, #4]
+ 81c:	60fb      	str	r3, [r7, #12]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:89
+	pTMR->TCR = 0;
+ 81e:	687b      	ldr	r3, [r7, #4]
+ 820:	2200      	movs	r2, #0
+ 822:	605a      	str	r2, [r3, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:90
+	pTMR->TC = 1;
+ 824:	687b      	ldr	r3, [r7, #4]
+ 826:	2201      	movs	r2, #1
+ 828:	609a      	str	r2, [r3, #8]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:93
+
+	/* Reset timer counter */
+	pTMR->TCR = TIMER_RESET;
+ 82a:	687b      	ldr	r3, [r7, #4]
+ 82c:	2202      	movs	r2, #2
+ 82e:	605a      	str	r2, [r3, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:96
+
+	/* Wait for terminal count to clear */
+	while (pTMR->TC != 0) {}
+ 830:	46c0      	nop			; (mov r8, r8)
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:96 (discriminator 1)
+ 832:	687b      	ldr	r3, [r7, #4]
+ 834:	689b      	ldr	r3, [r3, #8]
+ 836:	2b00      	cmp	r3, #0
+ 838:	d1fb      	bne.n	832 <Chip_TIMER_Reset+0x22>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:99
+
+	/* Restore timer state */
+	pTMR->TCR = reg;
+ 83a:	687b      	ldr	r3, [r7, #4]
+ 83c:	68fa      	ldr	r2, [r7, #12]
+ 83e:	605a      	str	r2, [r3, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/lpc_chip_11cxx_library/src/timer_11xx.c:100
+}
+ 840:	46bd      	mov	sp, r7
+ 842:	b004      	add	sp, #16
+ 844:	bd80      	pop	{r7, pc}
+ 846:	46c0      	nop			; (mov r8, r8)
+
+00000848 <NVIC_EnableIRQ>:
+NVIC_EnableIRQ():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:501
+    The function enables a device-specific interrupt in the NVIC interrupt controller.
+
+    \param [in]      IRQn  External interrupt number. Value cannot be negative.
+ */
+__STATIC_INLINE void NVIC_EnableIRQ(IRQn_Type IRQn)
+{
+ 848:	b580      	push	{r7, lr}
+ 84a:	b082      	sub	sp, #8
+ 84c:	af00      	add	r7, sp, #0
+ 84e:	1c02      	adds	r2, r0, #0
+ 850:	1dfb      	adds	r3, r7, #7
+ 852:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:502
+  NVIC->ISER[0] = (1 << ((uint32_t)(IRQn) & 0x1F));
+ 854:	4b06      	ldr	r3, [pc, #24]	; (870 <NVIC_EnableIRQ+0x28>)
+ 856:	1dfa      	adds	r2, r7, #7
+ 858:	7812      	ldrb	r2, [r2, #0]
+ 85a:	1c11      	adds	r1, r2, #0
+ 85c:	221f      	movs	r2, #31
+ 85e:	400a      	ands	r2, r1
+ 860:	2101      	movs	r1, #1
+ 862:	1c08      	adds	r0, r1, #0
+ 864:	4090      	lsls	r0, r2
+ 866:	1c02      	adds	r2, r0, #0
+ 868:	601a      	str	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:503
+}
+ 86a:	46bd      	mov	sp, r7
+ 86c:	b002      	add	sp, #8
+ 86e:	bd80      	pop	{r7, pc}
+ 870:	e000e100 	.word	0xe000e100
+
+00000874 <NVIC_ClearPendingIRQ>:
+NVIC_ClearPendingIRQ():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:553
+    The function clears the pending bit of an external interrupt.
+
+    \param [in]      IRQn  External interrupt number. Value cannot be negative.
+ */
+__STATIC_INLINE void NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+{
+ 874:	b580      	push	{r7, lr}
+ 876:	b082      	sub	sp, #8
+ 878:	af00      	add	r7, sp, #0
+ 87a:	1c02      	adds	r2, r0, #0
+ 87c:	1dfb      	adds	r3, r7, #7
+ 87e:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:554
+  NVIC->ICPR[0] = (1 << ((uint32_t)(IRQn) & 0x1F)); /* Clear pending interrupt */
+ 880:	4a08      	ldr	r2, [pc, #32]	; (8a4 <NVIC_ClearPendingIRQ+0x30>)
+ 882:	1dfb      	adds	r3, r7, #7
+ 884:	781b      	ldrb	r3, [r3, #0]
+ 886:	1c19      	adds	r1, r3, #0
+ 888:	231f      	movs	r3, #31
+ 88a:	400b      	ands	r3, r1
+ 88c:	2101      	movs	r1, #1
+ 88e:	1c08      	adds	r0, r1, #0
+ 890:	4098      	lsls	r0, r3
+ 892:	1c03      	adds	r3, r0, #0
+ 894:	1c19      	adds	r1, r3, #0
+ 896:	23c0      	movs	r3, #192	; 0xc0
+ 898:	005b      	lsls	r3, r3, #1
+ 89a:	50d1      	str	r1, [r2, r3]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:555
+}
+ 89c:	46bd      	mov	sp, r7
+ 89e:	b002      	add	sp, #8
+ 8a0:	bd80      	pop	{r7, pc}
+ 8a2:	46c0      	nop			; (mov r8, r8)
+ 8a4:	e000e100 	.word	0xe000e100
+
+000008a8 <NVIC_SetPriority>:
+NVIC_SetPriority():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:568
+
+    \param [in]      IRQn  Interrupt number.
+    \param [in]  priority  Priority to set.
+ */
+__STATIC_INLINE void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+{
+ 8a8:	b5b0      	push	{r4, r5, r7, lr}
+ 8aa:	b082      	sub	sp, #8
+ 8ac:	af00      	add	r7, sp, #0
+ 8ae:	1c02      	adds	r2, r0, #0
+ 8b0:	6039      	str	r1, [r7, #0]
+ 8b2:	1dfb      	adds	r3, r7, #7
+ 8b4:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:569
+  if(IRQn < 0) {
+ 8b6:	1dfb      	adds	r3, r7, #7
+ 8b8:	781b      	ldrb	r3, [r3, #0]
+ 8ba:	2b7f      	cmp	r3, #127	; 0x7f
+ 8bc:	d932      	bls.n	924 <NVIC_SetPriority+0x7c>
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:570
+    SCB->SHP[_SHP_IDX(IRQn)] = (SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+ 8be:	4930      	ldr	r1, [pc, #192]	; (980 <NVIC_SetPriority+0xd8>)
+ 8c0:	1dfb      	adds	r3, r7, #7
+ 8c2:	781b      	ldrb	r3, [r3, #0]
+ 8c4:	1c1a      	adds	r2, r3, #0
+ 8c6:	230f      	movs	r3, #15
+ 8c8:	4013      	ands	r3, r2
+ 8ca:	3b08      	subs	r3, #8
+ 8cc:	0898      	lsrs	r0, r3, #2
+ 8ce:	4a2c      	ldr	r2, [pc, #176]	; (980 <NVIC_SetPriority+0xd8>)
+ 8d0:	1dfb      	adds	r3, r7, #7
+ 8d2:	781b      	ldrb	r3, [r3, #0]
+ 8d4:	1c1c      	adds	r4, r3, #0
+ 8d6:	230f      	movs	r3, #15
+ 8d8:	4023      	ands	r3, r4
+ 8da:	3b08      	subs	r3, #8
+ 8dc:	089b      	lsrs	r3, r3, #2
+ 8de:	3306      	adds	r3, #6
+ 8e0:	009b      	lsls	r3, r3, #2
+ 8e2:	18d3      	adds	r3, r2, r3
+ 8e4:	685b      	ldr	r3, [r3, #4]
+ 8e6:	1dfa      	adds	r2, r7, #7
+ 8e8:	7812      	ldrb	r2, [r2, #0]
+ 8ea:	1c14      	adds	r4, r2, #0
+ 8ec:	2203      	movs	r2, #3
+ 8ee:	4022      	ands	r2, r4
+ 8f0:	00d2      	lsls	r2, r2, #3
+ 8f2:	24ff      	movs	r4, #255	; 0xff
+ 8f4:	1c25      	adds	r5, r4, #0
+ 8f6:	4095      	lsls	r5, r2
+ 8f8:	1c2a      	adds	r2, r5, #0
+ 8fa:	43d2      	mvns	r2, r2
+ 8fc:	401a      	ands	r2, r3
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:571
+        (((priority << (8 - __NVIC_PRIO_BITS)) & 0xFF) << _BIT_SHIFT(IRQn)); }
+ 8fe:	683b      	ldr	r3, [r7, #0]
+ 900:	019c      	lsls	r4, r3, #6
+ 902:	23ff      	movs	r3, #255	; 0xff
+ 904:	401c      	ands	r4, r3
+ 906:	1dfb      	adds	r3, r7, #7
+ 908:	781b      	ldrb	r3, [r3, #0]
+ 90a:	1c1d      	adds	r5, r3, #0
+ 90c:	2303      	movs	r3, #3
+ 90e:	402b      	ands	r3, r5
+ 910:	00db      	lsls	r3, r3, #3
+ 912:	1c25      	adds	r5, r4, #0
+ 914:	409d      	lsls	r5, r3
+ 916:	1c2b      	adds	r3, r5, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:570
+    \param [in]  priority  Priority to set.
+ */
+__STATIC_INLINE void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+{
+  if(IRQn < 0) {
+    SCB->SHP[_SHP_IDX(IRQn)] = (SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+ 918:	431a      	orrs	r2, r3
+ 91a:	1d83      	adds	r3, r0, #6
+ 91c:	009b      	lsls	r3, r3, #2
+ 91e:	18cb      	adds	r3, r1, r3
+ 920:	605a      	str	r2, [r3, #4]
+ 922:	e029      	b.n	978 <NVIC_SetPriority+0xd0>
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:573
+        (((priority << (8 - __NVIC_PRIO_BITS)) & 0xFF) << _BIT_SHIFT(IRQn)); }
+  else {
+    NVIC->IP[_IP_IDX(IRQn)] = (NVIC->IP[_IP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+ 924:	4b17      	ldr	r3, [pc, #92]	; (984 <NVIC_SetPriority+0xdc>)
+ 926:	1dfa      	adds	r2, r7, #7
+ 928:	7812      	ldrb	r2, [r2, #0]
+ 92a:	b252      	sxtb	r2, r2
+ 92c:	0892      	lsrs	r2, r2, #2
+ 92e:	4915      	ldr	r1, [pc, #84]	; (984 <NVIC_SetPriority+0xdc>)
+ 930:	1df8      	adds	r0, r7, #7
+ 932:	7800      	ldrb	r0, [r0, #0]
+ 934:	b240      	sxtb	r0, r0
+ 936:	0880      	lsrs	r0, r0, #2
+ 938:	30c0      	adds	r0, #192	; 0xc0
+ 93a:	0080      	lsls	r0, r0, #2
+ 93c:	5841      	ldr	r1, [r0, r1]
+ 93e:	1df8      	adds	r0, r7, #7
+ 940:	7800      	ldrb	r0, [r0, #0]
+ 942:	1c04      	adds	r4, r0, #0
+ 944:	2003      	movs	r0, #3
+ 946:	4020      	ands	r0, r4
+ 948:	00c0      	lsls	r0, r0, #3
+ 94a:	24ff      	movs	r4, #255	; 0xff
+ 94c:	1c25      	adds	r5, r4, #0
+ 94e:	4085      	lsls	r5, r0
+ 950:	1c28      	adds	r0, r5, #0
+ 952:	43c0      	mvns	r0, r0
+ 954:	4008      	ands	r0, r1
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:574
+        (((priority << (8 - __NVIC_PRIO_BITS)) & 0xFF) << _BIT_SHIFT(IRQn)); }
+ 956:	6839      	ldr	r1, [r7, #0]
+ 958:	018c      	lsls	r4, r1, #6
+ 95a:	21ff      	movs	r1, #255	; 0xff
+ 95c:	400c      	ands	r4, r1
+ 95e:	1df9      	adds	r1, r7, #7
+ 960:	7809      	ldrb	r1, [r1, #0]
+ 962:	1c0d      	adds	r5, r1, #0
+ 964:	2103      	movs	r1, #3
+ 966:	4029      	ands	r1, r5
+ 968:	00c9      	lsls	r1, r1, #3
+ 96a:	1c25      	adds	r5, r4, #0
+ 96c:	408d      	lsls	r5, r1
+ 96e:	1c29      	adds	r1, r5, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:573
+{
+  if(IRQn < 0) {
+    SCB->SHP[_SHP_IDX(IRQn)] = (SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+        (((priority << (8 - __NVIC_PRIO_BITS)) & 0xFF) << _BIT_SHIFT(IRQn)); }
+  else {
+    NVIC->IP[_IP_IDX(IRQn)] = (NVIC->IP[_IP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+ 970:	4301      	orrs	r1, r0
+ 972:	32c0      	adds	r2, #192	; 0xc0
+ 974:	0092      	lsls	r2, r2, #2
+ 976:	50d1      	str	r1, [r2, r3]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:575
+        (((priority << (8 - __NVIC_PRIO_BITS)) & 0xFF) << _BIT_SHIFT(IRQn)); }
+}
+ 978:	46bd      	mov	sp, r7
+ 97a:	b002      	add	sp, #8
+ 97c:	bdb0      	pop	{r4, r5, r7, pc}
+ 97e:	46c0      	nop			; (mov r8, r8)
+ 980:	e000ed00 	.word	0xe000ed00
+ 984:	e000e100 	.word	0xe000e100
+
+00000988 <SysTick_Config>:
+SysTick_Config():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:642
+    function <b>SysTick_Config</b> is not included. In this case, the file <b><i>device</i>.h</b>
+    must contain a vendor-specific implementation of this function.
+
+ */
+__STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
+{
+ 988:	b580      	push	{r7, lr}
+ 98a:	b082      	sub	sp, #8
+ 98c:	af00      	add	r7, sp, #0
+ 98e:	6078      	str	r0, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:643
+  if (ticks > SysTick_LOAD_RELOAD_Msk)  return (1);            /* Reload value impossible */
+ 990:	687a      	ldr	r2, [r7, #4]
+ 992:	4b0e      	ldr	r3, [pc, #56]	; (9cc <SysTick_Config+0x44>)
+ 994:	429a      	cmp	r2, r3
+ 996:	d901      	bls.n	99c <SysTick_Config+0x14>
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:643 (discriminator 1)
+ 998:	2301      	movs	r3, #1
+ 99a:	e012      	b.n	9c2 <SysTick_Config+0x3a>
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:645
+
+  SysTick->LOAD  = (ticks & SysTick_LOAD_RELOAD_Msk) - 1;      /* set reload register */
+ 99c:	4b0c      	ldr	r3, [pc, #48]	; (9d0 <SysTick_Config+0x48>)
+ 99e:	687a      	ldr	r2, [r7, #4]
+ 9a0:	0212      	lsls	r2, r2, #8
+ 9a2:	0a12      	lsrs	r2, r2, #8
+ 9a4:	3a01      	subs	r2, #1
+ 9a6:	605a      	str	r2, [r3, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:646
+  NVIC_SetPriority (SysTick_IRQn, (1<<__NVIC_PRIO_BITS) - 1);  /* set Priority for Systick Interrupt */
+ 9a8:	2301      	movs	r3, #1
+ 9aa:	425b      	negs	r3, r3
+ 9ac:	1c18      	adds	r0, r3, #0
+ 9ae:	2103      	movs	r1, #3
+ 9b0:	f7ff ff7a 	bl	8a8 <NVIC_SetPriority>
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:647
+  SysTick->VAL   = 0;                                          /* Load the SysTick Counter Value */
+ 9b4:	4b06      	ldr	r3, [pc, #24]	; (9d0 <SysTick_Config+0x48>)
+ 9b6:	2200      	movs	r2, #0
+ 9b8:	609a      	str	r2, [r3, #8]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:648
+  SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk |
+ 9ba:	4b05      	ldr	r3, [pc, #20]	; (9d0 <SysTick_Config+0x48>)
+ 9bc:	2207      	movs	r2, #7
+ 9be:	601a      	str	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:651
+                   SysTick_CTRL_TICKINT_Msk   |
+                   SysTick_CTRL_ENABLE_Msk;                    /* Enable SysTick IRQ and SysTick Timer */
+  return (0);                                                  /* Function successful */
+ 9c0:	2300      	movs	r3, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cm0.h:652
+}
+ 9c2:	1c18      	adds	r0, r3, #0
+ 9c4:	46bd      	mov	sp, r7
+ 9c6:	b002      	add	sp, #8
+ 9c8:	bd80      	pop	{r7, pc}
+ 9ca:	46c0      	nop			; (mov r8, r8)
+ 9cc:	00ffffff 	.word	0x00ffffff
+ 9d0:	e000e010 	.word	0xe000e010
+
+000009d4 <Chip_TIMER_MatchPending>:
+Chip_TIMER_MatchPending():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:113
+ * @return	false if the interrupt is not pending, otherwise true
+ * @note	Determine if the match interrupt for the passed timer and match
+ * counter is pending.
+ */
+STATIC INLINE bool Chip_TIMER_MatchPending(LPC_TIMER_T *pTMR, int8_t matchnum)
+{
+ 9d4:	b580      	push	{r7, lr}
+ 9d6:	b082      	sub	sp, #8
+ 9d8:	af00      	add	r7, sp, #0
+ 9da:	6078      	str	r0, [r7, #4]
+ 9dc:	1c0a      	adds	r2, r1, #0
+ 9de:	1cfb      	adds	r3, r7, #3
+ 9e0:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:114
+	return (bool) ((pTMR->IR & TIMER_MATCH_INT(matchnum)) != 0);
+ 9e2:	687b      	ldr	r3, [r7, #4]
+ 9e4:	681b      	ldr	r3, [r3, #0]
+ 9e6:	1cfa      	adds	r2, r7, #3
+ 9e8:	7812      	ldrb	r2, [r2, #0]
+ 9ea:	1c11      	adds	r1, r2, #0
+ 9ec:	220f      	movs	r2, #15
+ 9ee:	400a      	ands	r2, r1
+ 9f0:	2101      	movs	r1, #1
+ 9f2:	1c08      	adds	r0, r1, #0
+ 9f4:	4090      	lsls	r0, r2
+ 9f6:	1c02      	adds	r2, r0, #0
+ 9f8:	4013      	ands	r3, r2
+ 9fa:	1e5a      	subs	r2, r3, #1
+ 9fc:	4193      	sbcs	r3, r2
+ 9fe:	b2db      	uxtb	r3, r3
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:115
+}
+ a00:	1c18      	adds	r0, r3, #0
+ a02:	46bd      	mov	sp, r7
+ a04:	b002      	add	sp, #8
+ a06:	bd80      	pop	{r7, pc}
+
+00000a08 <Chip_TIMER_ClearMatch>:
+Chip_TIMER_ClearMatch():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:138
+ * @param	matchnum	: Match interrupt number to clear
+ * @return	Nothing
+ * @note	Clears a pending timer match interrupt.
+ */
+STATIC INLINE void Chip_TIMER_ClearMatch(LPC_TIMER_T *pTMR, int8_t matchnum)
+{
+ a08:	b580      	push	{r7, lr}
+ a0a:	b082      	sub	sp, #8
+ a0c:	af00      	add	r7, sp, #0
+ a0e:	6078      	str	r0, [r7, #4]
+ a10:	1c0a      	adds	r2, r1, #0
+ a12:	1cfb      	adds	r3, r7, #3
+ a14:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:139
+	pTMR->IR = TIMER_IR_CLR(matchnum);
+ a16:	1cfb      	adds	r3, r7, #3
+ a18:	781b      	ldrb	r3, [r3, #0]
+ a1a:	b25b      	sxtb	r3, r3
+ a1c:	2201      	movs	r2, #1
+ a1e:	1c11      	adds	r1, r2, #0
+ a20:	4099      	lsls	r1, r3
+ a22:	1c0b      	adds	r3, r1, #0
+ a24:	1c1a      	adds	r2, r3, #0
+ a26:	687b      	ldr	r3, [r7, #4]
+ a28:	601a      	str	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:140
+}
+ a2a:	46bd      	mov	sp, r7
+ a2c:	b002      	add	sp, #8
+ a2e:	bd80      	pop	{r7, pc}
+
+00000a30 <Chip_TIMER_Enable>:
+Chip_TIMER_Enable():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:161
+ * @param	pTMR	: Pointer to timer IP register address
+ * @return	Nothing
+ * @note	Enables the timer to start counting.
+ */
+STATIC INLINE void Chip_TIMER_Enable(LPC_TIMER_T *pTMR)
+{
+ a30:	b580      	push	{r7, lr}
+ a32:	b082      	sub	sp, #8
+ a34:	af00      	add	r7, sp, #0
+ a36:	6078      	str	r0, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:162
+	pTMR->TCR |= TIMER_ENABLE;
+ a38:	687b      	ldr	r3, [r7, #4]
+ a3a:	685b      	ldr	r3, [r3, #4]
+ a3c:	2201      	movs	r2, #1
+ a3e:	431a      	orrs	r2, r3
+ a40:	687b      	ldr	r3, [r7, #4]
+ a42:	605a      	str	r2, [r3, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:163
+}
+ a44:	46bd      	mov	sp, r7
+ a46:	b002      	add	sp, #8
+ a48:	bd80      	pop	{r7, pc}
+ a4a:	46c0      	nop			; (mov r8, r8)
+
+00000a4c <Chip_TIMER_SetMatch>:
+Chip_TIMER_SetMatch():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:219
+ * @param	matchval	: Match value for the selected match count
+ * @return	Nothing
+ * @note	Sets one of the timer match values.
+ */
+STATIC INLINE void Chip_TIMER_SetMatch(LPC_TIMER_T *pTMR, int8_t matchnum, uint32_t matchval)
+{
+ a4c:	b580      	push	{r7, lr}
+ a4e:	b084      	sub	sp, #16
+ a50:	af00      	add	r7, sp, #0
+ a52:	60f8      	str	r0, [r7, #12]
+ a54:	607a      	str	r2, [r7, #4]
+ a56:	1c3b      	adds	r3, r7, #0
+ a58:	330b      	adds	r3, #11
+ a5a:	1c0a      	adds	r2, r1, #0
+ a5c:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:220
+	pTMR->MR[matchnum] = matchval;
+ a5e:	1c3b      	adds	r3, r7, #0
+ a60:	330b      	adds	r3, #11
+ a62:	2200      	movs	r2, #0
+ a64:	569a      	ldrsb	r2, [r3, r2]
+ a66:	68fb      	ldr	r3, [r7, #12]
+ a68:	3206      	adds	r2, #6
+ a6a:	0092      	lsls	r2, r2, #2
+ a6c:	6879      	ldr	r1, [r7, #4]
+ a6e:	50d1      	str	r1, [r2, r3]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:221
+}
+ a70:	46bd      	mov	sp, r7
+ a72:	b004      	add	sp, #16
+ a74:	bd80      	pop	{r7, pc}
+ a76:	46c0      	nop			; (mov r8, r8)
+
+00000a78 <Chip_TIMER_MatchEnableInt>:
+Chip_TIMER_MatchEnableInt():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:250
+ * @param	pTMR		: Pointer to timer IP register address
+ * @param	matchnum	: Match timer, 0 to 3
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_TIMER_MatchEnableInt(LPC_TIMER_T *pTMR, int8_t matchnum)
+{
+ a78:	b580      	push	{r7, lr}
+ a7a:	b082      	sub	sp, #8
+ a7c:	af00      	add	r7, sp, #0
+ a7e:	6078      	str	r0, [r7, #4]
+ a80:	1c0a      	adds	r2, r1, #0
+ a82:	1cfb      	adds	r3, r7, #3
+ a84:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:251
+	pTMR->MCR |= TIMER_INT_ON_MATCH(matchnum);
+ a86:	687b      	ldr	r3, [r7, #4]
+ a88:	6959      	ldr	r1, [r3, #20]
+ a8a:	1cfb      	adds	r3, r7, #3
+ a8c:	2200      	movs	r2, #0
+ a8e:	569a      	ldrsb	r2, [r3, r2]
+ a90:	1c13      	adds	r3, r2, #0
+ a92:	005b      	lsls	r3, r3, #1
+ a94:	189b      	adds	r3, r3, r2
+ a96:	2201      	movs	r2, #1
+ a98:	1c10      	adds	r0, r2, #0
+ a9a:	4098      	lsls	r0, r3
+ a9c:	1c03      	adds	r3, r0, #0
+ a9e:	1c0a      	adds	r2, r1, #0
+ aa0:	431a      	orrs	r2, r3
+ aa2:	687b      	ldr	r3, [r7, #4]
+ aa4:	615a      	str	r2, [r3, #20]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:252
+}
+ aa6:	46bd      	mov	sp, r7
+ aa8:	b002      	add	sp, #8
+ aaa:	bd80      	pop	{r7, pc}
+
+00000aac <Chip_TIMER_ResetOnMatchEnable>:
+Chip_TIMER_ResetOnMatchEnable():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:272
+ * @param	pTMR		: Pointer to timer IP register address
+ * @param	matchnum	: Match timer, 0 to 3
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_TIMER_ResetOnMatchEnable(LPC_TIMER_T *pTMR, int8_t matchnum)
+{
+ aac:	b580      	push	{r7, lr}
+ aae:	b082      	sub	sp, #8
+ ab0:	af00      	add	r7, sp, #0
+ ab2:	6078      	str	r0, [r7, #4]
+ ab4:	1c0a      	adds	r2, r1, #0
+ ab6:	1cfb      	adds	r3, r7, #3
+ ab8:	701a      	strb	r2, [r3, #0]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:273
+	pTMR->MCR |= TIMER_RESET_ON_MATCH(matchnum);
+ aba:	687b      	ldr	r3, [r7, #4]
+ abc:	6959      	ldr	r1, [r3, #20]
+ abe:	1cfb      	adds	r3, r7, #3
+ ac0:	2200      	movs	r2, #0
+ ac2:	569a      	ldrsb	r2, [r3, r2]
+ ac4:	1c13      	adds	r3, r2, #0
+ ac6:	005b      	lsls	r3, r3, #1
+ ac8:	189b      	adds	r3, r3, r2
+ aca:	3301      	adds	r3, #1
+ acc:	2201      	movs	r2, #1
+ ace:	1c10      	adds	r0, r2, #0
+ ad0:	4098      	lsls	r0, r3
+ ad2:	1c03      	adds	r3, r0, #0
+ ad4:	1c0a      	adds	r2, r1, #0
+ ad6:	431a      	orrs	r2, r3
+ ad8:	687b      	ldr	r3, [r7, #4]
+ ada:	615a      	str	r2, [r3, #20]
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/timer_11xx.h:274
+}
+ adc:	46bd      	mov	sp, r7
+ ade:	b002      	add	sp, #8
+ ae0:	bd80      	pop	{r7, pc}
+ ae2:	46c0      	nop			; (mov r8, r8)
+
+00000ae4 <SysTick_Handler>:
+SysTick_Handler():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:52
+/**
+ * @brief	Handle interrupt from SysTick timer
+ * @return	Nothing
+ */
+void SysTick_Handler(void)
+{
+ ae4:	b580      	push	{r7, lr}
+ ae6:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:53
+	Board_LED_Set(0, false);
+ ae8:	2000      	movs	r0, #0
+ aea:	2100      	movs	r1, #0
+ aec:	f7ff fbd8 	bl	2a0 <Board_LED_Set>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:54
+}
+ af0:	46bd      	mov	sp, r7
+ af2:	bd80      	pop	{r7, pc}
+
+00000af4 <TIMER32_0_IRQHandler>:
+TIMER32_0_IRQHandler():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:61
+/**
+ * @brief	Handle interrupt from 32-bit timer
+ * @return	Nothing
+ */
+void TIMER32_0_IRQHandler(void)
+{
+ af4:	b580      	push	{r7, lr}
+ af6:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:62
+	if (Chip_TIMER_MatchPending(LPC_TIMER32_0, 1)) {
+ af8:	4b09      	ldr	r3, [pc, #36]	; (b20 <TIMER32_0_IRQHandler+0x2c>)
+ afa:	1c18      	adds	r0, r3, #0
+ afc:	2101      	movs	r1, #1
+ afe:	f7ff ff69 	bl	9d4 <Chip_TIMER_MatchPending>
+ b02:	1c03      	adds	r3, r0, #0
+ b04:	2b00      	cmp	r3, #0
+ b06:	d008      	beq.n	b1a <TIMER32_0_IRQHandler+0x26>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:63
+		Chip_TIMER_ClearMatch(LPC_TIMER32_0, 1);
+ b08:	4b05      	ldr	r3, [pc, #20]	; (b20 <TIMER32_0_IRQHandler+0x2c>)
+ b0a:	1c18      	adds	r0, r3, #0
+ b0c:	2101      	movs	r1, #1
+ b0e:	f7ff ff7b 	bl	a08 <Chip_TIMER_ClearMatch>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:64
+		Board_LED_Set(0, true);
+ b12:	2000      	movs	r0, #0
+ b14:	2101      	movs	r1, #1
+ b16:	f7ff fbc3 	bl	2a0 <Board_LED_Set>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:66
+	}
+}
+ b1a:	46bd      	mov	sp, r7
+ b1c:	bd80      	pop	{r7, pc}
+ b1e:	46c0      	nop			; (mov r8, r8)
+ b20:	40014000 	.word	0x40014000
+
+00000b24 <main>:
+main():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:69
+
+
+int main(void) {
+ b24:	b580      	push	{r7, lr}
+ b26:	b082      	sub	sp, #8
+ b28:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:101
+#endif
+
+
+	uint32_t timerFreq;
+
+	SystemCoreClockUpdate();
+ b2a:	f7ff fcb5 	bl	498 <SystemCoreClockUpdate>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:102
+	Board_Init();
+ b2e:	f7ff fbd1 	bl	2d4 <Board_Init>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:105
+
+	/* Enable and setup SysTick Timer at a periodic rate */
+	SysTick_Config(SystemCoreClock / TICKRATE_HZ1);
+ b32:	4b1c      	ldr	r3, [pc, #112]	; (ba4 <main+0x80>)
+ b34:	681b      	ldr	r3, [r3, #0]
+ b36:	1c18      	adds	r0, r3, #0
+ b38:	210a      	movs	r1, #10
+ b3a:	f000 f844 	bl	bc6 <__aeabi_uidiv>
+ b3e:	1c03      	adds	r3, r0, #0
+ b40:	1c18      	adds	r0, r3, #0
+ b42:	f7ff ff21 	bl	988 <SysTick_Config>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:108
+
+	/* Enable timer 1 clock */
+	Chip_TIMER_Init(LPC_TIMER32_0);
+ b46:	4b18      	ldr	r3, [pc, #96]	; (ba8 <main+0x84>)
+ b48:	1c18      	adds	r0, r3, #0
+ b4a:	f7ff fe51 	bl	7f0 <Chip_TIMER_Init>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:111
+
+	/* Timer rate is system clock rate */
+	timerFreq = Chip_Clock_GetSystemClockRate();
+ b4e:	f7ff fd95 	bl	67c <Chip_Clock_GetSystemClockRate>
+ b52:	1c03      	adds	r3, r0, #0
+ b54:	607b      	str	r3, [r7, #4]
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:114
+
+	/* Timer setup for match and interrupt at TICKRATE_HZ */
+	Chip_TIMER_Reset(LPC_TIMER32_0);
+ b56:	4b14      	ldr	r3, [pc, #80]	; (ba8 <main+0x84>)
+ b58:	1c18      	adds	r0, r3, #0
+ b5a:	f7ff fe59 	bl	810 <Chip_TIMER_Reset>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:115
+	Chip_TIMER_MatchEnableInt(LPC_TIMER32_0, 1);
+ b5e:	4b12      	ldr	r3, [pc, #72]	; (ba8 <main+0x84>)
+ b60:	1c18      	adds	r0, r3, #0
+ b62:	2101      	movs	r1, #1
+ b64:	f7ff ff88 	bl	a78 <Chip_TIMER_MatchEnableInt>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:116
+	Chip_TIMER_SetMatch(LPC_TIMER32_0, 1, (timerFreq / TICKRATE_HZ2));
+ b68:	687b      	ldr	r3, [r7, #4]
+ b6a:	1c18      	adds	r0, r3, #0
+ b6c:	210b      	movs	r1, #11
+ b6e:	f000 f82a 	bl	bc6 <__aeabi_uidiv>
+ b72:	1c03      	adds	r3, r0, #0
+ b74:	4a0c      	ldr	r2, [pc, #48]	; (ba8 <main+0x84>)
+ b76:	1c10      	adds	r0, r2, #0
+ b78:	2101      	movs	r1, #1
+ b7a:	1c1a      	adds	r2, r3, #0
+ b7c:	f7ff ff66 	bl	a4c <Chip_TIMER_SetMatch>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:117
+	Chip_TIMER_ResetOnMatchEnable(LPC_TIMER32_0, 1);
+ b80:	4b09      	ldr	r3, [pc, #36]	; (ba8 <main+0x84>)
+ b82:	1c18      	adds	r0, r3, #0
+ b84:	2101      	movs	r1, #1
+ b86:	f7ff ff91 	bl	aac <Chip_TIMER_ResetOnMatchEnable>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:118
+	Chip_TIMER_Enable(LPC_TIMER32_0);
+ b8a:	4b07      	ldr	r3, [pc, #28]	; (ba8 <main+0x84>)
+ b8c:	1c18      	adds	r0, r3, #0
+ b8e:	f7ff ff4f 	bl	a30 <Chip_TIMER_Enable>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:121
+
+	/* Enable timer interrupt */
+	NVIC_ClearPendingIRQ(TIMER_32_0_IRQn);
+ b92:	2012      	movs	r0, #18
+ b94:	f7ff fe6e 	bl	874 <NVIC_ClearPendingIRQ>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:122
+	NVIC_EnableIRQ(TIMER_32_0_IRQn);
+ b98:	2012      	movs	r0, #18
+ b9a:	f7ff fe55 	bl	848 <NVIC_EnableIRQ>
+__WFI():
+C:\data\HOME\git\bc_1114_repo\bc_1114\src\lpc_chip_11cxx_library\inc/core_cmInstr.h:299 (discriminator 1)
+    Wait For Interrupt is a hint instruction that suspends execution
+    until one of a number of events occurs.
+ */
+__attribute__( ( always_inline ) ) __STATIC_INLINE void __WFI(void)
+{
+  __ASM volatile ("wfi");
+ b9e:	bf30      	wfi
+main():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/bc_1114.c:127 (discriminator 1)
+
+	/* LEDs toggle in interrupt handlers */
+	while (1) {
+		__WFI();
+	}
+ ba0:	e7fd      	b.n	b9e <main+0x7a>
+ ba2:	46c0      	nop			; (mov r8, r8)
+ ba4:	10000000 	.word	0x10000000
+ ba8:	40014000 	.word	0x40014000
+
+00000bac <SystemInit>:
+SystemInit():
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/sysinit.c:61
+ * Public functions
+ ****************************************************************************/
+
+/* Set up and initialize hardware prior to call to main */
+void SystemInit(void)
+{
+ bac:	b580      	push	{r7, lr}
+ bae:	af00      	add	r7, sp, #0
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/sysinit.c:67
+#if defined(NO_BOARD_LIB)
+	/* Chip specific SystemInit */
+	Chip_SystemInit();
+#else
+	/* Board specific SystemInit */
+	Board_SystemInit();
+ bb0:	f7ff fc6a 	bl	488 <Board_SystemInit>
+C:\data\HOME\git\bc_1114_repo\bc_1114\Debug/../src/sysinit.c:69
+#endif
+}
+ bb4:	46bd      	mov	sp, r7
+ bb6:	bd80      	pop	{r7, pc}
+
+00000bb8 <__weak_main>:
+__main():
+ bb8:	b508      	push	{r3, lr}
+ bba:	f7ff ffb3 	bl	b24 <main>
+ bbe:	bd08      	pop	{r3, pc}
+
+00000bc0 <__aeabi_idiv>:
+__aeabi_idiv():
+ bc0:	0003      	movs	r3, r0
+ bc2:	430b      	orrs	r3, r1
+ bc4:	d421      	bmi.n	c0a <idiv_negative>
+
+00000bc6 <__aeabi_uidiv>:
+__aeabi_uidiv():
+ bc6:	2900      	cmp	r1, #0
+ bc8:	d031      	beq.n	c2e <idiv_divzero>
+ bca:	2201      	movs	r2, #1
+ bcc:	07d2      	lsls	r2, r2, #31
+ bce:	0903      	lsrs	r3, r0, #4
+ bd0:	e001      	b.n	bd6 <div_search4a>
+
+00000bd2 <div_search4>:
+ bd2:	0109      	lsls	r1, r1, #4
+ bd4:	0912      	lsrs	r2, r2, #4
+
+00000bd6 <div_search4a>:
+ bd6:	4299      	cmp	r1, r3
+ bd8:	d9fb      	bls.n	bd2 <div_search4>
+ bda:	0843      	lsrs	r3, r0, #1
+ bdc:	e001      	b.n	be2 <div_search1a>
+
+00000bde <div_search1>:
+ bde:	0049      	lsls	r1, r1, #1
+ be0:	0852      	lsrs	r2, r2, #1
+
+00000be2 <div_search1a>:
+ be2:	4299      	cmp	r1, r3
+ be4:	d9fb      	bls.n	bde <div_search1>
+ be6:	e000      	b.n	bea <div_loop1a>
+
+00000be8 <div_loop1>:
+ be8:	0849      	lsrs	r1, r1, #1
+
+00000bea <div_loop1a>:
+ bea:	1a40      	subs	r0, r0, r1
+ bec:	d307      	bcc.n	bfe <div1>
+
+00000bee <div2>:
+ bee:	4152      	adcs	r2, r2
+ bf0:	d3fa      	bcc.n	be8 <div_loop1>
+ bf2:	4601      	mov	r1, r0
+ bf4:	4610      	mov	r0, r2
+ bf6:	4770      	bx	lr
+
+00000bf8 <div_loop2>:
+ bf8:	0849      	lsrs	r1, r1, #1
+ bfa:	1840      	adds	r0, r0, r1
+ bfc:	d2f7      	bcs.n	bee <div2>
+
+00000bfe <div1>:
+ bfe:	1892      	adds	r2, r2, r2
+ c00:	d3fa      	bcc.n	bf8 <div_loop2>
+ c02:	1840      	adds	r0, r0, r1
+ c04:	4601      	mov	r1, r0
+ c06:	4610      	mov	r0, r2
+ c08:	4770      	bx	lr
+
+00000c0a <idiv_negative>:
+ c0a:	0fcb      	lsrs	r3, r1, #31
+ c0c:	d000      	beq.n	c10 <idiv_neg1>
+ c0e:	4249      	negs	r1, r1
+
+00000c10 <idiv_neg1>:
+ c10:	1002      	asrs	r2, r0, #32
+ c12:	d500      	bpl.n	c16 <idiv_neg2>
+ c14:	4240      	negs	r0, r0
+
+00000c16 <idiv_neg2>:
+ c16:	4053      	eors	r3, r2
+ c18:	b508      	push	{r3, lr}
+ c1a:	f7ff ffd4 	bl	bc6 <__aeabi_uidiv>
+ c1e:	bc0c      	pop	{r2, r3}
+
+00000c20 <idiv_sign>:
+ c20:	1052      	asrs	r2, r2, #1
+ c22:	d300      	bcc.n	c26 <idiv_sign1>
+ c24:	4240      	negs	r0, r0
+
+00000c26 <idiv_sign1>:
+ c26:	2a00      	cmp	r2, #0
+ c28:	d500      	bpl.n	c2c <idiv_ret>
+ c2a:	4249      	negs	r1, r1
+
+00000c2c <idiv_ret>:
+ c2c:	4718      	bx	r3
+
+00000c2e <idiv_divzero>:
+ c2e:	46f4      	mov	ip, lr
+ c30:	2000      	movs	r0, #0
+ c32:	f000 f801 	bl	c38 <__aeabi_idiv0>
+ c36:	4760      	bx	ip
+
+00000c38 <__aeabi_idiv0>:
+__aeabi_idiv0():
+ c38:	4770      	bx	lr
+	...
+
+00000c3c <OscRateIn>:
+$d():
+ c3c:	1b00 00b7                                   ....
+
+00000c40 <pinmuxing>:
+ c40:	0104 0000 0107 0000 010c 0000 010d 0000     ................
+ c50:	0118 0000 0119 0000 011d 0000 0129 0000     ............)...
+ c60:	012a 0000 011c 0000                         *.......
+
+00000c68 <wdtOSCRate>:
+ c68:	0000 0000 27c0 0009 0590 0010 5cc0 0015     .....'.......\..
+ c78:	b3f0 001a 0b20 0020 9f00 0024 32e0 0029     .... . ...$..2).
+ c88:	c6c0 002d 9750 0031 67e0 0035 3870 0039     ..-.P.1..g5.p89.
+ c98:	0900 003d 1640 0040 2380 0043 30c0 0046     ..=.@.@..#C..0F.

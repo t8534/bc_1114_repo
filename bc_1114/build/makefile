@@ -197,7 +197,9 @@ LPC_FLAGS = -DCORE_M0 -D__USE_LPCOPEN
 #SRC_LIST = -Wa,-adhln -g
 #SRC_LIST = -Wa,-adhln -g
 # -g to get C source listing by objdump.
-SRC_LIST = -g
+#SRC_LIST = -g
+SRC_LIST = -g3
+
 
 # Selecting Core
 CORTEX_M=0

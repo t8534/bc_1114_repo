@@ -1,0 +1,869 @@
+Archive member included because of file (symbol)
+
+c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-exit.o)
+                              c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o (exit)
+c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-impure.o)
+                              c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-exit.o) (_global_impure_ptr)
+c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-init.o)
+                              c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o (__libc_init_array)
+c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memset.o)
+                              c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o (memset)
+c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__call_atexit.o)
+                              c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-exit.o) (__call_exitprocs)
+c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-atexit.o)
+                              c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__call_atexit.o) (atexit)
+c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-fini.o)
+                              c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__call_atexit.o) (__libc_fini_array)
+c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__atexit.o)
+                              c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-atexit.o) (__register_exitproc)
+c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+                              C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o (__aeabi_uidiv)
+c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
+                              c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memcpy.o)
+                              C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o (memcpy)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+ .init          0x00000000        0x4 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+ .fini          0x00000000        0x4 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+ .ARM.attributes
+                0x00000000       0x1e c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+ .text          0x00000000       0x60 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .data          0x00000000        0x4 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .bss           0x00000000       0x1c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .init_array    0x00000000        0x4 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .fini_array    0x00000000        0x4 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .eh_frame      0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .jcr           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .ARM.attributes
+                0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+ .text          0x00000000       0x78 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.extab     0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.exidx     0x00000000        0x8 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.attributes
+                0x00000000       0x1b c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\cc9YbdbF.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .data          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .bss           0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .data.i2c.lto_priv.43
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .bss.i2c_slave.lto_priv.44
+                0x00000000       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SSP_GetPCLKkRate
+                0x00000000       0x4c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SSP_SetClockRate
+                0x00000000       0x38 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SSP_RWFrames_Blocking
+                0x00000000      0x124 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SSP_WriteFrames_Blocking
+                0x00000000      0x150 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SSP_ReadFrames_Blocking
+                0x00000000      0x164 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SSP_Int_FlushData
+                0x00000000       0x4c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SSP_Int_RWFrames8Bits
+                0x00000000       0x98 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SSP_Int_RWFrames16Bits
+                0x00000000       0x98 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SSP_SetMaster
+                0x00000000       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SSP_SetBitRate
+                0x00000000       0x78 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SSP_Init
+                0x00000000       0x60 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SSP_DeInit
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SYSCTL_SetDeepSleepPD
+                0x00000000       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SYSCTL_SetWakeup
+                0x00000000       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_FMC_SetFLASHAccess.lto_priv.18
+                0x00000000       0x2c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_SetupSystemPLL.lto_priv.16
+                0x00000000       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_IsSystemPLLLocked.lto_priv.14
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_SetSysClockDiv.lto_priv.12
+                0x00000000       0x18 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_EnablePeriphClock.lto_priv.7
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_SystemInit
+                0x00000000       0x58 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_DisablePeriphClock.lto_priv.21
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_TIMER_DeInit
+                0x00000000       0x20 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_TIMER_ExtMatchControlSet
+                0x00000000       0x80 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_EnablePeriphClock.lto_priv.9
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_DisablePeriphClock.lto_priv.22
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_SetUARTClockDiv
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.RingBuffer_IsEmpty
+                0x00000000       0x24 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_SendByte
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_ReadByte
+                0x00000000       0x18 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_IntEnable
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_IntDisable
+                0x00000000       0x20 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_SetupFIFOS.lto_priv.2
+                0x00000000       0x18 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_ConfigData.lto_priv.0
+                0x00000000       0x18 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_EnableDivisorAccess
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_DisableDivisorAccess
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_SetDivisorLatches
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_ReadLineStatus
+                0x00000000       0x14 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_Init
+                0x00000000       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_DeInit
+                0x00000000       0x14 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_Send
+                0x00000000       0x54 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_SendBlocking
+                0x00000000       0x54 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_Read
+                0x00000000       0x54 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_ReadBlocking
+                0x00000000       0x54 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_SetBaud
+                0x00000000       0x68 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_RXIntHandlerRB
+                0x00000000       0x44 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_TXIntHandlerRB
+                0x00000000       0x44 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_SendRB
+                0x00000000       0x70 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_ReadRB
+                0x00000000       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_IRQRBHandler
+                0x00000000       0x4c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_SetBaudFDR
+                0x00000000       0xe4 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_EnablePeriphClock.lto_priv.10
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_DisablePeriphClock.lto_priv.23
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_WWDT_Init
+                0x00000000       0x20 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_WWDT_DeInit
+                0x00000000       0x14 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_WWDT_ClearStatusFlag
+                0x00000000       0x38 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_IOCON_PinMuxSet.lto_priv.5
+                0x00000000       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_TXEnable
+                0x00000000       0x14 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_SetupFIFOS.lto_priv.3
+                0x00000000       0x18 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_UART_ConfigData.lto_priv.1
+                0x00000000       0x18 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_GPIO_GetPinState
+                0x00000000       0x40 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_GPIO_SetPinToggle
+                0x00000000       0x5c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.__write  0x00000000       0x18 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.__readc  0x00000000       0x10 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .rodata.ExtRateIn
+                0x00000000        0x4 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Board_UARTPutChar
+                0x00000000       0x24 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Board_UARTGetChar
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Board_UARTPutSTR
+                0x00000000       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Board_Debug_Init
+                0x00000000       0x5c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Board_LED_Test
+                0x00000000       0x24 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Board_LED_Toggle
+                0x00000000       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .data          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .bss           0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_EnablePeriphClock.lto_priv.48
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_DisablePeriphClock.lto_priv.45
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.getFullConvClk
+                0x00000000        0xc C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.getClkDiv
+                0x00000000       0x7c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.setStartMode
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.readAdcVal
+                0x00000000       0x48 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_ADC_Init
+                0x00000000       0x90 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_ADC_DeInit
+                0x00000000       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_ADC_ReadValue
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_ADC_ReadStatus
+                0x00000000       0x7c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_ADC_Int_SetChannelCmd
+                0x00000000       0x54 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_ADC_SetStartMode
+                0x00000000       0x64 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_ADC_SetSampleRate
+                0x00000000       0x70 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_ADC_SetResolution
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_ADC_EnableChannel
+                0x00000000       0x64 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_ADC_SetBurstCmd
+                0x00000000       0x48 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_ADC_ReadByte
+                0x00000000       0x54 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_SetPLLBypass
+                0x00000000       0x48 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_SetWDTClockSource
+                0x00000000       0x3c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_SetCLKOUTSource
+                0x00000000       0x3c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_DisablePeriphClock.lto_priv.46
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetPinDIROutput
+                0x00000000       0x4c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetPinDIRInput
+                0x00000000       0x4c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetPortDIROutput
+                0x00000000       0x40 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetPortDIRInput
+                0x00000000       0x44 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetPinModeEdge
+                0x00000000       0x44 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetPinModeLevel
+                0x00000000       0x40 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetEdgeModeBoth
+                0x00000000       0x40 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetEdgeModeSingle
+                0x00000000       0x44 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetModeHigh
+                0x00000000       0x40 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetModeLow
+                0x00000000       0x44 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_DeInit
+                0x00000000       0x14 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_WriteDirBit
+                0x00000000       0x78 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetDir
+                0x00000000       0x84 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetPinDIR
+                0x00000000       0x58 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetPortDIR
+                0x00000000       0x58 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_SetupPinInt
+                0x00000000       0xc4 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_EnablePeriphClock.lto_priv.50
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_DisablePeriphClock.lto_priv.47
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.enableClk
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.disableClk
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.getClkRate
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.startMasterXfer
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.startSlaverXfer
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.isI2CBusFree
+                0x00000000       0x20 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.getCurState
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.isMasterState
+                0x00000000       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.setSlaveAddr
+                0x00000000       0x6c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.isSlaveAddrMatching
+                0x00000000       0x4c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.lookupSlaveIndex
+                0x00000000       0xa8 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.handleMasterXferState
+                0x00000000      0x120 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .rodata.handleMasterXferState
+                0x00000000      0x164 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.getSlaveIndex
+                0x00000000       0x4c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.handleSlaveXferState
+                0x00000000      0x114 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .rodata.handleSlaveXferState
+                0x00000000      0x1a4 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_EventHandler
+                0x00000000       0x48 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_EventHandlerPolling
+                0x00000000       0x64 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_Init
+                0x00000000       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_DeInit
+                0x00000000       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_SetClockRate
+                0x00000000       0x70 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_GetClockRate
+                0x00000000       0x54 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_SetMasterEventHandler
+                0x00000000       0x48 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_GetMasterEventHandler
+                0x00000000       0x2c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_MasterTransfer
+                0x00000000       0xa4 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_MasterSend
+                0x00000000       0x84 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_MasterCmdRead
+                0x00000000       0x90 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_MasterRead
+                0x00000000       0x7c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_IsMasterActive
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_MasterStateHandler
+                0x00000000       0x64 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_SlaveSetup
+                0x00000000       0xbc C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_SlaveStateHandler
+                0x00000000       0xcc C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_Disable
+                0x00000000       0x2c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_I2C_IsStateChanged
+                0x00000000       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_PMU_SleepState
+                0x00000000       0x18 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_PMU_DeepPowerDownState
+                0x00000000       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_PMU_Sleep
+                0x00000000       0x24 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.RingBuffer_GetCount
+                0x00000000       0x20 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.RingBuffer_GetFree
+                0x00000000       0x20 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.RingBuffer_IsFull
+                0x00000000       0x2c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.RingBuffer_IsEmpty
+                0x00000000       0x24 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.RingBuffer_Init
+                0x00000000       0x38 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.RingBuffer_Insert
+                0x00000000       0x60 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.RingBuffer_InsertMult
+                0x00000000      0x128 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.RingBuffer_Pop
+                0x00000000       0x60 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.RingBuffer_PopMult
+                0x00000000      0x128 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SYSCTL_AssertPeriphReset
+                0x00000000       0x2c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SYSCTL_DeassertPeriphReset
+                0x00000000       0x2c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SYSCTL_PeriphReset.lto_priv.29
+                0x00000000       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_EnablePeriphClock.lto_priv.6
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_DisablePeriphClock.lto_priv.20
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_SetSSP0ClockDiv
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_GetSSP0ClockDiv.lto_priv.42
+                0x00000000       0x14 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_SetSSP1ClockDiv
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_GetSSP1ClockDiv.lto_priv.41
+                0x00000000       0x14 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SSP_Disable.lto_priv.26
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SSP_GetStatus.lto_priv.31
+                0x00000000       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SSP_GetRawIntStatus.lto_priv.33
+                0x00000000       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SSP_GetDataSize.lto_priv.40
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SSP_ClearIntPending.lto_priv.37
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SSP_ReceiveFrame.lto_priv.38
+                0x00000000       0x18 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SSP_SendFrame.lto_priv.39
+                0x00000000       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SSP_SetFormat.lto_priv.27
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SSP_Set_Mode.lto_priv.28
+                0x00000000       0x24 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.SSP_Write2BFifo.lto_priv.34
+                0x00000000       0x4c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.SSP_Write1BFifo.lto_priv.36
+                0x00000000       0x48 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.SSP_Read2BFifo.lto_priv.32
+                0x00000000       0x68 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.SSP_Read1BFifo.lto_priv.35
+                0x00000000       0x68 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SSP_GetClockIndex.lto_priv.25
+                0x00000000       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SSP_GetResetIndex.lto_priv.30
+                0x00000000       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_SSP_SetSSPClkDivider.lto_priv.24
+                0x00000000       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
+ .text          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memcpy.o)
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memcpy.o)
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memcpy.o)
+ .text.memcpy   0x00000000       0x7c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memcpy.o)
+ .debug_frame   0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memcpy.o)
+ .ARM.attributes
+                0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memcpy.o)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccDCjPdP.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\cc3JhWwg.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccd9aQFX.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccLem394.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccmrgS8j.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccjHWneU.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\cca2CroN.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccIm6r5T.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccU7Eh4g.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\cc6alUa5.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccRjrvsb.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccM7pxKx.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccNQk7Da.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccoIOtG8.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\cced7nQq.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccc4orj1.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccwcotlT.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccBgxbrZ.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccwjsbCv.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\cc1uqjFk.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccXDSMbo.o (symbol from plugin)
+ .text          0x00000000        0x0 C:\Users\arek\AppData\Local\Temp\ccP4KyvS.o (symbol from plugin)
+ .text          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-exit.o)
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-exit.o)
+ .text.exit     0x00000000       0x20 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-exit.o)
+ .debug_frame   0x00000000       0x28 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-exit.o)
+ .ARM.attributes
+                0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-exit.o)
+ .text          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-impure.o)
+ .data.impure_data
+                0x00000000      0x428 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x00000000        0x4 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-impure.o)
+ .rodata.str1.4
+                0x00000000        0x4 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x00000000        0x4 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-impure.o)
+ .text          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-init.o)
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-init.o)
+ .text.__libc_init_array
+                0x00000000       0x48 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-init.o)
+ .debug_frame   0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-init.o)
+ .text          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memset.o)
+ .text.memset   0x00000000       0x8c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memset.o)
+ .debug_frame   0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-memset.o)
+ .text          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__call_atexit.o)
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__call_atexit.o)
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__call_atexit.o)
+ .text.startup.register_fini
+                0x00000000       0x18 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__call_atexit.o)
+ .init_array.00000
+                0x00000000        0x4 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__call_atexit.o)
+ .text.__call_exitprocs
+                0x00000000      0x108 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__call_atexit.o)
+ .debug_frame   0x00000000       0x54 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__call_atexit.o)
+ .ARM.attributes
+                0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__call_atexit.o)
+ .text          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-atexit.o)
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-atexit.o)
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-atexit.o)
+ .text.atexit   0x00000000       0x10 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-atexit.o)
+ .debug_frame   0x00000000       0x28 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-atexit.o)
+ .ARM.attributes
+                0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-atexit.o)
+ .text          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-fini.o)
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-fini.o)
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-fini.o)
+ .text.__libc_fini_array
+                0x00000000       0x34 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-fini.o)
+ .debug_frame   0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-fini.o)
+ .ARM.attributes
+                0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-fini.o)
+ .text          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__atexit.o)
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__atexit.o)
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__atexit.o)
+ .text.__register_exitproc
+                0x00000000       0xd4 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__atexit.o)
+ .debug_frame   0x00000000       0x3c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__atexit.o)
+ .ARM.attributes
+                0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a(lib_a-__atexit.o)
+ .text          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+ .eh_frame      0x00000000        0x4 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+ .jcr           0x00000000        0x4 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+ .ARM.attributes
+                0x00000000       0x2c c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+ .text          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+ .data          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+ .bss           0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+ .init          0x00000000        0x8 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+ .fini          0x00000000        0x8 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+ .ARM.attributes
+                0x00000000       0x1e c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+MFlash32         0x00000000         0x00008000         xr
+RamLoc8          0x10000000         0x00002000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crti.o
+LOAD c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+LOAD c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+LOAD C:\Users\arek\AppData\Local\Temp\cc9YbdbF.o
+LOAD C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+LOAD C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+LOAD c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a
+LOAD c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a
+LOAD c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libc.a
+LOAD C:\Users\arek\AppData\Local\Temp\ccDCjPdP.o
+LOAD C:\Users\arek\AppData\Local\Temp\cc3JhWwg.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccd9aQFX.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccLem394.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccmrgS8j.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccjHWneU.o
+LOAD C:\Users\arek\AppData\Local\Temp\cca2CroN.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccIm6r5T.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccU7Eh4g.o
+LOAD C:\Users\arek\AppData\Local\Temp\cc6alUa5.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccRjrvsb.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccM7pxKx.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccNQk7Da.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccoIOtG8.o
+LOAD C:\Users\arek\AppData\Local\Temp\cced7nQq.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccc4orj1.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccwcotlT.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccBgxbrZ.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccwjsbCv.o
+LOAD C:\Users\arek\AppData\Local\Temp\cc1uqjFk.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccXDSMbo.o
+LOAD C:\Users\arek\AppData\Local\Temp\ccP4KyvS.o
+START GROUP
+LOAD c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a
+LOAD c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libg.a
+LOAD c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv6-m\libc.a
+END GROUP
+LOAD c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtend.o
+LOAD c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtn.o
+                0x00008000                __top_MFlash32 = 0x8000
+                0x10002000                __top_RamLoc8 = 0x10002000
+
+.text           0x00000000      0xd28
+ FILL mask 0xff
+                0x00000000                __vectors_start__ = ABSOLUTE (.)
+ *(.isr_vector)
+ .isr_vector    0x00000000       0xc0 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+                0x000000c0                . = ALIGN (0x4)
+                0x000000c0                __section_table_start = .
+                0x000000c0                __data_section_table = .
+                0x000000c0        0x4 LONG 0xd28 LOADADDR (.data)
+                0x000000c4        0x4 LONG 0x10000000 ADDR (.data)
+                0x000000c8        0x4 LONG 0x0 SIZEOF (.data)
+                0x000000cc                __data_section_table_end = .
+                0x000000cc                __bss_section_table = .
+                0x000000cc        0x4 LONG 0x10000000 ADDR (.bss)
+                0x000000d0        0x4 LONG 0x4 SIZEOF (.bss)
+                0x000000d4                __bss_section_table_end = .
+                0x000000d4                __section_table_end = .
+ *(.after_vectors*)
+ .after_vectors
+                0x000000d4      0x120 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+                0x00000148                ResetISR
+                0x000001cc                NMI_Handler
+                0x000001d4                HardFault_Handler
+                0x000001dc                SVC_Handler
+                0x000001e4                PendSV_Handler
+                0x000001ec                PIOINT1_IRQHandler
+                0x000001ec                CAN_IRQHandler
+                0x000001ec                SSP0_IRQHandler
+                0x000001ec                TIMER32_1_IRQHandler
+                0x000001ec                UART_IRQHandler
+                0x000001ec                ADC_IRQHandler
+                0x000001ec                SSP1_IRQHandler
+                0x000001ec                PIOINT2_IRQHandler
+                0x000001ec                BOD_IRQHandler
+                0x000001ec                WAKEUP_IRQHandler
+                0x000001ec                PIOINT0_IRQHandler
+                0x000001ec                I2C_IRQHandler
+                0x000001ec                WDT_IRQHandler
+                0x000001ec                TIMER16_1_IRQHandler
+                0x000001ec                TIMER16_0_IRQHandler
+                0x000001ec                PIOINT3_IRQHandler
+ *(.text*)
+ .text.Chip_SYSCTL_PowerDown
+                0x000001f4       0x3c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+                0x000001f4                Chip_SYSCTL_PowerDown
+ .text.Chip_SYSCTL_PowerUp
+                0x00000230       0x40 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+                0x00000230                Chip_SYSCTL_PowerUp
+ .text.Chip_Clock_EnablePeriphClock.lto_priv.8
+                0x00000270       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_TIMER_GetClock
+                0x000002a0       0x60 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_TIMER_Init
+                0x00000300       0x20 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+                0x00000300                Chip_TIMER_Init
+ .text.Chip_TIMER_Reset
+                0x00000320       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+                0x00000320                Chip_TIMER_Reset
+ .text.Chip_FMC_SetFLASHAccess.lto_priv.19
+                0x00000354       0x2c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_SetupSystemPLL.lto_priv.17
+                0x00000380       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_IsSystemPLLLocked.lto_priv.15
+                0x000003b4       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_SetSysClockDiv.lto_priv.13
+                0x000003d0       0x18 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_Clock_EnablePeriphClock.lto_priv.11
+                0x000003e8       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_IOCON_PinMuxSet.lto_priv.4
+                0x00000418       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.SystemSetupClocking
+                0x00000440       0x64 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.SystemSetupMuxing
+                0x000004a4       0x48 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Board_SystemInit
+                0x000004ec       0x10 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+                0x000004ec                Board_SystemInit
+ .text.Chip_GPIO_SetPinState
+                0x000004fc       0x4c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Chip_GPIO_SetPinDIROutput
+                0x00000548       0x4c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Board_LED_Init
+                0x00000594       0x18 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .text.Board_LED_Set
+                0x000005ac       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+                0x000005ac                Board_LED_Set
+ .text.Board_Init
+                0x000005e0       0x18 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+                0x000005e0                Board_Init
+ .text.NVIC_EnableIRQ
+                0x000005f8       0x2c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.NVIC_ClearPendingIRQ
+                0x00000624       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.NVIC_SetPriority
+                0x00000654       0xd4 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.SysTick_Config
+                0x00000728       0x4c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_TIMER_MatchPending
+                0x00000774       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_TIMER_ClearMatch
+                0x000007a8       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_TIMER_Enable
+                0x000007d0       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_TIMER_SetMatch
+                0x000007ec       0x2c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_TIMER_MatchEnableInt
+                0x00000818       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_TIMER_ResetOnMatchEnable
+                0x0000084c       0x34 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.SysTick_Handler
+                0x00000880       0x10 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+                0x00000880                SysTick_Handler
+ .text.TIMER32_0_IRQHandler
+                0x00000890       0x2c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+                0x00000890                TIMER32_0_IRQHandler
+ .text.main     0x000008bc       0x88 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+                0x000008bc                main
+ .text.SystemInit
+                0x00000944        0xc C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.SystemCoreClockUpdate
+                0x00000950       0x18 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_GetMainOscRate
+                0x00000968       0x14 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_GetIntOscRate
+                0x0000097c       0x10 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_GetWDTLFORate
+                0x0000098c       0x48 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_GetPLLFreq
+                0x000009d4       0x24 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_SetSystemPLLSource
+                0x000009f8       0x2c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+                0x000009f8                Chip_Clock_SetSystemPLLSource
+ .text.Chip_Clock_SetMainClockSource
+                0x00000a24       0x2c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+                0x00000a24                Chip_Clock_SetMainClockSource
+ .text.Chip_Clock_GetWDTOSCRate
+                0x00000a50       0x1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_GetSystemPLLInClockRate
+                0x00000a6c       0x40 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_GetSystemPLLOutClockRate
+                0x00000aac       0x24 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_GetMainClockRate
+                0x00000ad0       0x60 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+                0x00000ad0                Chip_Clock_GetMainClockRate
+ .text.Chip_Clock_GetSystemClockRate
+                0x00000b30       0x24 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_Clock_EnablePeriphClock.lto_priv.49
+                0x00000b54       0x30 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .text.Chip_GPIO_Init
+                0x00000b84       0x14 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+                0x00000b84                Chip_GPIO_Init
+ .text          0x00000b98      0x120 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+                0x00000b98                __aeabi_uidiv
+                0x00000b98                __udivsi3
+                0x00000ca4                __aeabi_uidivmod
+ .text          0x00000cb8        0x4 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x00000cb8                __aeabi_idiv0
+                0x00000cb8                __aeabi_ldiv0
+ *(.rodata .rodata.* .constdata .constdata.*)
+ .rodata.wdtOSCRate.lto_priv.51
+                0x00000cbc       0x40 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+                0x00000cbc                wdtOSCRate.lto_priv.51
+ .rodata.pinmuxing
+                0x00000cfc       0x28 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .rodata.OscRateIn
+                0x00000d24        0x4 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+                0x00000d24                OscRateIn
+                0x00000d28                . = ALIGN (0x4)
+
+.glue_7         0x00000d28        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x00000d28        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x00000d28        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x00000d28        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x00000d28        0x0
+ .iplt          0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+
+.rel.dyn        0x00000d28        0x0
+ .rel.iplt      0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x00000d28                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00000d28                __exidx_end = .
+                0x00000d28                _etext = .
+
+.uninit_RESERVED
+                0x10000000        0x0
+ *(.bss.$RESERVED*)
+                0x10000000                . = ALIGN (0x4)
+                0x10000000                _end_uninit_RESERVED = .
+
+.data           0x10000000        0x0 load address 0x00000d28
+ FILL mask 0xff
+                0x10000000                _data = .
+ *(vtable)
+ *(.ramfunc*)
+ *(.data*)
+                0x10000000                . = ALIGN (0x4)
+                0x10000000                _edata = .
+
+.igot.plt       0x10000000        0x0 load address 0x00000d28
+ .igot.plt      0x00000000        0x0 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m/crtbegin.o
+
+.bss            0x10000000        0x4 load address 0x00000d28
+                0x10000000                _bss = .
+ *(.bss*)
+ .bss.SystemCoreClock
+                0x10000000        0x4 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+                0x10000000                SystemCoreClock
+ *(COMMON)
+                0x10000004                . = ALIGN (0x4)
+                0x10000004                _ebss = .
+                0x10000004                PROVIDE (end, .)
+
+.noinit         0x10000004        0x0 load address 0x00000d28
+                0x10000004                _noinit = .
+ *(.noinit*)
+                0x10000004                . = ALIGN (0x4)
+                0x10000004                _end_noinit = .
+                0x10000004                PROVIDE (_pvHeapStart, DEFINED (__user_heap_base)?__user_heap_base:.)
+                0x10002000                PROVIDE (_vStackTop, DEFINED (__user_stack_top)?__user_stack_top:(__top_RamLoc8 - 0x0))
+OUTPUT(bc_1114.axf elf32-littlearm)
+
+.debug_info     0x00000000     0x4a78
+ .debug_info    0x00000000     0x1e9d C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .debug_info    0x00001e9d     0x2bdb C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+
+.debug_abbrev   0x00000000      0x85b
+ .debug_abbrev  0x00000000      0x3ab C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .debug_abbrev  0x000003ab      0x4b0 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+
+.debug_aranges  0x00000000      0x778
+ .debug_aranges
+                0x00000000      0x2e0 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .debug_aranges
+                0x000002e0      0x498 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+
+.debug_ranges   0x00000000      0x758
+ .debug_ranges  0x00000000      0x2d0 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .debug_ranges  0x000002d0      0x488 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+
+.debug_line     0x00000000     0x198c
+ .debug_line    0x00000000      0xab5 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .debug_line    0x00000ab5      0xed7 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+
+.debug_str      0x00000000     0x2baf
+ .debug_str     0x00000000     0x1193 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+                               0x11f9 (size before relaxing)
+ .debug_str     0x00001193     0x1a1c C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+                               0x20d6 (size before relaxing)
+
+.comment        0x00000000       0x70
+ .comment       0x00000000       0x70 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+
+.ARM.attributes
+                0x00000000       0x28
+ .ARM.attributes
+                0x00000000       0x2f C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .ARM.attributes
+                0x0000002f       0x2f C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .ARM.attributes
+                0x0000005e       0x1e c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x0000007c       0x1e c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_dvmd_tls.o)
+
+.debug_frame    0x00000000     0x1d04
+ .debug_frame   0x00000000      0xb10 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans0.ltrans.o
+ .debug_frame   0x00000b10     0x11d4 C:\Users\arek\AppData\Local\Temp\cctqt8k3.ltrans1.ltrans.o
+ .debug_frame   0x00001ce4       0x20 c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/armv6-m\libgcc.a(_udivsi3.o)

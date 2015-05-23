@@ -1,0 +1,2610 @@
+
+bc_1114.axf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <g_pfnVectors>:
+$d():
+   0:	00 20 00 10 49 01 00 00 cd 01 00 00 d5 01 00 00     . ..I...........
+	...
+  2c:	dd 01 00 00 00 00 00 00 00 00 00 00 e5 01 00 00     ................
+  3c:	81 08 00 00 ed 01 00 00 ed 01 00 00 ed 01 00 00     ................
+  4c:	ed 01 00 00 ed 01 00 00 ed 01 00 00 ed 01 00 00     ................
+  5c:	ed 01 00 00 ed 01 00 00 ed 01 00 00 ed 01 00 00     ................
+  6c:	ed 01 00 00 ed 01 00 00 ed 01 00 00 ed 01 00 00     ................
+  7c:	ed 01 00 00 ed 01 00 00 ed 01 00 00 91 08 00 00     ................
+  8c:	ed 01 00 00 ed 01 00 00 ed 01 00 00 00 00 00 00     ................
+  9c:	00 00 00 00 ed 01 00 00 ed 01 00 00 ed 01 00 00     ................
+  ac:	00 00 00 00 ed 01 00 00 ed 01 00 00 ed 01 00 00     ................
+  bc:	ed 01 00 00                                         ....
+
+000000c0 <__data_section_table>:
+__section_table_start():
+  c0:	00000d28 	.word	0x00000d28
+  c4:	10000000 	.word	0x10000000
+  c8:	00000000 	.word	0x00000000
+
+000000cc <__bss_section_table>:
+__data_section_table_end():
+  cc:	10000000 	.word	0x10000000
+  d0:	00000004 	.word	0x00000004
+
+000000d4 <data_init>:
+data_init():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/ring_buffer.c:109
+	ptr += RB_INDH(RingBuff) * RingBuff->itemSz;
+	memcpy(ptr, data, cnt1 * RingBuff->itemSz);
+	RingBuff->head += cnt1;
+
+	/* Write segment 2 */
+	ptr = (uint8_t *) RingBuff->data + RB_INDH(RingBuff) * RingBuff->itemSz;
+  d4:	b580      	push	{r7, lr}
+  d6:	b088      	sub	sp, #32
+  d8:	af00      	add	r7, sp, #0
+  da:	60f8      	str	r0, [r7, #12]
+  dc:	60b9      	str	r1, [r7, #8]
+  de:	607a      	str	r2, [r7, #4]
+  e0:	68bb      	ldr	r3, [r7, #8]
+  e2:	61fb      	str	r3, [r7, #28]
+  e4:	68fb      	ldr	r3, [r7, #12]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/ring_buffer.c:110
+	data = (const uint8_t *) data + cnt1 * RingBuff->itemSz;
+  e6:	61bb      	str	r3, [r7, #24]
+  e8:	2300      	movs	r3, #0
+  ea:	617b      	str	r3, [r7, #20]
+  ec:	e00a      	b.n	104 <data_init+0x30>
+  ee:	69fb      	ldr	r3, [r7, #28]
+  f0:	1d1a      	adds	r2, r3, #4
+  f2:	61fa      	str	r2, [r7, #28]
+  f4:	69ba      	ldr	r2, [r7, #24]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/ring_buffer.c:111
+	memcpy(ptr, data, cnt2 * RingBuff->itemSz);
+  f6:	1d11      	adds	r1, r2, #4
+  f8:	61b9      	str	r1, [r7, #24]
+  fa:	6812      	ldr	r2, [r2, #0]
+  fc:	601a      	str	r2, [r3, #0]
+  fe:	697b      	ldr	r3, [r7, #20]
+ 100:	3304      	adds	r3, #4
+ 102:	617b      	str	r3, [r7, #20]
+ 104:	697a      	ldr	r2, [r7, #20]
+ 106:	687b      	ldr	r3, [r7, #4]
+ 108:	429a      	cmp	r2, r3
+ 10a:	d3f0      	bcc.n	ee <data_init+0x1a>
+ 10c:	46bd      	mov	sp, r7
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/ring_buffer.c:112
+	RingBuff->head += cnt2;
+ 10e:	b008      	add	sp, #32
+ 110:	bd80      	pop	{r7, pc}
+handleSlaveXferState():
+ 112:	46c0      	nop			; (mov r8, r8)
+
+00000114 <bss_init>:
+bss_init():
+ 114:	b580      	push	{r7, lr}
+ 116:	b084      	sub	sp, #16
+ 118:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/ring_buffer.c:114
+
+	return cnt1 + cnt2;
+ 11a:	6078      	str	r0, [r7, #4]
+ 11c:	6039      	str	r1, [r7, #0]
+ 11e:	687b      	ldr	r3, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/ring_buffer.c:115
+}
+ 120:	60fb      	str	r3, [r7, #12]
+ 122:	2300      	movs	r3, #0
+ 124:	60bb      	str	r3, [r7, #8]
+ 126:	e007      	b.n	138 <bss_init+0x24>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:211
+__attribute__ ((section(".after_vectors")))
+void bss_init(unsigned int start, unsigned int len) {
+    unsigned int *pulDest = (unsigned int*) start;
+    unsigned int loop;
+    for (loop = 0; loop < len; loop = loop + 4)
+        *pulDest++ = 0;
+ 128:	68fb      	ldr	r3, [r7, #12]
+ 12a:	1d1a      	adds	r2, r3, #4
+ 12c:	60fa      	str	r2, [r7, #12]
+ 12e:	2200      	movs	r2, #0
+ 130:	601a      	str	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:210
+
+__attribute__ ((section(".after_vectors")))
+void bss_init(unsigned int start, unsigned int len) {
+    unsigned int *pulDest = (unsigned int*) start;
+    unsigned int loop;
+    for (loop = 0; loop < len; loop = loop + 4)
+ 132:	68bb      	ldr	r3, [r7, #8]
+ 134:	3304      	adds	r3, #4
+ 136:	60bb      	str	r3, [r7, #8]
+ 138:	68ba      	ldr	r2, [r7, #8]
+ 13a:	683b      	ldr	r3, [r7, #0]
+ 13c:	429a      	cmp	r2, r3
+ 13e:	d3f3      	bcc.n	128 <bss_init+0x14>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:212
+        *pulDest++ = 0;
+}
+ 140:	46bd      	mov	sp, r7
+ 142:	b004      	add	sp, #16
+ 144:	bd80      	pop	{r7, pc}
+ 146:	46c0      	nop			; (mov r8, r8)
+
+00000148 <ResetISR>:
+ResetISR():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:233
+// Sets up a simple runtime environment and initializes the C/C++
+// library.
+//*****************************************************************************
+__attribute__ ((section(".after_vectors")))
+void
+ResetISR(void) {
+ 148:	b580      	push	{r7, lr}
+ 14a:	b084      	sub	sp, #16
+ 14c:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:242
+    //
+    unsigned int LoadAddr, ExeAddr, SectionLen;
+    unsigned int *SectionTableAddr;
+
+    // Load base address of Global Section Table
+    SectionTableAddr = &__data_section_table;
+ 14e:	4b1c      	ldr	r3, [pc, #112]	; (1c0 <ResetISR+0x78>)
+ 150:	60fb      	str	r3, [r7, #12]
+ 152:	e016      	b.n	182 <ResetISR+0x3a>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:246
+
+    // Copy the data sections from flash to SRAM.
+    while (SectionTableAddr < &__data_section_table_end) {
+        LoadAddr = *SectionTableAddr++;
+ 154:	68fb      	ldr	r3, [r7, #12]
+ 156:	1d1a      	adds	r2, r3, #4
+ 158:	60fa      	str	r2, [r7, #12]
+ 15a:	681b      	ldr	r3, [r3, #0]
+ 15c:	60bb      	str	r3, [r7, #8]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:247
+        ExeAddr = *SectionTableAddr++;
+ 15e:	68fb      	ldr	r3, [r7, #12]
+ 160:	1d1a      	adds	r2, r3, #4
+ 162:	60fa      	str	r2, [r7, #12]
+ 164:	681b      	ldr	r3, [r3, #0]
+ 166:	607b      	str	r3, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:248
+        SectionLen = *SectionTableAddr++;
+ 168:	68fb      	ldr	r3, [r7, #12]
+ 16a:	1d1a      	adds	r2, r3, #4
+ 16c:	60fa      	str	r2, [r7, #12]
+ 16e:	681b      	ldr	r3, [r3, #0]
+ 170:	603b      	str	r3, [r7, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:249
+        data_init(LoadAddr, ExeAddr, SectionLen);
+ 172:	68b9      	ldr	r1, [r7, #8]
+ 174:	687a      	ldr	r2, [r7, #4]
+ 176:	683b      	ldr	r3, [r7, #0]
+ 178:	1c08      	adds	r0, r1, #0
+ 17a:	1c11      	adds	r1, r2, #0
+ 17c:	1c1a      	adds	r2, r3, #0
+ 17e:	f7ff ffa9 	bl	d4 <data_init>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:245
+
+    // Load base address of Global Section Table
+    SectionTableAddr = &__data_section_table;
+
+    // Copy the data sections from flash to SRAM.
+    while (SectionTableAddr < &__data_section_table_end) {
+ 182:	68fa      	ldr	r2, [r7, #12]
+ 184:	4b0f      	ldr	r3, [pc, #60]	; (1c4 <ResetISR+0x7c>)
+ 186:	429a      	cmp	r2, r3
+ 188:	d3e4      	bcc.n	154 <ResetISR+0xc>
+ 18a:	e00f      	b.n	1ac <ResetISR+0x64>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:254
+        data_init(LoadAddr, ExeAddr, SectionLen);
+    }
+    // At this point, SectionTableAddr = &__bss_section_table;
+    // Zero fill the bss segment
+    while (SectionTableAddr < &__bss_section_table_end) {
+        ExeAddr = *SectionTableAddr++;
+ 18c:	68fb      	ldr	r3, [r7, #12]
+ 18e:	1d1a      	adds	r2, r3, #4
+ 190:	60fa      	str	r2, [r7, #12]
+ 192:	681b      	ldr	r3, [r3, #0]
+ 194:	607b      	str	r3, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:255
+        SectionLen = *SectionTableAddr++;
+ 196:	68fb      	ldr	r3, [r7, #12]
+ 198:	1d1a      	adds	r2, r3, #4
+ 19a:	60fa      	str	r2, [r7, #12]
+ 19c:	681b      	ldr	r3, [r3, #0]
+ 19e:	603b      	str	r3, [r7, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:256
+        bss_init(ExeAddr, SectionLen);
+ 1a0:	687a      	ldr	r2, [r7, #4]
+ 1a2:	683b      	ldr	r3, [r7, #0]
+ 1a4:	1c10      	adds	r0, r2, #0
+ 1a6:	1c19      	adds	r1, r3, #0
+ 1a8:	f7ff ffb4 	bl	114 <bss_init>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:253
+        SectionLen = *SectionTableAddr++;
+        data_init(LoadAddr, ExeAddr, SectionLen);
+    }
+    // At this point, SectionTableAddr = &__bss_section_table;
+    // Zero fill the bss segment
+    while (SectionTableAddr < &__bss_section_table_end) {
+ 1ac:	68fa      	ldr	r2, [r7, #12]
+ 1ae:	4b06      	ldr	r3, [pc, #24]	; (1c8 <ResetISR+0x80>)
+ 1b0:	429a      	cmp	r2, r3
+ 1b2:	d3eb      	bcc.n	18c <ResetISR+0x44>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:260
+        SectionLen = *SectionTableAddr++;
+        bss_init(ExeAddr, SectionLen);
+    }
+
+#if defined (__USE_CMSIS) || defined (__USE_LPCOPEN)
+    SystemInit();
+ 1b4:	f000 fbc6 	bl	944 <SystemInit>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:274
+
+#if defined (__REDLIB__)
+    // Call the Redlib library, which in turn calls main()
+    __main() ;
+#else
+    main();
+ 1b8:	f000 fb80 	bl	8bc <main>
+ 1bc:	e7fe      	b.n	1bc <ResetISR+0x74>
+ 1be:	46c0      	nop			; (mov r8, r8)
+ 1c0:	000000c0 	.word	0x000000c0
+ 1c4:	000000cc 	.word	0x000000cc
+ 1c8:	000000d4 	.word	0x000000d4
+
+000001cc <NMI_Handler>:
+NMI_Handler():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:290
+// Default exception handlers. Override the ones here by defining your own
+// handler routines in your application code.
+//*****************************************************************************
+__attribute__ ((section(".after_vectors")))
+void NMI_Handler(void)
+{
+ 1cc:	b580      	push	{r7, lr}
+ 1ce:	af00      	add	r7, sp, #0
+ 1d0:	e7fe      	b.n	1d0 <NMI_Handler+0x4>
+ 1d2:	46c0      	nop			; (mov r8, r8)
+
+000001d4 <HardFault_Handler>:
+HardFault_Handler():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:297
+    {
+    }
+}
+__attribute__ ((section(".after_vectors")))
+void HardFault_Handler(void)
+{
+ 1d4:	b580      	push	{r7, lr}
+ 1d6:	af00      	add	r7, sp, #0
+ 1d8:	e7fe      	b.n	1d8 <HardFault_Handler+0x4>
+ 1da:	46c0      	nop			; (mov r8, r8)
+
+000001dc <SVC_Handler>:
+SVC_Handler():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:304
+    {
+    }
+}
+__attribute__ ((section(".after_vectors")))
+void SVC_Handler(void)
+{
+ 1dc:	b580      	push	{r7, lr}
+ 1de:	af00      	add	r7, sp, #0
+ 1e0:	e7fe      	b.n	1e0 <SVC_Handler+0x4>
+ 1e2:	46c0      	nop			; (mov r8, r8)
+
+000001e4 <PendSV_Handler>:
+PendSV_Handler():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:311
+    {
+    }
+}
+__attribute__ ((section(".after_vectors")))
+void PendSV_Handler(void)
+{
+ 1e4:	b580      	push	{r7, lr}
+ 1e6:	af00      	add	r7, sp, #0
+ 1e8:	e7fe      	b.n	1e8 <PendSV_Handler+0x4>
+ 1ea:	46c0      	nop			; (mov r8, r8)
+
+000001ec <ADC_IRQHandler>:
+IntDefaultHandler():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/cr_startup_lpc11xx.c:332
+// handler is not present in the application code.
+//
+//*****************************************************************************
+__attribute__ ((section(".after_vectors")))
+void IntDefaultHandler(void)
+{
+ 1ec:	b580      	push	{r7, lr}
+ 1ee:	af00      	add	r7, sp, #0
+ 1f0:	e7fe      	b.n	1f0 <ADC_IRQHandler+0x4>
+ 1f2:	46c0      	nop			; (mov r8, r8)
+
+000001f4 <Chip_SYSCTL_PowerDown>:
+Chip_SYSCTL_PowerDown():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:105
+
+#endif
+
+/* Power down one or more blocks or peripherals */
+void Chip_SYSCTL_PowerDown(uint32_t powerdownmask)
+{
+ 1f4:	b580      	push	{r7, lr}
+ 1f6:	b084      	sub	sp, #16
+ 1f8:	af00      	add	r7, sp, #0
+ 1fa:	6078      	str	r0, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:108
+	uint32_t pdrun;
+
+	pdrun = LPC_SYSCTL->PDRUNCFG & PDRUNCFGMASKTMP;
+ 1fc:	4a0b      	ldr	r2, [pc, #44]	; (22c <Chip_SYSCTL_PowerDown+0x38>)
+ 1fe:	238e      	movs	r3, #142	; 0x8e
+ 200:	009b      	lsls	r3, r3, #2
+ 202:	58d3      	ldr	r3, [r2, r3]
+ 204:	22ff      	movs	r2, #255	; 0xff
+ 206:	4013      	ands	r3, r2
+ 208:	60fb      	str	r3, [r7, #12]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:109
+	pdrun |= (powerdownmask & PDRUNCFGMASKTMP);
+ 20a:	687b      	ldr	r3, [r7, #4]
+ 20c:	22ff      	movs	r2, #255	; 0xff
+ 20e:	4013      	ands	r3, r2
+ 210:	68fa      	ldr	r2, [r7, #12]
+ 212:	4313      	orrs	r3, r2
+ 214:	60fb      	str	r3, [r7, #12]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:111
+
+	LPC_SYSCTL->PDRUNCFG = (pdrun | PDRUNCFGUSEMASK);
+ 216:	4905      	ldr	r1, [pc, #20]	; (22c <Chip_SYSCTL_PowerDown+0x38>)
+ 218:	68fb      	ldr	r3, [r7, #12]
+ 21a:	22ed      	movs	r2, #237	; 0xed
+ 21c:	0212      	lsls	r2, r2, #8
+ 21e:	431a      	orrs	r2, r3
+ 220:	238e      	movs	r3, #142	; 0x8e
+ 222:	009b      	lsls	r3, r3, #2
+ 224:	50ca      	str	r2, [r1, r3]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:112
+}
+ 226:	46bd      	mov	sp, r7
+ 228:	b004      	add	sp, #16
+ 22a:	bd80      	pop	{r7, pc}
+ 22c:	40048000 	.word	0x40048000
+
+00000230 <Chip_SYSCTL_PowerUp>:
+Chip_SYSCTL_PowerUp():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:116
+
+/* Power up one or more blocks or peripherals */
+void Chip_SYSCTL_PowerUp(uint32_t powerupmask)
+{
+ 230:	b580      	push	{r7, lr}
+ 232:	b084      	sub	sp, #16
+ 234:	af00      	add	r7, sp, #0
+ 236:	6078      	str	r0, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:119
+	uint32_t pdrun;
+
+	pdrun = LPC_SYSCTL->PDRUNCFG & PDRUNCFGMASKTMP;
+ 238:	4a0c      	ldr	r2, [pc, #48]	; (26c <Chip_SYSCTL_PowerUp+0x3c>)
+ 23a:	238e      	movs	r3, #142	; 0x8e
+ 23c:	009b      	lsls	r3, r3, #2
+ 23e:	58d3      	ldr	r3, [r2, r3]
+ 240:	22ff      	movs	r2, #255	; 0xff
+ 242:	4013      	ands	r3, r2
+ 244:	60fb      	str	r3, [r7, #12]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:120
+	pdrun &= ~(powerupmask & PDRUNCFGMASKTMP);
+ 246:	687b      	ldr	r3, [r7, #4]
+ 248:	22ff      	movs	r2, #255	; 0xff
+ 24a:	4013      	ands	r3, r2
+ 24c:	43da      	mvns	r2, r3
+ 24e:	68fb      	ldr	r3, [r7, #12]
+ 250:	4013      	ands	r3, r2
+ 252:	60fb      	str	r3, [r7, #12]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:122
+
+	LPC_SYSCTL->PDRUNCFG = (pdrun | PDRUNCFGUSEMASK);
+ 254:	4905      	ldr	r1, [pc, #20]	; (26c <Chip_SYSCTL_PowerUp+0x3c>)
+ 256:	68fb      	ldr	r3, [r7, #12]
+ 258:	22ed      	movs	r2, #237	; 0xed
+ 25a:	0212      	lsls	r2, r2, #8
+ 25c:	431a      	orrs	r2, r3
+ 25e:	238e      	movs	r3, #142	; 0x8e
+ 260:	009b      	lsls	r3, r3, #2
+ 262:	50ca      	str	r2, [r1, r3]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/sysctl_11xx.c:123
+}
+ 264:	46bd      	mov	sp, r7
+ 266:	b004      	add	sp, #16
+ 268:	bd80      	pop	{r7, pc}
+ 26a:	46c0      	nop			; (mov r8, r8)
+ 26c:	40048000 	.word	0x40048000
+
+00000270 <Chip_Clock_EnablePeriphClock.lto_priv.8>:
+Chip_Clock_EnablePeriphClock():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:296
+ * @brief	Enable a system or peripheral clock
+ * @param	clk	: Clock to enable
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_Clock_EnablePeriphClock(CHIP_SYSCTL_CLOCK_T clk)
+{
+ 270:	b580      	push	{r7, lr}
+ 272:	b082      	sub	sp, #8
+ 274:	af00      	add	r7, sp, #0
+ 276:	1c02      	adds	r2, r0, #0
+ 278:	1dfb      	adds	r3, r7, #7
+ 27a:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:297
+	LPC_SYSCTL->SYSAHBCLKCTRL |= (1 << clk);
+ 27c:	4907      	ldr	r1, [pc, #28]	; (29c <Chip_Clock_EnablePeriphClock.lto_priv.8+0x2c>)
+ 27e:	4a07      	ldr	r2, [pc, #28]	; (29c <Chip_Clock_EnablePeriphClock.lto_priv.8+0x2c>)
+ 280:	2380      	movs	r3, #128	; 0x80
+ 282:	58d3      	ldr	r3, [r2, r3]
+ 284:	1dfa      	adds	r2, r7, #7
+ 286:	7812      	ldrb	r2, [r2, #0]
+ 288:	2001      	movs	r0, #1
+ 28a:	4090      	lsls	r0, r2
+ 28c:	1c02      	adds	r2, r0, #0
+ 28e:	4313      	orrs	r3, r2
+ 290:	2280      	movs	r2, #128	; 0x80
+ 292:	508b      	str	r3, [r1, r2]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:298
+}
+ 294:	46bd      	mov	sp, r7
+ 296:	b002      	add	sp, #8
+ 298:	bd80      	pop	{r7, pc}
+ 29a:	46c0      	nop			; (mov r8, r8)
+ 29c:	40048000 	.word	0x40048000
+
+000002a0 <Chip_TIMER_GetClock>:
+Chip_TIMER_GetClock():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:48
+ * Private functions
+ ****************************************************************************/
+
+/* Returns clock index for a specific timer referenced by IP block address */
+STATIC CHIP_SYSCTL_CLOCK_T Chip_TIMER_GetClock(LPC_TIMER_T *pTMR)
+{
+ 2a0:	b580      	push	{r7, lr}
+ 2a2:	b084      	sub	sp, #16
+ 2a4:	af00      	add	r7, sp, #0
+ 2a6:	6078      	str	r0, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:50
+  CHIP_SYSCTL_CLOCK_T tmrClk;
+  if (pTMR == LPC_TIMER32_1) {
+ 2a8:	687b      	ldr	r3, [r7, #4]
+ 2aa:	4a12      	ldr	r2, [pc, #72]	; (2f4 <Chip_TIMER_GetClock+0x54>)
+ 2ac:	4293      	cmp	r3, r2
+ 2ae:	d104      	bne.n	2ba <Chip_TIMER_GetClock+0x1a>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:51
+	  tmrClk = SYSCTL_CLOCK_CT32B1;
+ 2b0:	230f      	movs	r3, #15
+ 2b2:	18fb      	adds	r3, r7, r3
+ 2b4:	220a      	movs	r2, #10
+ 2b6:	701a      	strb	r2, [r3, #0]
+ 2b8:	e015      	b.n	2e6 <Chip_TIMER_GetClock+0x46>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:53
+  }
+  else if (pTMR == LPC_TIMER16_0) {
+ 2ba:	687b      	ldr	r3, [r7, #4]
+ 2bc:	4a0e      	ldr	r2, [pc, #56]	; (2f8 <Chip_TIMER_GetClock+0x58>)
+ 2be:	4293      	cmp	r3, r2
+ 2c0:	d104      	bne.n	2cc <Chip_TIMER_GetClock+0x2c>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:54
+	  tmrClk = SYSCTL_CLOCK_CT16B0;
+ 2c2:	230f      	movs	r3, #15
+ 2c4:	18fb      	adds	r3, r7, r3
+ 2c6:	2207      	movs	r2, #7
+ 2c8:	701a      	strb	r2, [r3, #0]
+ 2ca:	e00c      	b.n	2e6 <Chip_TIMER_GetClock+0x46>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:56
+  }
+  else if (pTMR == LPC_TIMER16_1) {
+ 2cc:	687b      	ldr	r3, [r7, #4]
+ 2ce:	4a0b      	ldr	r2, [pc, #44]	; (2fc <Chip_TIMER_GetClock+0x5c>)
+ 2d0:	4293      	cmp	r3, r2
+ 2d2:	d104      	bne.n	2de <Chip_TIMER_GetClock+0x3e>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:57
+	  tmrClk = SYSCTL_CLOCK_CT16B1;
+ 2d4:	230f      	movs	r3, #15
+ 2d6:	18fb      	adds	r3, r7, r3
+ 2d8:	2208      	movs	r2, #8
+ 2da:	701a      	strb	r2, [r3, #0]
+ 2dc:	e003      	b.n	2e6 <Chip_TIMER_GetClock+0x46>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:60
+  }
+  else {
+	  tmrClk = SYSCTL_CLOCK_CT32B0;
+ 2de:	230f      	movs	r3, #15
+ 2e0:	18fb      	adds	r3, r7, r3
+ 2e2:	2209      	movs	r2, #9
+ 2e4:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:63
+  }
+
+  return tmrClk;
+ 2e6:	230f      	movs	r3, #15
+ 2e8:	18fb      	adds	r3, r7, r3
+ 2ea:	781b      	ldrb	r3, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:64
+}
+ 2ec:	1c18      	adds	r0, r3, #0
+ 2ee:	46bd      	mov	sp, r7
+ 2f0:	b004      	add	sp, #16
+ 2f2:	bd80      	pop	{r7, pc}
+ 2f4:	40018000 	.word	0x40018000
+ 2f8:	4000c000 	.word	0x4000c000
+ 2fc:	40010000 	.word	0x40010000
+
+00000300 <Chip_TIMER_Init>:
+Chip_TIMER_Init():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:72
+ * Public functions
+ ****************************************************************************/
+
+/* Initialize a timer */
+void Chip_TIMER_Init(LPC_TIMER_T *pTMR)
+{
+ 300:	b580      	push	{r7, lr}
+ 302:	b082      	sub	sp, #8
+ 304:	af00      	add	r7, sp, #0
+ 306:	6078      	str	r0, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:73
+	Chip_Clock_EnablePeriphClock(Chip_TIMER_GetClock(pTMR));
+ 308:	687b      	ldr	r3, [r7, #4]
+ 30a:	1c18      	adds	r0, r3, #0
+ 30c:	f7ff ffc8 	bl	2a0 <Chip_TIMER_GetClock>
+ 310:	1c03      	adds	r3, r0, #0
+ 312:	1c18      	adds	r0, r3, #0
+ 314:	f7ff ffac 	bl	270 <Chip_Clock_EnablePeriphClock.lto_priv.8>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:74
+}
+ 318:	46bd      	mov	sp, r7
+ 31a:	b002      	add	sp, #8
+ 31c:	bd80      	pop	{r7, pc}
+ 31e:	46c0      	nop			; (mov r8, r8)
+
+00000320 <Chip_TIMER_Reset>:
+Chip_TIMER_Reset():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:84
+	Chip_Clock_DisablePeriphClock(Chip_TIMER_GetClock(pTMR));
+}
+
+/* Resets the timer terminal and prescale counts to 0 */
+void Chip_TIMER_Reset(LPC_TIMER_T *pTMR)
+{
+ 320:	b580      	push	{r7, lr}
+ 322:	b084      	sub	sp, #16
+ 324:	af00      	add	r7, sp, #0
+ 326:	6078      	str	r0, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:88
+	uint32_t reg;
+
+	/* Disable timer, set terminal count to non-0 */
+	reg = pTMR->TCR;
+ 328:	687b      	ldr	r3, [r7, #4]
+ 32a:	685b      	ldr	r3, [r3, #4]
+ 32c:	60fb      	str	r3, [r7, #12]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:89
+	pTMR->TCR = 0;
+ 32e:	687b      	ldr	r3, [r7, #4]
+ 330:	2200      	movs	r2, #0
+ 332:	605a      	str	r2, [r3, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:90
+	pTMR->TC = 1;
+ 334:	687b      	ldr	r3, [r7, #4]
+ 336:	2201      	movs	r2, #1
+ 338:	609a      	str	r2, [r3, #8]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:93
+
+	/* Reset timer counter */
+	pTMR->TCR = TIMER_RESET;
+ 33a:	687b      	ldr	r3, [r7, #4]
+ 33c:	2202      	movs	r2, #2
+ 33e:	605a      	str	r2, [r3, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:96
+
+	/* Wait for terminal count to clear */
+	while (pTMR->TC != 0) {}
+ 340:	687b      	ldr	r3, [r7, #4]
+ 342:	689b      	ldr	r3, [r3, #8]
+ 344:	2b00      	cmp	r3, #0
+ 346:	d1fb      	bne.n	340 <Chip_TIMER_Reset+0x20>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:99
+
+	/* Restore timer state */
+	pTMR->TCR = reg;
+ 348:	687b      	ldr	r3, [r7, #4]
+ 34a:	68fa      	ldr	r2, [r7, #12]
+ 34c:	605a      	str	r2, [r3, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/timer_11xx.c:100
+}
+ 34e:	46bd      	mov	sp, r7
+ 350:	b004      	add	sp, #16
+ 352:	bd80      	pop	{r7, pc}
+
+00000354 <Chip_FMC_SetFLASHAccess.lto_priv.19>:
+Chip_FMC_SetFLASHAccess():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/fmc_11xx.h:86
+ * @return	Nothing
+ * @note	For CPU speed up to 20MHz, use a value of 0. For up to 40MHz, use
+ * a value of 1. For up to 50MHz, use a value of 2.
+ */
+STATIC INLINE void Chip_FMC_SetFLASHAccess(FMC_FLASHTIM_T clks)
+{
+ 354:	b580      	push	{r7, lr}
+ 356:	b084      	sub	sp, #16
+ 358:	af00      	add	r7, sp, #0
+ 35a:	1c02      	adds	r2, r0, #0
+ 35c:	1dfb      	adds	r3, r7, #7
+ 35e:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/fmc_11xx.h:87
+	uint32_t tmp = LPC_FMC->FLASHTIM & (~(0x3));
+ 360:	4b06      	ldr	r3, [pc, #24]	; (37c <Chip_FMC_SetFLASHAccess.lto_priv.19+0x28>)
+ 362:	691b      	ldr	r3, [r3, #16]
+ 364:	2203      	movs	r2, #3
+ 366:	4393      	bics	r3, r2
+ 368:	60fb      	str	r3, [r7, #12]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/fmc_11xx.h:90
+
+	/* Don't alter upper bits */
+	LPC_FMC->FLASHTIM = tmp | clks;
+ 36a:	4b04      	ldr	r3, [pc, #16]	; (37c <Chip_FMC_SetFLASHAccess.lto_priv.19+0x28>)
+ 36c:	1dfa      	adds	r2, r7, #7
+ 36e:	7811      	ldrb	r1, [r2, #0]
+ 370:	68fa      	ldr	r2, [r7, #12]
+ 372:	430a      	orrs	r2, r1
+ 374:	611a      	str	r2, [r3, #16]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/fmc_11xx.h:91
+}
+ 376:	46bd      	mov	sp, r7
+ 378:	b004      	add	sp, #16
+ 37a:	bd80      	pop	{r7, pc}
+ 37c:	4003c000 	.word	0x4003c000
+
+00000380 <Chip_Clock_SetupSystemPLL.lto_priv.17>:
+Chip_Clock_SetupSystemPLL():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:55
+ * @param	psel    : PLL post divider value. P =  (1<<psel).
+ * @return	Nothing
+ * @note	See the user manual for how to setup the PLL.
+ */
+STATIC INLINE void Chip_Clock_SetupSystemPLL(uint8_t msel, uint8_t psel)
+{
+ 380:	b580      	push	{r7, lr}
+ 382:	b082      	sub	sp, #8
+ 384:	af00      	add	r7, sp, #0
+ 386:	1c02      	adds	r2, r0, #0
+ 388:	1dfb      	adds	r3, r7, #7
+ 38a:	701a      	strb	r2, [r3, #0]
+ 38c:	1dbb      	adds	r3, r7, #6
+ 38e:	1c0a      	adds	r2, r1, #0
+ 390:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:56
+	LPC_SYSCTL->SYSPLLCTRL = (msel & 0x1F) | ((psel & 0x3) << 5);
+ 392:	4b07      	ldr	r3, [pc, #28]	; (3b0 <Chip_Clock_SetupSystemPLL.lto_priv.17+0x30>)
+ 394:	1dfa      	adds	r2, r7, #7
+ 396:	7812      	ldrb	r2, [r2, #0]
+ 398:	211f      	movs	r1, #31
+ 39a:	4011      	ands	r1, r2
+ 39c:	1dba      	adds	r2, r7, #6
+ 39e:	7812      	ldrb	r2, [r2, #0]
+ 3a0:	2003      	movs	r0, #3
+ 3a2:	4002      	ands	r2, r0
+ 3a4:	0152      	lsls	r2, r2, #5
+ 3a6:	430a      	orrs	r2, r1
+ 3a8:	609a      	str	r2, [r3, #8]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:57
+}
+ 3aa:	46bd      	mov	sp, r7
+ 3ac:	b002      	add	sp, #8
+ 3ae:	bd80      	pop	{r7, pc}
+ 3b0:	40048000 	.word	0x40048000
+
+000003b4 <Chip_Clock_IsSystemPLLLocked.lto_priv.15>:
+Chip_Clock_IsSystemPLLLocked():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:64
+/**
+ * @brief	Read System PLL lock status
+ * @return	true of the PLL is locked. false if not locked
+ */
+STATIC INLINE bool Chip_Clock_IsSystemPLLLocked(void)
+{
+ 3b4:	b580      	push	{r7, lr}
+ 3b6:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:65
+	return (bool) ((LPC_SYSCTL->SYSPLLSTAT & 1) != 0);
+ 3b8:	4b04      	ldr	r3, [pc, #16]	; (3cc <Chip_Clock_IsSystemPLLLocked.lto_priv.15+0x18>)
+ 3ba:	68db      	ldr	r3, [r3, #12]
+ 3bc:	2201      	movs	r2, #1
+ 3be:	4013      	ands	r3, r2
+ 3c0:	1e5a      	subs	r2, r3, #1
+ 3c2:	4193      	sbcs	r3, r2
+ 3c4:	b2db      	uxtb	r3, r3
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:66
+}
+ 3c6:	1c18      	adds	r0, r3, #0
+ 3c8:	46bd      	mov	sp, r7
+ 3ca:	bd80      	pop	{r7, pc}
+ 3cc:	40048000 	.word	0x40048000
+
+000003d0 <Chip_Clock_SetSysClockDiv.lto_priv.13>:
+Chip_Clock_SetSysClockDiv():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:221
+ * @return	Nothing
+ * @note	Use 0 to disable, or a divider value of 1 to 255. The system clock
+ * rate is the main system clock divided by this value.
+ */
+STATIC INLINE void Chip_Clock_SetSysClockDiv(uint32_t div)
+{
+ 3d0:	b580      	push	{r7, lr}
+ 3d2:	b082      	sub	sp, #8
+ 3d4:	af00      	add	r7, sp, #0
+ 3d6:	6078      	str	r0, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:222
+	LPC_SYSCTL->SYSAHBCLKDIV  = div;
+ 3d8:	4b02      	ldr	r3, [pc, #8]	; (3e4 <Chip_Clock_SetSysClockDiv.lto_priv.13+0x14>)
+ 3da:	687a      	ldr	r2, [r7, #4]
+ 3dc:	679a      	str	r2, [r3, #120]	; 0x78
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:223
+}
+ 3de:	46bd      	mov	sp, r7
+ 3e0:	b002      	add	sp, #8
+ 3e2:	bd80      	pop	{r7, pc}
+ 3e4:	40048000 	.word	0x40048000
+
+000003e8 <Chip_Clock_EnablePeriphClock.lto_priv.11>:
+Chip_Clock_EnablePeriphClock():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:296
+ * @brief	Enable a system or peripheral clock
+ * @param	clk	: Clock to enable
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_Clock_EnablePeriphClock(CHIP_SYSCTL_CLOCK_T clk)
+{
+ 3e8:	b580      	push	{r7, lr}
+ 3ea:	b082      	sub	sp, #8
+ 3ec:	af00      	add	r7, sp, #0
+ 3ee:	1c02      	adds	r2, r0, #0
+ 3f0:	1dfb      	adds	r3, r7, #7
+ 3f2:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:297
+	LPC_SYSCTL->SYSAHBCLKCTRL |= (1 << clk);
+ 3f4:	4907      	ldr	r1, [pc, #28]	; (414 <Chip_Clock_EnablePeriphClock.lto_priv.11+0x2c>)
+ 3f6:	4a07      	ldr	r2, [pc, #28]	; (414 <Chip_Clock_EnablePeriphClock.lto_priv.11+0x2c>)
+ 3f8:	2380      	movs	r3, #128	; 0x80
+ 3fa:	58d3      	ldr	r3, [r2, r3]
+ 3fc:	1dfa      	adds	r2, r7, #7
+ 3fe:	7812      	ldrb	r2, [r2, #0]
+ 400:	2001      	movs	r0, #1
+ 402:	4090      	lsls	r0, r2
+ 404:	1c02      	adds	r2, r0, #0
+ 406:	4313      	orrs	r3, r2
+ 408:	2280      	movs	r2, #128	; 0x80
+ 40a:	508b      	str	r3, [r1, r2]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:298
+}
+ 40c:	46bd      	mov	sp, r7
+ 40e:	b002      	add	sp, #8
+ 410:	bd80      	pop	{r7, pc}
+ 412:	46c0      	nop			; (mov r8, r8)
+ 414:	40048000 	.word	0x40048000
+
+00000418 <Chip_IOCON_PinMuxSet.lto_priv.4>:
+Chip_IOCON_PinMuxSet():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/iocon_11xx.h:250
+ * @param	pin			: GPIO pin to mux
+ * @param	modefunc	: OR'ed values or type IOCON_*
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_IOCON_PinMuxSet(LPC_IOCON_T *pIOCON, CHIP_IOCON_PIO_T pin, uint32_t modefunc)
+{
+ 418:	b580      	push	{r7, lr}
+ 41a:	b084      	sub	sp, #16
+ 41c:	af00      	add	r7, sp, #0
+ 41e:	60f8      	str	r0, [r7, #12]
+ 420:	607a      	str	r2, [r7, #4]
+ 422:	230b      	movs	r3, #11
+ 424:	18fb      	adds	r3, r7, r3
+ 426:	1c0a      	adds	r2, r1, #0
+ 428:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/iocon_11xx.h:251
+	pIOCON->REG[pin] = modefunc;
+ 42a:	230b      	movs	r3, #11
+ 42c:	18fb      	adds	r3, r7, r3
+ 42e:	781a      	ldrb	r2, [r3, #0]
+ 430:	68fb      	ldr	r3, [r7, #12]
+ 432:	0092      	lsls	r2, r2, #2
+ 434:	6879      	ldr	r1, [r7, #4]
+ 436:	50d1      	str	r1, [r2, r3]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/iocon_11xx.h:252
+}
+ 438:	46bd      	mov	sp, r7
+ 43a:	b004      	add	sp, #16
+ 43c:	bd80      	pop	{r7, pc}
+Chip_IOCON_PinMuxSet.lto_priv.4():
+ 43e:	46c0      	nop			; (mov r8, r8)
+
+00000440 <SystemSetupClocking>:
+SystemSetupClocking():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:74
+ * Private functions
+ ****************************************************************************/
+
+/* Setup system clocking */
+STATIC void SystemSetupClocking(void)
+{
+ 440:	b580      	push	{r7, lr}
+ 442:	b082      	sub	sp, #8
+ 444:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:78
+	volatile int i;
+
+	/* Powerup main oscillator */
+	Chip_SYSCTL_PowerUp(SYSCTL_POWERDOWN_SYSOSC_PD);
+ 446:	2020      	movs	r0, #32
+ 448:	f7ff fef2 	bl	230 <Chip_SYSCTL_PowerUp>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:82
+
+	/* Wait 200us for OSC to be stablized, no status
+	   indication, dummy wait. */
+	for (i = 0; i < 0x100; i++) {}
+ 44c:	2300      	movs	r3, #0
+ 44e:	607b      	str	r3, [r7, #4]
+ 450:	e002      	b.n	458 <SystemSetupClocking+0x18>
+ 452:	687b      	ldr	r3, [r7, #4]
+ 454:	3301      	adds	r3, #1
+ 456:	607b      	str	r3, [r7, #4]
+ 458:	687b      	ldr	r3, [r7, #4]
+ 45a:	2bff      	cmp	r3, #255	; 0xff
+ 45c:	ddf9      	ble.n	452 <SystemSetupClocking+0x12>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:85
+
+	/* Set system PLL input to main oscillator */
+	Chip_Clock_SetSystemPLLSource(SYSCTL_PLLCLKSRC_MAINOSC);
+ 45e:	2001      	movs	r0, #1
+ 460:	f000 faca 	bl	9f8 <Chip_Clock_SetSystemPLLSource>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:88
+
+	/* Power down PLL to change the PLL divider ratio */
+	Chip_SYSCTL_PowerDown(SYSCTL_POWERDOWN_SYSPLL_PD);
+ 464:	2080      	movs	r0, #128	; 0x80
+ 466:	f7ff fec5 	bl	1f4 <Chip_SYSCTL_PowerDown>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:94
+
+	/* Setup PLL for main oscillator rate (FCLKIN = 12MHz) * 4 = 48MHz
+	   MSEL = 3 (this is pre-decremented), PSEL = 1 (for P = 2)
+	   FCLKOUT = FCLKIN * (MSEL + 1) = 12MHz * 4 = 48MHz
+	   FCCO = FCLKOUT * 2 * P = 48MHz * 2 * 2 = 192MHz (within FCCO range) */
+	Chip_Clock_SetupSystemPLL(3, 1);
+ 46a:	2003      	movs	r0, #3
+ 46c:	2101      	movs	r1, #1
+ 46e:	f7ff ff87 	bl	380 <Chip_Clock_SetupSystemPLL.lto_priv.17>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:97
+
+	/* Powerup system PLL */
+	Chip_SYSCTL_PowerUp(SYSCTL_POWERDOWN_SYSPLL_PD);
+ 472:	2080      	movs	r0, #128	; 0x80
+ 474:	f7ff fedc 	bl	230 <Chip_SYSCTL_PowerUp>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:100
+
+	/* Wait for PLL to lock */
+	while (!Chip_Clock_IsSystemPLLLocked()) {}
+ 478:	f7ff ff9c 	bl	3b4 <Chip_Clock_IsSystemPLLLocked.lto_priv.15>
+ 47c:	1c03      	adds	r3, r0, #0
+ 47e:	1c1a      	adds	r2, r3, #0
+ 480:	2301      	movs	r3, #1
+ 482:	4053      	eors	r3, r2
+ 484:	b2db      	uxtb	r3, r3
+ 486:	2b00      	cmp	r3, #0
+ 488:	d1f6      	bne.n	478 <SystemSetupClocking+0x38>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:103
+
+	/* Set system clock divider to 1 */
+	Chip_Clock_SetSysClockDiv(1);
+ 48a:	2001      	movs	r0, #1
+ 48c:	f7ff ffa0 	bl	3d0 <Chip_Clock_SetSysClockDiv.lto_priv.13>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:106
+
+	/* Setup FLASH access to 3 clocks */
+	Chip_FMC_SetFLASHAccess(FLASHTIM_50MHZ_CPU);
+ 490:	2002      	movs	r0, #2
+ 492:	f7ff ff5f 	bl	354 <Chip_FMC_SetFLASHAccess.lto_priv.19>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:110
+
+	/* Set main clock source to the system PLL. This will drive 48MHz
+	   for the main clock and 48MHz for the system clock */
+	Chip_Clock_SetMainClockSource(SYSCTL_MAINCLKSRC_PLLOUT);
+ 496:	2003      	movs	r0, #3
+ 498:	f000 fac4 	bl	a24 <Chip_Clock_SetMainClockSource>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:111
+}
+ 49c:	46bd      	mov	sp, r7
+ 49e:	b002      	add	sp, #8
+ 4a0:	bd80      	pop	{r7, pc}
+ 4a2:	46c0      	nop			; (mov r8, r8)
+
+000004a4 <SystemSetupMuxing>:
+SystemSetupMuxing():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:115
+
+/* Sets up system pin muxing */
+STATIC void SystemSetupMuxing(void)
+{
+ 4a4:	b580      	push	{r7, lr}
+ 4a6:	b082      	sub	sp, #8
+ 4a8:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:119
+	int i;
+
+	/* Enable IOCON clock */
+	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_IOCON);
+ 4aa:	2010      	movs	r0, #16
+ 4ac:	f7ff ff9c 	bl	3e8 <Chip_Clock_EnablePeriphClock.lto_priv.11>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:121
+
+	for (i = 0; i < (sizeof(pinmuxing) / sizeof(PINMUX_GRP_T)); i++) {
+ 4b0:	2300      	movs	r3, #0
+ 4b2:	607b      	str	r3, [r7, #4]
+ 4b4:	e010      	b.n	4d8 <SystemSetupMuxing+0x34>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:122
+		Chip_IOCON_PinMuxSet(LPC_IOCON, (CHIP_IOCON_PIO_T) pinmuxing[i].pin,
+ 4b6:	4b0b      	ldr	r3, [pc, #44]	; (4e4 <SystemSetupMuxing+0x40>)
+ 4b8:	687a      	ldr	r2, [r7, #4]
+ 4ba:	0092      	lsls	r2, r2, #2
+ 4bc:	5cd1      	ldrb	r1, [r2, r3]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:123
+			pinmuxing[i].modefunc);
+ 4be:	4b09      	ldr	r3, [pc, #36]	; (4e4 <SystemSetupMuxing+0x40>)
+ 4c0:	687a      	ldr	r2, [r7, #4]
+ 4c2:	0092      	lsls	r2, r2, #2
+ 4c4:	58d3      	ldr	r3, [r2, r3]
+ 4c6:	0a1b      	lsrs	r3, r3, #8
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:122
+
+	/* Enable IOCON clock */
+	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_IOCON);
+
+	for (i = 0; i < (sizeof(pinmuxing) / sizeof(PINMUX_GRP_T)); i++) {
+		Chip_IOCON_PinMuxSet(LPC_IOCON, (CHIP_IOCON_PIO_T) pinmuxing[i].pin,
+ 4c8:	1c1a      	adds	r2, r3, #0
+ 4ca:	4b07      	ldr	r3, [pc, #28]	; (4e8 <SystemSetupMuxing+0x44>)
+ 4cc:	1c18      	adds	r0, r3, #0
+ 4ce:	f7ff ffa3 	bl	418 <Chip_IOCON_PinMuxSet.lto_priv.4>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:121
+	int i;
+
+	/* Enable IOCON clock */
+	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_IOCON);
+
+	for (i = 0; i < (sizeof(pinmuxing) / sizeof(PINMUX_GRP_T)); i++) {
+ 4d2:	687b      	ldr	r3, [r7, #4]
+ 4d4:	3301      	adds	r3, #1
+ 4d6:	607b      	str	r3, [r7, #4]
+ 4d8:	687b      	ldr	r3, [r7, #4]
+ 4da:	2b09      	cmp	r3, #9
+ 4dc:	d9eb      	bls.n	4b6 <SystemSetupMuxing+0x12>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:125
+		Chip_IOCON_PinMuxSet(LPC_IOCON, (CHIP_IOCON_PIO_T) pinmuxing[i].pin,
+			pinmuxing[i].modefunc);
+	}
+}
+ 4de:	46bd      	mov	sp, r7
+ 4e0:	b002      	add	sp, #8
+ 4e2:	bd80      	pop	{r7, pc}
+ 4e4:	00000cfc 	.word	0x00000cfc
+ 4e8:	40044000 	.word	0x40044000
+
+000004ec <Board_SystemInit>:
+Board_SystemInit():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:133
+ * Public functions
+ ****************************************************************************/
+
+/* Set up and initialize hardware prior to call to main */
+void Board_SystemInit(void)
+{
+ 4ec:	b580      	push	{r7, lr}
+ 4ee:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:135
+	/* Setup system clocking and muxing */
+	SystemSetupClocking();
+ 4f0:	f7ff ffa6 	bl	440 <SystemSetupClocking>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:136
+	SystemSetupMuxing();
+ 4f4:	f7ff ffd6 	bl	4a4 <SystemSetupMuxing>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board_sysinit.c:137
+}
+ 4f8:	46bd      	mov	sp, r7
+ 4fa:	bd80      	pop	{r7, pc}
+
+000004fc <Chip_GPIO_SetPinState>:
+Chip_GPIO_SetPinState():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/gpio_11xx_2.h:103
+ * @param	setting	: true for high, false for low
+ * @return	Nothing
+ * @note	This function replaces Chip_GPIO_WritePortBit()
+ */
+STATIC INLINE void Chip_GPIO_SetPinState(LPC_GPIO_T *pGPIO, uint8_t port, uint8_t pin, bool setting)
+{
+ 4fc:	b590      	push	{r4, r7, lr}
+ 4fe:	b083      	sub	sp, #12
+ 500:	af00      	add	r7, sp, #0
+ 502:	6078      	str	r0, [r7, #4]
+ 504:	1c0c      	adds	r4, r1, #0
+ 506:	1c10      	adds	r0, r2, #0
+ 508:	1c19      	adds	r1, r3, #0
+ 50a:	1cfb      	adds	r3, r7, #3
+ 50c:	1c22      	adds	r2, r4, #0
+ 50e:	701a      	strb	r2, [r3, #0]
+ 510:	1cbb      	adds	r3, r7, #2
+ 512:	1c02      	adds	r2, r0, #0
+ 514:	701a      	strb	r2, [r3, #0]
+ 516:	1c7b      	adds	r3, r7, #1
+ 518:	1c0a      	adds	r2, r1, #0
+ 51a:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/gpio_11xx_2.h:104
+	pGPIO[port].DATA[1 << pin] = setting << pin;
+ 51c:	1cfb      	adds	r3, r7, #3
+ 51e:	781b      	ldrb	r3, [r3, #0]
+ 520:	041b      	lsls	r3, r3, #16
+ 522:	687a      	ldr	r2, [r7, #4]
+ 524:	18d3      	adds	r3, r2, r3
+ 526:	1cba      	adds	r2, r7, #2
+ 528:	7812      	ldrb	r2, [r2, #0]
+ 52a:	2101      	movs	r1, #1
+ 52c:	4091      	lsls	r1, r2
+ 52e:	1c0a      	adds	r2, r1, #0
+ 530:	1c79      	adds	r1, r7, #1
+ 532:	7808      	ldrb	r0, [r1, #0]
+ 534:	1cb9      	adds	r1, r7, #2
+ 536:	7809      	ldrb	r1, [r1, #0]
+ 538:	4088      	lsls	r0, r1
+ 53a:	1c01      	adds	r1, r0, #0
+ 53c:	0092      	lsls	r2, r2, #2
+ 53e:	50d1      	str	r1, [r2, r3]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/gpio_11xx_2.h:105
+}
+ 540:	46bd      	mov	sp, r7
+ 542:	b003      	add	sp, #12
+ 544:	bd90      	pop	{r4, r7, pc}
+ 546:	46c0      	nop			; (mov r8, r8)
+
+00000548 <Chip_GPIO_SetPinDIROutput>:
+Chip_GPIO_SetPinDIROutput():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/gpio_11xx_2.h:154
+ * @param	port	: Port number
+ * @param	pin		: GPIO pin to set direction on as output
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_GPIO_SetPinDIROutput(LPC_GPIO_T *pGPIO, uint8_t port, uint8_t pin)
+{
+ 548:	b580      	push	{r7, lr}
+ 54a:	b082      	sub	sp, #8
+ 54c:	af00      	add	r7, sp, #0
+ 54e:	6078      	str	r0, [r7, #4]
+ 550:	1c08      	adds	r0, r1, #0
+ 552:	1c11      	adds	r1, r2, #0
+ 554:	1cfb      	adds	r3, r7, #3
+ 556:	1c02      	adds	r2, r0, #0
+ 558:	701a      	strb	r2, [r3, #0]
+ 55a:	1cbb      	adds	r3, r7, #2
+ 55c:	1c0a      	adds	r2, r1, #0
+ 55e:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/gpio_11xx_2.h:155
+	pGPIO[port].DIR |= (1UL << pin);
+ 560:	1cfb      	adds	r3, r7, #3
+ 562:	781b      	ldrb	r3, [r3, #0]
+ 564:	041b      	lsls	r3, r3, #16
+ 566:	687a      	ldr	r2, [r7, #4]
+ 568:	18d2      	adds	r2, r2, r3
+ 56a:	1cfb      	adds	r3, r7, #3
+ 56c:	781b      	ldrb	r3, [r3, #0]
+ 56e:	041b      	lsls	r3, r3, #16
+ 570:	6879      	ldr	r1, [r7, #4]
+ 572:	18c9      	adds	r1, r1, r3
+ 574:	2380      	movs	r3, #128	; 0x80
+ 576:	021b      	lsls	r3, r3, #8
+ 578:	58c9      	ldr	r1, [r1, r3]
+ 57a:	1cbb      	adds	r3, r7, #2
+ 57c:	781b      	ldrb	r3, [r3, #0]
+ 57e:	2001      	movs	r0, #1
+ 580:	4098      	lsls	r0, r3
+ 582:	1c03      	adds	r3, r0, #0
+ 584:	4319      	orrs	r1, r3
+ 586:	2380      	movs	r3, #128	; 0x80
+ 588:	021b      	lsls	r3, r3, #8
+ 58a:	50d1      	str	r1, [r2, r3]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/gpio_11xx_2.h:156
+}
+ 58c:	46bd      	mov	sp, r7
+ 58e:	b002      	add	sp, #8
+ 590:	bd80      	pop	{r7, pc}
+ 592:	46c0      	nop			; (mov r8, r8)
+
+00000594 <Board_LED_Init>:
+Board_LED_Init():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board.c:104
+#endif
+}
+
+/* Initializes board LED(s) */
+static void Board_LED_Init(void)
+{
+ 594:	b580      	push	{r7, lr}
+ 596:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board.c:106
+	/* Set the PIO_7 as output */
+	Chip_GPIO_SetPinDIROutput(LPC_GPIO, 0, 7);
+ 598:	23a0      	movs	r3, #160	; 0xa0
+ 59a:	05db      	lsls	r3, r3, #23
+ 59c:	1c18      	adds	r0, r3, #0
+ 59e:	2100      	movs	r1, #0
+ 5a0:	2207      	movs	r2, #7
+ 5a2:	f7ff ffd1 	bl	548 <Chip_GPIO_SetPinDIROutput>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board.c:107
+}
+ 5a6:	46bd      	mov	sp, r7
+ 5a8:	bd80      	pop	{r7, pc}
+ 5aa:	46c0      	nop			; (mov r8, r8)
+
+000005ac <Board_LED_Set>:
+Board_LED_Set():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board.c:111
+
+/* Sets the state of a board LED to on or off */
+void Board_LED_Set(uint8_t LEDNumber, bool On)
+{
+ 5ac:	b580      	push	{r7, lr}
+ 5ae:	b082      	sub	sp, #8
+ 5b0:	af00      	add	r7, sp, #0
+ 5b2:	1c02      	adds	r2, r0, #0
+ 5b4:	1dfb      	adds	r3, r7, #7
+ 5b6:	701a      	strb	r2, [r3, #0]
+ 5b8:	1dbb      	adds	r3, r7, #6
+ 5ba:	1c0a      	adds	r2, r1, #0
+ 5bc:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board.c:112
+	if(LEDNumber == 0) {
+ 5be:	1dfb      	adds	r3, r7, #7
+ 5c0:	781b      	ldrb	r3, [r3, #0]
+ 5c2:	2b00      	cmp	r3, #0
+ 5c4:	d108      	bne.n	5d8 <Board_LED_Set+0x2c>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board.c:113
+		Chip_GPIO_SetPinState(LPC_GPIO, 0, 7, On);
+ 5c6:	23a0      	movs	r3, #160	; 0xa0
+ 5c8:	05da      	lsls	r2, r3, #23
+ 5ca:	1dbb      	adds	r3, r7, #6
+ 5cc:	781b      	ldrb	r3, [r3, #0]
+ 5ce:	1c10      	adds	r0, r2, #0
+ 5d0:	2100      	movs	r1, #0
+ 5d2:	2207      	movs	r2, #7
+ 5d4:	f7ff ff92 	bl	4fc <Chip_GPIO_SetPinState>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board.c:115
+	}
+}
+ 5d8:	46bd      	mov	sp, r7
+ 5da:	b002      	add	sp, #8
+ 5dc:	bd80      	pop	{r7, pc}
+ 5de:	46c0      	nop			; (mov r8, r8)
+
+000005e0 <Board_Init>:
+Board_Init():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board.c:132
+}
+
+/* Set up and initialize all required blocks and functions related to the
+   board hardware */
+void Board_Init(void)
+{
+ 5e0:	b580      	push	{r7, lr}
+ 5e2:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board.c:137
+	/* Sets up DEBUG UART */
+	DEBUGINIT();
+
+	/* Initialize GPIO */
+	Chip_GPIO_Init(LPC_GPIO);
+ 5e4:	23a0      	movs	r3, #160	; 0xa0
+ 5e6:	05db      	lsls	r3, r3, #23
+ 5e8:	1c18      	adds	r0, r3, #0
+ 5ea:	f000 facb 	bl	b84 <Chip_GPIO_Init>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board.c:140
+
+	/* Initialize LEDs */
+	Board_LED_Init();
+ 5ee:	f7ff ffd1 	bl	594 <Board_LED_Init>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpcexpresso_11c24_board_library/src/board.c:141
+}
+ 5f2:	46bd      	mov	sp, r7
+ 5f4:	bd80      	pop	{r7, pc}
+ 5f6:	46c0      	nop			; (mov r8, r8)
+
+000005f8 <NVIC_EnableIRQ>:
+NVIC_EnableIRQ():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:501
+    The function enables a device-specific interrupt in the NVIC interrupt controller.
+
+    \param [in]      IRQn  External interrupt number. Value cannot be negative.
+ */
+__STATIC_INLINE void NVIC_EnableIRQ(IRQn_Type IRQn)
+{
+ 5f8:	b580      	push	{r7, lr}
+ 5fa:	b082      	sub	sp, #8
+ 5fc:	af00      	add	r7, sp, #0
+ 5fe:	1c02      	adds	r2, r0, #0
+ 600:	1dfb      	adds	r3, r7, #7
+ 602:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:502
+  NVIC->ISER[0] = (1 << ((uint32_t)(IRQn) & 0x1F));
+ 604:	4b06      	ldr	r3, [pc, #24]	; (620 <NVIC_EnableIRQ+0x28>)
+ 606:	1dfa      	adds	r2, r7, #7
+ 608:	7812      	ldrb	r2, [r2, #0]
+ 60a:	1c11      	adds	r1, r2, #0
+ 60c:	221f      	movs	r2, #31
+ 60e:	400a      	ands	r2, r1
+ 610:	2101      	movs	r1, #1
+ 612:	4091      	lsls	r1, r2
+ 614:	1c0a      	adds	r2, r1, #0
+ 616:	601a      	str	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:503
+}
+ 618:	46bd      	mov	sp, r7
+ 61a:	b002      	add	sp, #8
+ 61c:	bd80      	pop	{r7, pc}
+ 61e:	46c0      	nop			; (mov r8, r8)
+ 620:	e000e100 	.word	0xe000e100
+
+00000624 <NVIC_ClearPendingIRQ>:
+NVIC_ClearPendingIRQ():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:553
+    The function clears the pending bit of an external interrupt.
+
+    \param [in]      IRQn  External interrupt number. Value cannot be negative.
+ */
+__STATIC_INLINE void NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+{
+ 624:	b580      	push	{r7, lr}
+ 626:	b082      	sub	sp, #8
+ 628:	af00      	add	r7, sp, #0
+ 62a:	1c02      	adds	r2, r0, #0
+ 62c:	1dfb      	adds	r3, r7, #7
+ 62e:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:554
+  NVIC->ICPR[0] = (1 << ((uint32_t)(IRQn) & 0x1F)); /* Clear pending interrupt */
+ 630:	4a07      	ldr	r2, [pc, #28]	; (650 <NVIC_ClearPendingIRQ+0x2c>)
+ 632:	1dfb      	adds	r3, r7, #7
+ 634:	781b      	ldrb	r3, [r3, #0]
+ 636:	1c19      	adds	r1, r3, #0
+ 638:	231f      	movs	r3, #31
+ 63a:	400b      	ands	r3, r1
+ 63c:	2101      	movs	r1, #1
+ 63e:	4099      	lsls	r1, r3
+ 640:	1c0b      	adds	r3, r1, #0
+ 642:	1c19      	adds	r1, r3, #0
+ 644:	23c0      	movs	r3, #192	; 0xc0
+ 646:	005b      	lsls	r3, r3, #1
+ 648:	50d1      	str	r1, [r2, r3]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:555
+}
+ 64a:	46bd      	mov	sp, r7
+ 64c:	b002      	add	sp, #8
+ 64e:	bd80      	pop	{r7, pc}
+ 650:	e000e100 	.word	0xe000e100
+
+00000654 <NVIC_SetPriority>:
+NVIC_SetPriority():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:568
+
+    \param [in]      IRQn  Interrupt number.
+    \param [in]  priority  Priority to set.
+ */
+__STATIC_INLINE void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+{
+ 654:	b5b0      	push	{r4, r5, r7, lr}
+ 656:	b082      	sub	sp, #8
+ 658:	af00      	add	r7, sp, #0
+ 65a:	1c02      	adds	r2, r0, #0
+ 65c:	6039      	str	r1, [r7, #0]
+ 65e:	1dfb      	adds	r3, r7, #7
+ 660:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:569
+  if(IRQn < 0) {
+ 662:	1dfb      	adds	r3, r7, #7
+ 664:	781b      	ldrb	r3, [r3, #0]
+ 666:	2b7f      	cmp	r3, #127	; 0x7f
+ 668:	d92f      	bls.n	6ca <NVIC_SetPriority+0x76>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:570
+    SCB->SHP[_SHP_IDX(IRQn)] = (SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+ 66a:	4c2d      	ldr	r4, [pc, #180]	; (720 <NVIC_SetPriority+0xcc>)
+ 66c:	1dfb      	adds	r3, r7, #7
+ 66e:	781b      	ldrb	r3, [r3, #0]
+ 670:	1c1a      	adds	r2, r3, #0
+ 672:	230f      	movs	r3, #15
+ 674:	4013      	ands	r3, r2
+ 676:	3b08      	subs	r3, #8
+ 678:	0899      	lsrs	r1, r3, #2
+ 67a:	4a29      	ldr	r2, [pc, #164]	; (720 <NVIC_SetPriority+0xcc>)
+ 67c:	1dfb      	adds	r3, r7, #7
+ 67e:	781b      	ldrb	r3, [r3, #0]
+ 680:	1c18      	adds	r0, r3, #0
+ 682:	230f      	movs	r3, #15
+ 684:	4003      	ands	r3, r0
+ 686:	3b08      	subs	r3, #8
+ 688:	089b      	lsrs	r3, r3, #2
+ 68a:	3306      	adds	r3, #6
+ 68c:	009b      	lsls	r3, r3, #2
+ 68e:	18d3      	adds	r3, r2, r3
+ 690:	685b      	ldr	r3, [r3, #4]
+ 692:	1dfa      	adds	r2, r7, #7
+ 694:	7812      	ldrb	r2, [r2, #0]
+ 696:	1c10      	adds	r0, r2, #0
+ 698:	2203      	movs	r2, #3
+ 69a:	4002      	ands	r2, r0
+ 69c:	00d2      	lsls	r2, r2, #3
+ 69e:	1c10      	adds	r0, r2, #0
+ 6a0:	22ff      	movs	r2, #255	; 0xff
+ 6a2:	4082      	lsls	r2, r0
+ 6a4:	43d2      	mvns	r2, r2
+ 6a6:	401a      	ands	r2, r3
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:571
+        (((priority << (8 - __NVIC_PRIO_BITS)) & 0xFF) << _BIT_SHIFT(IRQn)); }
+ 6a8:	683b      	ldr	r3, [r7, #0]
+ 6aa:	019b      	lsls	r3, r3, #6
+ 6ac:	20ff      	movs	r0, #255	; 0xff
+ 6ae:	4003      	ands	r3, r0
+ 6b0:	1df8      	adds	r0, r7, #7
+ 6b2:	7800      	ldrb	r0, [r0, #0]
+ 6b4:	1c05      	adds	r5, r0, #0
+ 6b6:	2003      	movs	r0, #3
+ 6b8:	4028      	ands	r0, r5
+ 6ba:	00c0      	lsls	r0, r0, #3
+ 6bc:	4083      	lsls	r3, r0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:570
+    \param [in]  priority  Priority to set.
+ */
+__STATIC_INLINE void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+{
+  if(IRQn < 0) {
+    SCB->SHP[_SHP_IDX(IRQn)] = (SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+ 6be:	431a      	orrs	r2, r3
+ 6c0:	1d8b      	adds	r3, r1, #6
+ 6c2:	009b      	lsls	r3, r3, #2
+ 6c4:	18e3      	adds	r3, r4, r3
+ 6c6:	605a      	str	r2, [r3, #4]
+ 6c8:	e026      	b.n	718 <NVIC_SetPriority+0xc4>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:573
+        (((priority << (8 - __NVIC_PRIO_BITS)) & 0xFF) << _BIT_SHIFT(IRQn)); }
+  else {
+    NVIC->IP[_IP_IDX(IRQn)] = (NVIC->IP[_IP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+ 6ca:	4c16      	ldr	r4, [pc, #88]	; (724 <NVIC_SetPriority+0xd0>)
+ 6cc:	1dfb      	adds	r3, r7, #7
+ 6ce:	781b      	ldrb	r3, [r3, #0]
+ 6d0:	b25b      	sxtb	r3, r3
+ 6d2:	089b      	lsrs	r3, r3, #2
+ 6d4:	4913      	ldr	r1, [pc, #76]	; (724 <NVIC_SetPriority+0xd0>)
+ 6d6:	1dfa      	adds	r2, r7, #7
+ 6d8:	7812      	ldrb	r2, [r2, #0]
+ 6da:	b252      	sxtb	r2, r2
+ 6dc:	0892      	lsrs	r2, r2, #2
+ 6de:	32c0      	adds	r2, #192	; 0xc0
+ 6e0:	0092      	lsls	r2, r2, #2
+ 6e2:	5852      	ldr	r2, [r2, r1]
+ 6e4:	1df9      	adds	r1, r7, #7
+ 6e6:	7809      	ldrb	r1, [r1, #0]
+ 6e8:	1c08      	adds	r0, r1, #0
+ 6ea:	2103      	movs	r1, #3
+ 6ec:	4001      	ands	r1, r0
+ 6ee:	00c9      	lsls	r1, r1, #3
+ 6f0:	1c08      	adds	r0, r1, #0
+ 6f2:	21ff      	movs	r1, #255	; 0xff
+ 6f4:	4081      	lsls	r1, r0
+ 6f6:	43c9      	mvns	r1, r1
+ 6f8:	4011      	ands	r1, r2
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:574
+        (((priority << (8 - __NVIC_PRIO_BITS)) & 0xFF) << _BIT_SHIFT(IRQn)); }
+ 6fa:	683a      	ldr	r2, [r7, #0]
+ 6fc:	0192      	lsls	r2, r2, #6
+ 6fe:	20ff      	movs	r0, #255	; 0xff
+ 700:	4002      	ands	r2, r0
+ 702:	1df8      	adds	r0, r7, #7
+ 704:	7800      	ldrb	r0, [r0, #0]
+ 706:	1c05      	adds	r5, r0, #0
+ 708:	2003      	movs	r0, #3
+ 70a:	4028      	ands	r0, r5
+ 70c:	00c0      	lsls	r0, r0, #3
+ 70e:	4082      	lsls	r2, r0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:573
+{
+  if(IRQn < 0) {
+    SCB->SHP[_SHP_IDX(IRQn)] = (SCB->SHP[_SHP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+        (((priority << (8 - __NVIC_PRIO_BITS)) & 0xFF) << _BIT_SHIFT(IRQn)); }
+  else {
+    NVIC->IP[_IP_IDX(IRQn)] = (NVIC->IP[_IP_IDX(IRQn)] & ~(0xFF << _BIT_SHIFT(IRQn))) |
+ 710:	430a      	orrs	r2, r1
+ 712:	33c0      	adds	r3, #192	; 0xc0
+ 714:	009b      	lsls	r3, r3, #2
+ 716:	511a      	str	r2, [r3, r4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:575
+        (((priority << (8 - __NVIC_PRIO_BITS)) & 0xFF) << _BIT_SHIFT(IRQn)); }
+}
+ 718:	46bd      	mov	sp, r7
+ 71a:	b002      	add	sp, #8
+ 71c:	bdb0      	pop	{r4, r5, r7, pc}
+ 71e:	46c0      	nop			; (mov r8, r8)
+ 720:	e000ed00 	.word	0xe000ed00
+ 724:	e000e100 	.word	0xe000e100
+
+00000728 <SysTick_Config>:
+SysTick_Config():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:642
+    function <b>SysTick_Config</b> is not included. In this case, the file <b><i>device</i>.h</b>
+    must contain a vendor-specific implementation of this function.
+
+ */
+__STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
+{
+ 728:	b580      	push	{r7, lr}
+ 72a:	b082      	sub	sp, #8
+ 72c:	af00      	add	r7, sp, #0
+ 72e:	6078      	str	r0, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:643
+  if (ticks > SysTick_LOAD_RELOAD_Msk)  return (1);            /* Reload value impossible */
+ 730:	687b      	ldr	r3, [r7, #4]
+ 732:	4a0e      	ldr	r2, [pc, #56]	; (76c <SysTick_Config+0x44>)
+ 734:	4293      	cmp	r3, r2
+ 736:	d901      	bls.n	73c <SysTick_Config+0x14>
+ 738:	2301      	movs	r3, #1
+ 73a:	e012      	b.n	762 <SysTick_Config+0x3a>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:645
+
+  SysTick->LOAD  = (ticks & SysTick_LOAD_RELOAD_Msk) - 1;      /* set reload register */
+ 73c:	4b0c      	ldr	r3, [pc, #48]	; (770 <SysTick_Config+0x48>)
+ 73e:	687a      	ldr	r2, [r7, #4]
+ 740:	0212      	lsls	r2, r2, #8
+ 742:	0a12      	lsrs	r2, r2, #8
+ 744:	3a01      	subs	r2, #1
+ 746:	605a      	str	r2, [r3, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:646
+  NVIC_SetPriority (SysTick_IRQn, (1<<__NVIC_PRIO_BITS) - 1);  /* set Priority for Systick Interrupt */
+ 748:	2301      	movs	r3, #1
+ 74a:	425b      	negs	r3, r3
+ 74c:	1c18      	adds	r0, r3, #0
+ 74e:	2103      	movs	r1, #3
+ 750:	f7ff ff80 	bl	654 <NVIC_SetPriority>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:647
+  SysTick->VAL   = 0;                                          /* Load the SysTick Counter Value */
+ 754:	4b06      	ldr	r3, [pc, #24]	; (770 <SysTick_Config+0x48>)
+ 756:	2200      	movs	r2, #0
+ 758:	609a      	str	r2, [r3, #8]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:648
+  SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk |
+ 75a:	4b05      	ldr	r3, [pc, #20]	; (770 <SysTick_Config+0x48>)
+ 75c:	2207      	movs	r2, #7
+ 75e:	601a      	str	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:651
+                   SysTick_CTRL_TICKINT_Msk   |
+                   SysTick_CTRL_ENABLE_Msk;                    /* Enable SysTick IRQ and SysTick Timer */
+  return (0);                                                  /* Function successful */
+ 760:	2300      	movs	r3, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cm0.h:652
+}
+ 762:	1c18      	adds	r0, r3, #0
+ 764:	46bd      	mov	sp, r7
+ 766:	b002      	add	sp, #8
+ 768:	bd80      	pop	{r7, pc}
+ 76a:	46c0      	nop			; (mov r8, r8)
+ 76c:	00ffffff 	.word	0x00ffffff
+ 770:	e000e010 	.word	0xe000e010
+
+00000774 <Chip_TIMER_MatchPending>:
+Chip_TIMER_MatchPending():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:113
+ * @return	false if the interrupt is not pending, otherwise true
+ * @note	Determine if the match interrupt for the passed timer and match
+ * counter is pending.
+ */
+STATIC INLINE bool Chip_TIMER_MatchPending(LPC_TIMER_T *pTMR, int8_t matchnum)
+{
+ 774:	b580      	push	{r7, lr}
+ 776:	b082      	sub	sp, #8
+ 778:	af00      	add	r7, sp, #0
+ 77a:	6078      	str	r0, [r7, #4]
+ 77c:	1c0a      	adds	r2, r1, #0
+ 77e:	1cfb      	adds	r3, r7, #3
+ 780:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:114
+	return (bool) ((pTMR->IR & TIMER_MATCH_INT(matchnum)) != 0);
+ 782:	687b      	ldr	r3, [r7, #4]
+ 784:	681b      	ldr	r3, [r3, #0]
+ 786:	1cfa      	adds	r2, r7, #3
+ 788:	7812      	ldrb	r2, [r2, #0]
+ 78a:	1c11      	adds	r1, r2, #0
+ 78c:	220f      	movs	r2, #15
+ 78e:	400a      	ands	r2, r1
+ 790:	2101      	movs	r1, #1
+ 792:	4091      	lsls	r1, r2
+ 794:	1c0a      	adds	r2, r1, #0
+ 796:	4013      	ands	r3, r2
+ 798:	1e5a      	subs	r2, r3, #1
+ 79a:	4193      	sbcs	r3, r2
+ 79c:	b2db      	uxtb	r3, r3
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:115
+}
+ 79e:	1c18      	adds	r0, r3, #0
+ 7a0:	46bd      	mov	sp, r7
+ 7a2:	b002      	add	sp, #8
+ 7a4:	bd80      	pop	{r7, pc}
+ 7a6:	46c0      	nop			; (mov r8, r8)
+
+000007a8 <Chip_TIMER_ClearMatch>:
+Chip_TIMER_ClearMatch():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:138
+ * @param	matchnum	: Match interrupt number to clear
+ * @return	Nothing
+ * @note	Clears a pending timer match interrupt.
+ */
+STATIC INLINE void Chip_TIMER_ClearMatch(LPC_TIMER_T *pTMR, int8_t matchnum)
+{
+ 7a8:	b580      	push	{r7, lr}
+ 7aa:	b082      	sub	sp, #8
+ 7ac:	af00      	add	r7, sp, #0
+ 7ae:	6078      	str	r0, [r7, #4]
+ 7b0:	1c0a      	adds	r2, r1, #0
+ 7b2:	1cfb      	adds	r3, r7, #3
+ 7b4:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:139
+	pTMR->IR = TIMER_IR_CLR(matchnum);
+ 7b6:	1cfb      	adds	r3, r7, #3
+ 7b8:	781b      	ldrb	r3, [r3, #0]
+ 7ba:	b25b      	sxtb	r3, r3
+ 7bc:	2201      	movs	r2, #1
+ 7be:	409a      	lsls	r2, r3
+ 7c0:	1c13      	adds	r3, r2, #0
+ 7c2:	1c1a      	adds	r2, r3, #0
+ 7c4:	687b      	ldr	r3, [r7, #4]
+ 7c6:	601a      	str	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:140
+}
+ 7c8:	46bd      	mov	sp, r7
+ 7ca:	b002      	add	sp, #8
+ 7cc:	bd80      	pop	{r7, pc}
+ 7ce:	46c0      	nop			; (mov r8, r8)
+
+000007d0 <Chip_TIMER_Enable>:
+Chip_TIMER_Enable():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:161
+ * @param	pTMR	: Pointer to timer IP register address
+ * @return	Nothing
+ * @note	Enables the timer to start counting.
+ */
+STATIC INLINE void Chip_TIMER_Enable(LPC_TIMER_T *pTMR)
+{
+ 7d0:	b580      	push	{r7, lr}
+ 7d2:	b082      	sub	sp, #8
+ 7d4:	af00      	add	r7, sp, #0
+ 7d6:	6078      	str	r0, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:162
+	pTMR->TCR |= TIMER_ENABLE;
+ 7d8:	687b      	ldr	r3, [r7, #4]
+ 7da:	685b      	ldr	r3, [r3, #4]
+ 7dc:	2201      	movs	r2, #1
+ 7de:	431a      	orrs	r2, r3
+ 7e0:	687b      	ldr	r3, [r7, #4]
+ 7e2:	605a      	str	r2, [r3, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:163
+}
+ 7e4:	46bd      	mov	sp, r7
+ 7e6:	b002      	add	sp, #8
+ 7e8:	bd80      	pop	{r7, pc}
+ 7ea:	46c0      	nop			; (mov r8, r8)
+
+000007ec <Chip_TIMER_SetMatch>:
+Chip_TIMER_SetMatch():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:219
+ * @param	matchval	: Match value for the selected match count
+ * @return	Nothing
+ * @note	Sets one of the timer match values.
+ */
+STATIC INLINE void Chip_TIMER_SetMatch(LPC_TIMER_T *pTMR, int8_t matchnum, uint32_t matchval)
+{
+ 7ec:	b580      	push	{r7, lr}
+ 7ee:	b084      	sub	sp, #16
+ 7f0:	af00      	add	r7, sp, #0
+ 7f2:	60f8      	str	r0, [r7, #12]
+ 7f4:	607a      	str	r2, [r7, #4]
+ 7f6:	230b      	movs	r3, #11
+ 7f8:	18fb      	adds	r3, r7, r3
+ 7fa:	1c0a      	adds	r2, r1, #0
+ 7fc:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:220
+	pTMR->MR[matchnum] = matchval;
+ 7fe:	230b      	movs	r3, #11
+ 800:	18fb      	adds	r3, r7, r3
+ 802:	2200      	movs	r2, #0
+ 804:	569a      	ldrsb	r2, [r3, r2]
+ 806:	68fb      	ldr	r3, [r7, #12]
+ 808:	3206      	adds	r2, #6
+ 80a:	0092      	lsls	r2, r2, #2
+ 80c:	6879      	ldr	r1, [r7, #4]
+ 80e:	50d1      	str	r1, [r2, r3]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:221
+}
+ 810:	46bd      	mov	sp, r7
+ 812:	b004      	add	sp, #16
+ 814:	bd80      	pop	{r7, pc}
+ 816:	46c0      	nop			; (mov r8, r8)
+
+00000818 <Chip_TIMER_MatchEnableInt>:
+Chip_TIMER_MatchEnableInt():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:250
+ * @param	pTMR		: Pointer to timer IP register address
+ * @param	matchnum	: Match timer, 0 to 3
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_TIMER_MatchEnableInt(LPC_TIMER_T *pTMR, int8_t matchnum)
+{
+ 818:	b580      	push	{r7, lr}
+ 81a:	b082      	sub	sp, #8
+ 81c:	af00      	add	r7, sp, #0
+ 81e:	6078      	str	r0, [r7, #4]
+ 820:	1c0a      	adds	r2, r1, #0
+ 822:	1cfb      	adds	r3, r7, #3
+ 824:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:251
+	pTMR->MCR |= TIMER_INT_ON_MATCH(matchnum);
+ 826:	687b      	ldr	r3, [r7, #4]
+ 828:	6959      	ldr	r1, [r3, #20]
+ 82a:	1cfb      	adds	r3, r7, #3
+ 82c:	2200      	movs	r2, #0
+ 82e:	569a      	ldrsb	r2, [r3, r2]
+ 830:	1c13      	adds	r3, r2, #0
+ 832:	005b      	lsls	r3, r3, #1
+ 834:	189b      	adds	r3, r3, r2
+ 836:	2201      	movs	r2, #1
+ 838:	409a      	lsls	r2, r3
+ 83a:	1c13      	adds	r3, r2, #0
+ 83c:	1c0a      	adds	r2, r1, #0
+ 83e:	431a      	orrs	r2, r3
+ 840:	687b      	ldr	r3, [r7, #4]
+ 842:	615a      	str	r2, [r3, #20]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:252
+}
+ 844:	46bd      	mov	sp, r7
+ 846:	b002      	add	sp, #8
+ 848:	bd80      	pop	{r7, pc}
+ 84a:	46c0      	nop			; (mov r8, r8)
+
+0000084c <Chip_TIMER_ResetOnMatchEnable>:
+Chip_TIMER_ResetOnMatchEnable():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:272
+ * @param	pTMR		: Pointer to timer IP register address
+ * @param	matchnum	: Match timer, 0 to 3
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_TIMER_ResetOnMatchEnable(LPC_TIMER_T *pTMR, int8_t matchnum)
+{
+ 84c:	b580      	push	{r7, lr}
+ 84e:	b082      	sub	sp, #8
+ 850:	af00      	add	r7, sp, #0
+ 852:	6078      	str	r0, [r7, #4]
+ 854:	1c0a      	adds	r2, r1, #0
+ 856:	1cfb      	adds	r3, r7, #3
+ 858:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:273
+	pTMR->MCR |= TIMER_RESET_ON_MATCH(matchnum);
+ 85a:	687b      	ldr	r3, [r7, #4]
+ 85c:	6959      	ldr	r1, [r3, #20]
+ 85e:	1cfb      	adds	r3, r7, #3
+ 860:	2200      	movs	r2, #0
+ 862:	569a      	ldrsb	r2, [r3, r2]
+ 864:	1c13      	adds	r3, r2, #0
+ 866:	005b      	lsls	r3, r3, #1
+ 868:	189b      	adds	r3, r3, r2
+ 86a:	3301      	adds	r3, #1
+ 86c:	2201      	movs	r2, #1
+ 86e:	409a      	lsls	r2, r3
+ 870:	1c13      	adds	r3, r2, #0
+ 872:	1c0a      	adds	r2, r1, #0
+ 874:	431a      	orrs	r2, r3
+ 876:	687b      	ldr	r3, [r7, #4]
+ 878:	615a      	str	r2, [r3, #20]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/timer_11xx.h:274
+}
+ 87a:	46bd      	mov	sp, r7
+ 87c:	b002      	add	sp, #8
+ 87e:	bd80      	pop	{r7, pc}
+
+00000880 <SysTick_Handler>:
+SysTick_Handler():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:58
+/**
+ * @brief	Handle interrupt from SysTick timer
+ * @return	Nothing
+ */
+void SysTick_Handler(void)
+{
+ 880:	b580      	push	{r7, lr}
+ 882:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:59
+	Board_LED_Set(0, false);
+ 884:	2000      	movs	r0, #0
+ 886:	2100      	movs	r1, #0
+ 888:	f7ff fe90 	bl	5ac <Board_LED_Set>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:60
+}
+ 88c:	46bd      	mov	sp, r7
+ 88e:	bd80      	pop	{r7, pc}
+
+00000890 <TIMER32_0_IRQHandler>:
+TIMER32_0_IRQHandler():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:67
+/**
+ * @brief	Handle interrupt from 32-bit timer
+ * @return	Nothing
+ */
+void TIMER32_0_IRQHandler(void)
+{
+ 890:	b580      	push	{r7, lr}
+ 892:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:68
+	if (Chip_TIMER_MatchPending(LPC_TIMER32_0, 1)) {
+ 894:	4b08      	ldr	r3, [pc, #32]	; (8b8 <TIMER32_0_IRQHandler+0x28>)
+ 896:	1c18      	adds	r0, r3, #0
+ 898:	2101      	movs	r1, #1
+ 89a:	f7ff ff6b 	bl	774 <Chip_TIMER_MatchPending>
+ 89e:	1e03      	subs	r3, r0, #0
+ 8a0:	d008      	beq.n	8b4 <TIMER32_0_IRQHandler+0x24>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:69
+		Chip_TIMER_ClearMatch(LPC_TIMER32_0, 1);
+ 8a2:	4b05      	ldr	r3, [pc, #20]	; (8b8 <TIMER32_0_IRQHandler+0x28>)
+ 8a4:	1c18      	adds	r0, r3, #0
+ 8a6:	2101      	movs	r1, #1
+ 8a8:	f7ff ff7e 	bl	7a8 <Chip_TIMER_ClearMatch>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:70
+		Board_LED_Set(0, true);
+ 8ac:	2000      	movs	r0, #0
+ 8ae:	2101      	movs	r1, #1
+ 8b0:	f7ff fe7c 	bl	5ac <Board_LED_Set>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:72
+	}
+}
+ 8b4:	46bd      	mov	sp, r7
+ 8b6:	bd80      	pop	{r7, pc}
+ 8b8:	40014000 	.word	0x40014000
+
+000008bc <main>:
+main():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:75
+
+
+int main(void) {
+ 8bc:	b580      	push	{r7, lr}
+ 8be:	b082      	sub	sp, #8
+ 8c0:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:107
+#endif
+
+
+	uint32_t timerFreq;
+
+	SystemCoreClockUpdate();
+ 8c2:	f000 f845 	bl	950 <SystemCoreClockUpdate>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:108
+	Board_Init();
+ 8c6:	f7ff fe8b 	bl	5e0 <Board_Init>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:111
+
+	/* Enable and setup SysTick Timer at a periodic rate */
+	SysTick_Config(SystemCoreClock / TICKRATE_HZ1);
+ 8ca:	4b1c      	ldr	r3, [pc, #112]	; (93c <main+0x80>)
+ 8cc:	681b      	ldr	r3, [r3, #0]
+ 8ce:	1c18      	adds	r0, r3, #0
+ 8d0:	210a      	movs	r1, #10
+ 8d2:	f000 f961 	bl	b98 <__aeabi_uidiv>
+ 8d6:	1c03      	adds	r3, r0, #0
+ 8d8:	1c18      	adds	r0, r3, #0
+ 8da:	f7ff ff25 	bl	728 <SysTick_Config>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:114
+
+	/* Enable timer 1 clock */
+	Chip_TIMER_Init(LPC_TIMER32_0);
+ 8de:	4b18      	ldr	r3, [pc, #96]	; (940 <main+0x84>)
+ 8e0:	1c18      	adds	r0, r3, #0
+ 8e2:	f7ff fd0d 	bl	300 <Chip_TIMER_Init>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:117
+
+	/* Timer rate is system clock rate */
+	timerFreq = Chip_Clock_GetSystemClockRate();
+ 8e6:	f000 f923 	bl	b30 <Chip_Clock_GetSystemClockRate>
+ 8ea:	1c03      	adds	r3, r0, #0
+ 8ec:	607b      	str	r3, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:120
+
+	/* Timer setup for match and interrupt at TICKRATE_HZ */
+	Chip_TIMER_Reset(LPC_TIMER32_0);
+ 8ee:	4b14      	ldr	r3, [pc, #80]	; (940 <main+0x84>)
+ 8f0:	1c18      	adds	r0, r3, #0
+ 8f2:	f7ff fd15 	bl	320 <Chip_TIMER_Reset>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:121
+	Chip_TIMER_MatchEnableInt(LPC_TIMER32_0, 1);
+ 8f6:	4b12      	ldr	r3, [pc, #72]	; (940 <main+0x84>)
+ 8f8:	1c18      	adds	r0, r3, #0
+ 8fa:	2101      	movs	r1, #1
+ 8fc:	f7ff ff8c 	bl	818 <Chip_TIMER_MatchEnableInt>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:122
+	Chip_TIMER_SetMatch(LPC_TIMER32_0, 1, (timerFreq / TICKRATE_HZ2));
+ 900:	687b      	ldr	r3, [r7, #4]
+ 902:	1c18      	adds	r0, r3, #0
+ 904:	210b      	movs	r1, #11
+ 906:	f000 f947 	bl	b98 <__aeabi_uidiv>
+ 90a:	1c03      	adds	r3, r0, #0
+ 90c:	1c1a      	adds	r2, r3, #0
+ 90e:	4b0c      	ldr	r3, [pc, #48]	; (940 <main+0x84>)
+ 910:	1c18      	adds	r0, r3, #0
+ 912:	2101      	movs	r1, #1
+ 914:	f7ff ff6a 	bl	7ec <Chip_TIMER_SetMatch>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:123
+	Chip_TIMER_ResetOnMatchEnable(LPC_TIMER32_0, 1);
+ 918:	4b09      	ldr	r3, [pc, #36]	; (940 <main+0x84>)
+ 91a:	1c18      	adds	r0, r3, #0
+ 91c:	2101      	movs	r1, #1
+ 91e:	f7ff ff95 	bl	84c <Chip_TIMER_ResetOnMatchEnable>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:124
+	Chip_TIMER_Enable(LPC_TIMER32_0);
+ 922:	4b07      	ldr	r3, [pc, #28]	; (940 <main+0x84>)
+ 924:	1c18      	adds	r0, r3, #0
+ 926:	f7ff ff53 	bl	7d0 <Chip_TIMER_Enable>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:127
+
+	/* Enable timer interrupt */
+	NVIC_ClearPendingIRQ(TIMER_32_0_IRQn);
+ 92a:	2012      	movs	r0, #18
+ 92c:	f7ff fe7a 	bl	624 <NVIC_ClearPendingIRQ>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/bc_1114.c:128
+	NVIC_EnableIRQ(TIMER_32_0_IRQn);
+ 930:	2012      	movs	r0, #18
+ 932:	f7ff fe61 	bl	5f8 <NVIC_EnableIRQ>
+__WFI():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/core_cmInstr.h:299
+    Wait For Interrupt is a hint instruction that suspends execution
+    until one of a number of events occurs.
+ */
+__attribute__( ( always_inline ) ) __STATIC_INLINE void __WFI(void)
+{
+  __ASM volatile ("wfi");
+ 936:	bf30      	wfi
+ 938:	e7fd      	b.n	936 <main+0x7a>
+ 93a:	46c0      	nop			; (mov r8, r8)
+ 93c:	10000000 	.word	0x10000000
+ 940:	40014000 	.word	0x40014000
+
+00000944 <SystemInit>:
+SystemInit():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/sysinit.c:61
+ * Public functions
+ ****************************************************************************/
+
+/* Set up and initialize hardware prior to call to main */
+void SystemInit(void)
+{
+ 944:	b580      	push	{r7, lr}
+ 946:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/sysinit.c:67
+#if defined(NO_BOARD_LIB)
+	/* Chip specific SystemInit */
+	Chip_SystemInit();
+#else
+	/* Board specific SystemInit */
+	Board_SystemInit();
+ 948:	f7ff fdd0 	bl	4ec <Board_SystemInit>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/sys/sysinit.c:69
+#endif
+}
+ 94c:	46bd      	mov	sp, r7
+ 94e:	bd80      	pop	{r7, pc}
+
+00000950 <SystemCoreClockUpdate>:
+SystemCoreClockUpdate():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/chip_11xx.c:56
+ ****************************************************************************/
+
+/* Update system core clock rate, should be called if the system has
+   a clock rate change */
+void SystemCoreClockUpdate(void)
+{
+ 950:	b580      	push	{r7, lr}
+ 952:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/chip_11xx.c:58
+	/* CPU core speed */
+	SystemCoreClock = Chip_Clock_GetSystemClockRate();
+ 954:	f000 f8ec 	bl	b30 <Chip_Clock_GetSystemClockRate>
+ 958:	1c02      	adds	r2, r0, #0
+ 95a:	4b02      	ldr	r3, [pc, #8]	; (964 <SystemCoreClockUpdate+0x14>)
+ 95c:	601a      	str	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/chip_11xx.c:59
+}
+ 95e:	46bd      	mov	sp, r7
+ 960:	bd80      	pop	{r7, pc}
+ 962:	46c0      	nop			; (mov r8, r8)
+ 964:	10000000 	.word	0x10000000
+
+00000968 <Chip_Clock_GetMainOscRate>:
+Chip_Clock_GetMainOscRate():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:457
+/**
+ * @brief	Returns the main oscillator clock rate
+ * @return	main oscillator clock rate
+ */
+STATIC INLINE uint32_t Chip_Clock_GetMainOscRate(void)
+{
+ 968:	b580      	push	{r7, lr}
+ 96a:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:458
+	return OscRateIn;
+ 96c:	4b02      	ldr	r3, [pc, #8]	; (978 <Chip_Clock_GetMainOscRate+0x10>)
+ 96e:	681b      	ldr	r3, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:459
+}
+ 970:	1c18      	adds	r0, r3, #0
+ 972:	46bd      	mov	sp, r7
+ 974:	bd80      	pop	{r7, pc}
+ 976:	46c0      	nop			; (mov r8, r8)
+ 978:	00000d24 	.word	0x00000d24
+
+0000097c <Chip_Clock_GetIntOscRate>:
+Chip_Clock_GetIntOscRate():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:466
+/**
+ * @brief	Returns the internal oscillator (IRC) clock rate
+ * @return	internal oscillator (IRC) clock rate
+ */
+STATIC INLINE uint32_t Chip_Clock_GetIntOscRate(void)
+{
+ 97c:	b580      	push	{r7, lr}
+ 97e:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:467
+	return SYSCTL_IRC_FREQ;
+ 980:	4b01      	ldr	r3, [pc, #4]	; (988 <Chip_Clock_GetIntOscRate+0xc>)
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:468
+}
+ 982:	1c18      	adds	r0, r3, #0
+ 984:	46bd      	mov	sp, r7
+ 986:	bd80      	pop	{r7, pc}
+ 988:	00b71b00 	.word	0x00b71b00
+
+0000098c <Chip_Clock_GetWDTLFORate>:
+Chip_Clock_GetWDTLFORate():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:65
+ * Private functions
+ ****************************************************************************/
+
+/* Compute a WDT or LFO rate */
+STATIC uint32_t Chip_Clock_GetWDTLFORate(uint32_t reg)
+{
+ 98c:	b580      	push	{r7, lr}
+ 98e:	b084      	sub	sp, #16
+ 990:	af00      	add	r7, sp, #0
+ 992:	6078      	str	r0, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:70
+	uint32_t div;
+	CHIP_WDTLFO_OSC_T clk;
+
+	/* Get WDT oscillator settings */
+	clk = (CHIP_WDTLFO_OSC_T) ((reg >> 5) & 0xF);
+ 994:	687b      	ldr	r3, [r7, #4]
+ 996:	095b      	lsrs	r3, r3, #5
+ 998:	b2da      	uxtb	r2, r3
+ 99a:	230f      	movs	r3, #15
+ 99c:	18fb      	adds	r3, r7, r3
+ 99e:	210f      	movs	r1, #15
+ 9a0:	400a      	ands	r2, r1
+ 9a2:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:71
+	div = reg & 0x1F;
+ 9a4:	687b      	ldr	r3, [r7, #4]
+ 9a6:	221f      	movs	r2, #31
+ 9a8:	4013      	ands	r3, r2
+ 9aa:	60bb      	str	r3, [r7, #8]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:74
+
+	/* Compute clock rate and divided by divde value */
+	return wdtOSCRate[clk] / ((div + 1) << 1);
+ 9ac:	230f      	movs	r3, #15
+ 9ae:	18fb      	adds	r3, r7, r3
+ 9b0:	781a      	ldrb	r2, [r3, #0]
+ 9b2:	4b07      	ldr	r3, [pc, #28]	; (9d0 <Chip_Clock_GetWDTLFORate+0x44>)
+ 9b4:	0092      	lsls	r2, r2, #2
+ 9b6:	58d2      	ldr	r2, [r2, r3]
+ 9b8:	68bb      	ldr	r3, [r7, #8]
+ 9ba:	3301      	adds	r3, #1
+ 9bc:	005b      	lsls	r3, r3, #1
+ 9be:	1c10      	adds	r0, r2, #0
+ 9c0:	1c19      	adds	r1, r3, #0
+ 9c2:	f000 f8e9 	bl	b98 <__aeabi_uidiv>
+ 9c6:	1c03      	adds	r3, r0, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:75
+}
+ 9c8:	1c18      	adds	r0, r3, #0
+ 9ca:	46bd      	mov	sp, r7
+ 9cc:	b004      	add	sp, #16
+ 9ce:	bd80      	pop	{r7, pc}
+ 9d0:	00000cbc 	.word	0x00000cbc
+
+000009d4 <Chip_Clock_GetPLLFreq>:
+Chip_Clock_GetPLLFreq():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:79
+
+/* Compute a PLL frequency */
+STATIC uint32_t Chip_Clock_GetPLLFreq(uint32_t PLLReg, uint32_t inputRate)
+{
+ 9d4:	b580      	push	{r7, lr}
+ 9d6:	b084      	sub	sp, #16
+ 9d8:	af00      	add	r7, sp, #0
+ 9da:	6078      	str	r0, [r7, #4]
+ 9dc:	6039      	str	r1, [r7, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:80
+	uint32_t msel = ((PLLReg & 0x1F) + 1);
+ 9de:	687b      	ldr	r3, [r7, #4]
+ 9e0:	221f      	movs	r2, #31
+ 9e2:	4013      	ands	r3, r2
+ 9e4:	3301      	adds	r3, #1
+ 9e6:	60fb      	str	r3, [r7, #12]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:82
+
+	return inputRate * msel;
+ 9e8:	683b      	ldr	r3, [r7, #0]
+ 9ea:	68fa      	ldr	r2, [r7, #12]
+ 9ec:	4353      	muls	r3, r2
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:83
+}
+ 9ee:	1c18      	adds	r0, r3, #0
+ 9f0:	46bd      	mov	sp, r7
+ 9f2:	b004      	add	sp, #16
+ 9f4:	bd80      	pop	{r7, pc}
+ 9f6:	46c0      	nop			; (mov r8, r8)
+
+000009f8 <Chip_Clock_SetSystemPLLSource>:
+Chip_Clock_SetSystemPLLSource():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:91
+ * Public functions
+ ****************************************************************************/
+
+/* Set System PLL clock source */
+void Chip_Clock_SetSystemPLLSource(CHIP_SYSCTL_PLLCLKSRC_T src)
+{
+ 9f8:	b580      	push	{r7, lr}
+ 9fa:	b082      	sub	sp, #8
+ 9fc:	af00      	add	r7, sp, #0
+ 9fe:	1c02      	adds	r2, r0, #0
+ a00:	1dfb      	adds	r3, r7, #7
+ a02:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:92
+	LPC_SYSCTL->SYSPLLCLKSEL  = (uint32_t) src;
+ a04:	4b06      	ldr	r3, [pc, #24]	; (a20 <Chip_Clock_SetSystemPLLSource+0x28>)
+ a06:	1dfa      	adds	r2, r7, #7
+ a08:	7812      	ldrb	r2, [r2, #0]
+ a0a:	641a      	str	r2, [r3, #64]	; 0x40
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:93
+	LPC_SYSCTL->SYSPLLCLKUEN  = 0;
+ a0c:	4b04      	ldr	r3, [pc, #16]	; (a20 <Chip_Clock_SetSystemPLLSource+0x28>)
+ a0e:	2200      	movs	r2, #0
+ a10:	645a      	str	r2, [r3, #68]	; 0x44
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:94
+	LPC_SYSCTL->SYSPLLCLKUEN  = 1;
+ a12:	4b03      	ldr	r3, [pc, #12]	; (a20 <Chip_Clock_SetSystemPLLSource+0x28>)
+ a14:	2201      	movs	r2, #1
+ a16:	645a      	str	r2, [r3, #68]	; 0x44
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:95
+}
+ a18:	46bd      	mov	sp, r7
+ a1a:	b002      	add	sp, #8
+ a1c:	bd80      	pop	{r7, pc}
+ a1e:	46c0      	nop			; (mov r8, r8)
+ a20:	40048000 	.word	0x40048000
+
+00000a24 <Chip_Clock_SetMainClockSource>:
+Chip_Clock_SetMainClockSource():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:125
+
+#endif
+
+/* Set main system clock source */
+void Chip_Clock_SetMainClockSource(CHIP_SYSCTL_MAINCLKSRC_T src)
+{
+ a24:	b580      	push	{r7, lr}
+ a26:	b082      	sub	sp, #8
+ a28:	af00      	add	r7, sp, #0
+ a2a:	1c02      	adds	r2, r0, #0
+ a2c:	1dfb      	adds	r3, r7, #7
+ a2e:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:126
+	LPC_SYSCTL->MAINCLKSEL  = (uint32_t) src;
+ a30:	4b06      	ldr	r3, [pc, #24]	; (a4c <Chip_Clock_SetMainClockSource+0x28>)
+ a32:	1dfa      	adds	r2, r7, #7
+ a34:	7812      	ldrb	r2, [r2, #0]
+ a36:	671a      	str	r2, [r3, #112]	; 0x70
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:127
+	LPC_SYSCTL->MAINCLKUEN  = 0;
+ a38:	4b04      	ldr	r3, [pc, #16]	; (a4c <Chip_Clock_SetMainClockSource+0x28>)
+ a3a:	2200      	movs	r2, #0
+ a3c:	675a      	str	r2, [r3, #116]	; 0x74
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:128
+	LPC_SYSCTL->MAINCLKUEN  = 1;
+ a3e:	4b03      	ldr	r3, [pc, #12]	; (a4c <Chip_Clock_SetMainClockSource+0x28>)
+ a40:	2201      	movs	r2, #1
+ a42:	675a      	str	r2, [r3, #116]	; 0x74
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:129
+}
+ a44:	46bd      	mov	sp, r7
+ a46:	b002      	add	sp, #8
+ a48:	bd80      	pop	{r7, pc}
+ a4a:	46c0      	nop			; (mov r8, r8)
+ a4c:	40048000 	.word	0x40048000
+
+00000a50 <Chip_Clock_GetWDTOSCRate>:
+Chip_Clock_GetWDTOSCRate():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:169
+
+#endif
+
+/* Return estimated watchdog oscillator rate */
+uint32_t Chip_Clock_GetWDTOSCRate(void)
+{
+ a50:	b580      	push	{r7, lr}
+ a52:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:170
+	return Chip_Clock_GetWDTLFORate(LPC_SYSCTL->WDTOSCCTRL);
+ a54:	4b04      	ldr	r3, [pc, #16]	; (a68 <Chip_Clock_GetWDTOSCRate+0x18>)
+ a56:	6a5b      	ldr	r3, [r3, #36]	; 0x24
+ a58:	1c18      	adds	r0, r3, #0
+ a5a:	f7ff ff97 	bl	98c <Chip_Clock_GetWDTLFORate>
+ a5e:	1c03      	adds	r3, r0, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:171
+}
+ a60:	1c18      	adds	r0, r3, #0
+ a62:	46bd      	mov	sp, r7
+ a64:	bd80      	pop	{r7, pc}
+ a66:	46c0      	nop			; (mov r8, r8)
+ a68:	40048000 	.word	0x40048000
+
+00000a6c <Chip_Clock_GetSystemPLLInClockRate>:
+Chip_Clock_GetSystemPLLInClockRate():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:184
+
+#endif
+
+/* Return System PLL input clock rate */
+uint32_t Chip_Clock_GetSystemPLLInClockRate(void)
+{
+ a6c:	b580      	push	{r7, lr}
+ a6e:	b082      	sub	sp, #8
+ a70:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:187
+	uint32_t clkRate;
+
+	switch ((CHIP_SYSCTL_PLLCLKSRC_T) (LPC_SYSCTL->SYSPLLCLKSEL & 0x3)) {
+ a72:	4b0d      	ldr	r3, [pc, #52]	; (aa8 <Chip_Clock_GetSystemPLLInClockRate+0x3c>)
+ a74:	6c1b      	ldr	r3, [r3, #64]	; 0x40
+ a76:	b2db      	uxtb	r3, r3
+ a78:	1c1a      	adds	r2, r3, #0
+ a7a:	2303      	movs	r3, #3
+ a7c:	4013      	ands	r3, r2
+ a7e:	d002      	beq.n	a86 <Chip_Clock_GetSystemPLLInClockRate+0x1a>
+ a80:	2b01      	cmp	r3, #1
+ a82:	d005      	beq.n	a90 <Chip_Clock_GetSystemPLLInClockRate+0x24>
+ a84:	e009      	b.n	a9a <Chip_Clock_GetSystemPLLInClockRate+0x2e>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:189
+	case SYSCTL_PLLCLKSRC_IRC:
+		clkRate = Chip_Clock_GetIntOscRate();
+ a86:	f7ff ff79 	bl	97c <Chip_Clock_GetIntOscRate>
+ a8a:	1c03      	adds	r3, r0, #0
+ a8c:	607b      	str	r3, [r7, #4]
+ a8e:	e006      	b.n	a9e <Chip_Clock_GetSystemPLLInClockRate+0x32>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:193
+		break;
+
+	case SYSCTL_PLLCLKSRC_MAINOSC:
+		clkRate = Chip_Clock_GetMainOscRate();
+ a90:	f7ff ff6a 	bl	968 <Chip_Clock_GetMainOscRate>
+ a94:	1c03      	adds	r3, r0, #0
+ a96:	607b      	str	r3, [r7, #4]
+ a98:	e001      	b.n	a9e <Chip_Clock_GetSystemPLLInClockRate+0x32>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:203
+		clkRate = Chip_Clock_GetExtClockInRate();
+		break;
+#endif
+
+	default:
+		clkRate = 0;
+ a9a:	2300      	movs	r3, #0
+ a9c:	607b      	str	r3, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:206
+	}
+
+	return clkRate;
+ a9e:	687b      	ldr	r3, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:207
+}
+ aa0:	1c18      	adds	r0, r3, #0
+ aa2:	46bd      	mov	sp, r7
+ aa4:	b002      	add	sp, #8
+ aa6:	bd80      	pop	{r7, pc}
+ aa8:	40048000 	.word	0x40048000
+
+00000aac <Chip_Clock_GetSystemPLLOutClockRate>:
+Chip_Clock_GetSystemPLLOutClockRate():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:211
+
+/* Return System PLL output clock rate */
+uint32_t Chip_Clock_GetSystemPLLOutClockRate(void)
+{
+ aac:	b598      	push	{r3, r4, r7, lr}
+ aae:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:212
+	return Chip_Clock_GetPLLFreq(LPC_SYSCTL->SYSPLLCTRL,
+ ab0:	4b06      	ldr	r3, [pc, #24]	; (acc <Chip_Clock_GetSystemPLLOutClockRate+0x20>)
+ ab2:	689c      	ldr	r4, [r3, #8]
+ ab4:	f7ff ffda 	bl	a6c <Chip_Clock_GetSystemPLLInClockRate>
+ ab8:	1c03      	adds	r3, r0, #0
+ aba:	1c20      	adds	r0, r4, #0
+ abc:	1c19      	adds	r1, r3, #0
+ abe:	f7ff ff89 	bl	9d4 <Chip_Clock_GetPLLFreq>
+ ac2:	1c03      	adds	r3, r0, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:214
+								 Chip_Clock_GetSystemPLLInClockRate());
+}
+ ac4:	1c18      	adds	r0, r3, #0
+ ac6:	46bd      	mov	sp, r7
+ ac8:	bd98      	pop	{r3, r4, r7, pc}
+ aca:	46c0      	nop			; (mov r8, r8)
+ acc:	40048000 	.word	0x40048000
+
+00000ad0 <Chip_Clock_GetMainClockRate>:
+Chip_Clock_GetMainClockRate():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:249
+
+#endif
+
+/* Return main clock rate */
+uint32_t Chip_Clock_GetMainClockRate(void)
+{
+ ad0:	b580      	push	{r7, lr}
+ ad2:	b082      	sub	sp, #8
+ ad4:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:250
+	uint32_t clkRate = 0;
+ ad6:	2300      	movs	r3, #0
+ ad8:	607b      	str	r3, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:252
+
+	switch ((CHIP_SYSCTL_MAINCLKSRC_T) (LPC_SYSCTL->MAINCLKSEL & 0x3)) {
+ ada:	4b14      	ldr	r3, [pc, #80]	; (b2c <Chip_Clock_GetMainClockRate+0x5c>)
+ adc:	6f1b      	ldr	r3, [r3, #112]	; 0x70
+ ade:	b2db      	uxtb	r3, r3
+ ae0:	1c1a      	adds	r2, r3, #0
+ ae2:	2303      	movs	r3, #3
+ ae4:	4013      	ands	r3, r2
+ ae6:	2b01      	cmp	r3, #1
+ ae8:	d00d      	beq.n	b06 <Chip_Clock_GetMainClockRate+0x36>
+ aea:	dc02      	bgt.n	af2 <Chip_Clock_GetMainClockRate+0x22>
+ aec:	2b00      	cmp	r3, #0
+ aee:	d005      	beq.n	afc <Chip_Clock_GetMainClockRate+0x2c>
+ af0:	e017      	b.n	b22 <Chip_Clock_GetMainClockRate+0x52>
+ af2:	2b02      	cmp	r3, #2
+ af4:	d00c      	beq.n	b10 <Chip_Clock_GetMainClockRate+0x40>
+ af6:	2b03      	cmp	r3, #3
+ af8:	d00f      	beq.n	b1a <Chip_Clock_GetMainClockRate+0x4a>
+ afa:	e012      	b.n	b22 <Chip_Clock_GetMainClockRate+0x52>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:254
+	case SYSCTL_MAINCLKSRC_IRC:
+		clkRate = Chip_Clock_GetIntOscRate();
+ afc:	f7ff ff3e 	bl	97c <Chip_Clock_GetIntOscRate>
+ b00:	1c03      	adds	r3, r0, #0
+ b02:	607b      	str	r3, [r7, #4]
+ b04:	e00d      	b.n	b22 <Chip_Clock_GetMainClockRate+0x52>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:258
+		break;
+
+	case SYSCTL_MAINCLKSRC_PLLIN:
+		clkRate = Chip_Clock_GetSystemPLLInClockRate();
+ b06:	f7ff ffb1 	bl	a6c <Chip_Clock_GetSystemPLLInClockRate>
+ b0a:	1c03      	adds	r3, r0, #0
+ b0c:	607b      	str	r3, [r7, #4]
+ b0e:	e008      	b.n	b22 <Chip_Clock_GetMainClockRate+0x52>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:268
+		clkRate = Chip_Clock_GetLFOOSCRate();
+		break;
+
+#else
+	case SYSCTL_MAINCLKSRC_WDTOSC:
+		clkRate = Chip_Clock_GetWDTOSCRate();
+ b10:	f7ff ff9e 	bl	a50 <Chip_Clock_GetWDTOSCRate>
+ b14:	1c03      	adds	r3, r0, #0
+ b16:	607b      	str	r3, [r7, #4]
+ b18:	e003      	b.n	b22 <Chip_Clock_GetMainClockRate+0x52>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:273
+		break;
+#endif
+
+	case SYSCTL_MAINCLKSRC_PLLOUT:
+		clkRate = Chip_Clock_GetSystemPLLOutClockRate();
+ b1a:	f7ff ffc7 	bl	aac <Chip_Clock_GetSystemPLLOutClockRate>
+ b1e:	1c03      	adds	r3, r0, #0
+ b20:	607b      	str	r3, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:277
+		break;
+	}
+
+	return clkRate;
+ b22:	687b      	ldr	r3, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:278
+}
+ b24:	1c18      	adds	r0, r3, #0
+ b26:	46bd      	mov	sp, r7
+ b28:	b002      	add	sp, #8
+ b2a:	bd80      	pop	{r7, pc}
+ b2c:	40048000 	.word	0x40048000
+
+00000b30 <Chip_Clock_GetSystemClockRate>:
+Chip_Clock_GetSystemClockRate():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:282
+
+/* Return system clock rate */
+uint32_t Chip_Clock_GetSystemClockRate(void)
+{
+ b30:	b580      	push	{r7, lr}
+ b32:	af00      	add	r7, sp, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:284
+	/* No point in checking for divide by 0 */
+	return Chip_Clock_GetMainClockRate() / LPC_SYSCTL->SYSAHBCLKDIV;
+ b34:	f7ff ffcc 	bl	ad0 <Chip_Clock_GetMainClockRate>
+ b38:	1c02      	adds	r2, r0, #0
+ b3a:	4b05      	ldr	r3, [pc, #20]	; (b50 <Chip_Clock_GetSystemClockRate+0x20>)
+ b3c:	6f9b      	ldr	r3, [r3, #120]	; 0x78
+ b3e:	1c10      	adds	r0, r2, #0
+ b40:	1c19      	adds	r1, r3, #0
+ b42:	f000 f829 	bl	b98 <__aeabi_uidiv>
+ b46:	1c03      	adds	r3, r0, #0
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/clock_11xx.c:285
+}
+ b48:	1c18      	adds	r0, r3, #0
+ b4a:	46bd      	mov	sp, r7
+ b4c:	bd80      	pop	{r7, pc}
+ b4e:	46c0      	nop			; (mov r8, r8)
+ b50:	40048000 	.word	0x40048000
+
+00000b54 <Chip_Clock_EnablePeriphClock.lto_priv.49>:
+Chip_Clock_EnablePeriphClock():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:296
+ * @brief	Enable a system or peripheral clock
+ * @param	clk	: Clock to enable
+ * @return	Nothing
+ */
+STATIC INLINE void Chip_Clock_EnablePeriphClock(CHIP_SYSCTL_CLOCK_T clk)
+{
+ b54:	b580      	push	{r7, lr}
+ b56:	b082      	sub	sp, #8
+ b58:	af00      	add	r7, sp, #0
+ b5a:	1c02      	adds	r2, r0, #0
+ b5c:	1dfb      	adds	r3, r7, #7
+ b5e:	701a      	strb	r2, [r3, #0]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:297
+	LPC_SYSCTL->SYSAHBCLKCTRL |= (1 << clk);
+ b60:	4907      	ldr	r1, [pc, #28]	; (b80 <Chip_Clock_EnablePeriphClock.lto_priv.49+0x2c>)
+ b62:	4a07      	ldr	r2, [pc, #28]	; (b80 <Chip_Clock_EnablePeriphClock.lto_priv.49+0x2c>)
+ b64:	2380      	movs	r3, #128	; 0x80
+ b66:	58d3      	ldr	r3, [r2, r3]
+ b68:	1dfa      	adds	r2, r7, #7
+ b6a:	7812      	ldrb	r2, [r2, #0]
+ b6c:	2001      	movs	r0, #1
+ b6e:	4090      	lsls	r0, r2
+ b70:	1c02      	adds	r2, r0, #0
+ b72:	4313      	orrs	r3, r2
+ b74:	2280      	movs	r2, #128	; 0x80
+ b76:	508b      	str	r3, [r1, r2]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/inc/clock_11xx.h:298
+}
+ b78:	46bd      	mov	sp, r7
+ b7a:	b002      	add	sp, #8
+ b7c:	bd80      	pop	{r7, pc}
+ b7e:	46c0      	nop			; (mov r8, r8)
+ b80:	40048000 	.word	0x40048000
+
+00000b84 <Chip_GPIO_Init>:
+Chip_GPIO_Init():
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/gpio_11xx_2.c:55
+ * Public functions
+ ****************************************************************************/
+
+/* Initialize GPIO block */
+void Chip_GPIO_Init(LPC_GPIO_T *pGPIO)
+{
+ b84:	b580      	push	{r7, lr}
+ b86:	b082      	sub	sp, #8
+ b88:	af00      	add	r7, sp, #0
+ b8a:	6078      	str	r0, [r7, #4]
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/gpio_11xx_2.c:56
+	Chip_Clock_EnablePeriphClock(SYSCTL_CLOCK_GPIO);
+ b8c:	2006      	movs	r0, #6
+ b8e:	f7ff ffe1 	bl	b54 <Chip_Clock_EnablePeriphClock.lto_priv.49>
+C:\data\eclipse_git\git\bc_1114_repo\bc_1114\build/../src/lpc_chip_11cxx_library/src/gpio_11xx_2.c:57
+}
+ b92:	46bd      	mov	sp, r7
+ b94:	b002      	add	sp, #8
+ b96:	bd80      	pop	{r7, pc}
+
+00000b98 <__aeabi_uidiv>:
+__udivsi3():
+ b98:	2200      	movs	r2, #0
+ b9a:	0843      	lsrs	r3, r0, #1
+ b9c:	428b      	cmp	r3, r1
+ b9e:	d374      	bcc.n	c8a <__aeabi_uidiv+0xf2>
+ ba0:	0903      	lsrs	r3, r0, #4
+ ba2:	428b      	cmp	r3, r1
+ ba4:	d35f      	bcc.n	c66 <__aeabi_uidiv+0xce>
+ ba6:	0a03      	lsrs	r3, r0, #8
+ ba8:	428b      	cmp	r3, r1
+ baa:	d344      	bcc.n	c36 <__aeabi_uidiv+0x9e>
+ bac:	0b03      	lsrs	r3, r0, #12
+ bae:	428b      	cmp	r3, r1
+ bb0:	d328      	bcc.n	c04 <__aeabi_uidiv+0x6c>
+ bb2:	0c03      	lsrs	r3, r0, #16
+ bb4:	428b      	cmp	r3, r1
+ bb6:	d30d      	bcc.n	bd4 <__aeabi_uidiv+0x3c>
+ bb8:	22ff      	movs	r2, #255	; 0xff
+ bba:	0209      	lsls	r1, r1, #8
+ bbc:	ba12      	rev	r2, r2
+ bbe:	0c03      	lsrs	r3, r0, #16
+ bc0:	428b      	cmp	r3, r1
+ bc2:	d302      	bcc.n	bca <__aeabi_uidiv+0x32>
+ bc4:	1212      	asrs	r2, r2, #8
+ bc6:	0209      	lsls	r1, r1, #8
+ bc8:	d065      	beq.n	c96 <__aeabi_uidiv+0xfe>
+ bca:	0b03      	lsrs	r3, r0, #12
+ bcc:	428b      	cmp	r3, r1
+ bce:	d319      	bcc.n	c04 <__aeabi_uidiv+0x6c>
+ bd0:	e000      	b.n	bd4 <__aeabi_uidiv+0x3c>
+ bd2:	0a09      	lsrs	r1, r1, #8
+ bd4:	0bc3      	lsrs	r3, r0, #15
+ bd6:	428b      	cmp	r3, r1
+ bd8:	d301      	bcc.n	bde <__aeabi_uidiv+0x46>
+ bda:	03cb      	lsls	r3, r1, #15
+ bdc:	1ac0      	subs	r0, r0, r3
+ bde:	4152      	adcs	r2, r2
+ be0:	0b83      	lsrs	r3, r0, #14
+ be2:	428b      	cmp	r3, r1
+ be4:	d301      	bcc.n	bea <__aeabi_uidiv+0x52>
+ be6:	038b      	lsls	r3, r1, #14
+ be8:	1ac0      	subs	r0, r0, r3
+ bea:	4152      	adcs	r2, r2
+ bec:	0b43      	lsrs	r3, r0, #13
+ bee:	428b      	cmp	r3, r1
+ bf0:	d301      	bcc.n	bf6 <__aeabi_uidiv+0x5e>
+ bf2:	034b      	lsls	r3, r1, #13
+ bf4:	1ac0      	subs	r0, r0, r3
+ bf6:	4152      	adcs	r2, r2
+ bf8:	0b03      	lsrs	r3, r0, #12
+ bfa:	428b      	cmp	r3, r1
+ bfc:	d301      	bcc.n	c02 <__aeabi_uidiv+0x6a>
+ bfe:	030b      	lsls	r3, r1, #12
+ c00:	1ac0      	subs	r0, r0, r3
+ c02:	4152      	adcs	r2, r2
+ c04:	0ac3      	lsrs	r3, r0, #11
+ c06:	428b      	cmp	r3, r1
+ c08:	d301      	bcc.n	c0e <__aeabi_uidiv+0x76>
+ c0a:	02cb      	lsls	r3, r1, #11
+ c0c:	1ac0      	subs	r0, r0, r3
+ c0e:	4152      	adcs	r2, r2
+ c10:	0a83      	lsrs	r3, r0, #10
+ c12:	428b      	cmp	r3, r1
+ c14:	d301      	bcc.n	c1a <__aeabi_uidiv+0x82>
+ c16:	028b      	lsls	r3, r1, #10
+ c18:	1ac0      	subs	r0, r0, r3
+ c1a:	4152      	adcs	r2, r2
+ c1c:	0a43      	lsrs	r3, r0, #9
+ c1e:	428b      	cmp	r3, r1
+ c20:	d301      	bcc.n	c26 <__aeabi_uidiv+0x8e>
+ c22:	024b      	lsls	r3, r1, #9
+ c24:	1ac0      	subs	r0, r0, r3
+ c26:	4152      	adcs	r2, r2
+ c28:	0a03      	lsrs	r3, r0, #8
+ c2a:	428b      	cmp	r3, r1
+ c2c:	d301      	bcc.n	c32 <__aeabi_uidiv+0x9a>
+ c2e:	020b      	lsls	r3, r1, #8
+ c30:	1ac0      	subs	r0, r0, r3
+ c32:	4152      	adcs	r2, r2
+ c34:	d2cd      	bcs.n	bd2 <__aeabi_uidiv+0x3a>
+ c36:	09c3      	lsrs	r3, r0, #7
+ c38:	428b      	cmp	r3, r1
+ c3a:	d301      	bcc.n	c40 <__aeabi_uidiv+0xa8>
+ c3c:	01cb      	lsls	r3, r1, #7
+ c3e:	1ac0      	subs	r0, r0, r3
+ c40:	4152      	adcs	r2, r2
+ c42:	0983      	lsrs	r3, r0, #6
+ c44:	428b      	cmp	r3, r1
+ c46:	d301      	bcc.n	c4c <__aeabi_uidiv+0xb4>
+ c48:	018b      	lsls	r3, r1, #6
+ c4a:	1ac0      	subs	r0, r0, r3
+ c4c:	4152      	adcs	r2, r2
+ c4e:	0943      	lsrs	r3, r0, #5
+ c50:	428b      	cmp	r3, r1
+ c52:	d301      	bcc.n	c58 <__aeabi_uidiv+0xc0>
+ c54:	014b      	lsls	r3, r1, #5
+ c56:	1ac0      	subs	r0, r0, r3
+ c58:	4152      	adcs	r2, r2
+ c5a:	0903      	lsrs	r3, r0, #4
+ c5c:	428b      	cmp	r3, r1
+ c5e:	d301      	bcc.n	c64 <__aeabi_uidiv+0xcc>
+ c60:	010b      	lsls	r3, r1, #4
+ c62:	1ac0      	subs	r0, r0, r3
+ c64:	4152      	adcs	r2, r2
+ c66:	08c3      	lsrs	r3, r0, #3
+ c68:	428b      	cmp	r3, r1
+ c6a:	d301      	bcc.n	c70 <__aeabi_uidiv+0xd8>
+ c6c:	00cb      	lsls	r3, r1, #3
+ c6e:	1ac0      	subs	r0, r0, r3
+ c70:	4152      	adcs	r2, r2
+ c72:	0883      	lsrs	r3, r0, #2
+ c74:	428b      	cmp	r3, r1
+ c76:	d301      	bcc.n	c7c <__aeabi_uidiv+0xe4>
+ c78:	008b      	lsls	r3, r1, #2
+ c7a:	1ac0      	subs	r0, r0, r3
+ c7c:	4152      	adcs	r2, r2
+ c7e:	0843      	lsrs	r3, r0, #1
+ c80:	428b      	cmp	r3, r1
+ c82:	d301      	bcc.n	c88 <__aeabi_uidiv+0xf0>
+ c84:	004b      	lsls	r3, r1, #1
+ c86:	1ac0      	subs	r0, r0, r3
+ c88:	4152      	adcs	r2, r2
+ c8a:	1a41      	subs	r1, r0, r1
+ c8c:	d200      	bcs.n	c90 <__aeabi_uidiv+0xf8>
+ c8e:	4601      	mov	r1, r0
+ c90:	4152      	adcs	r2, r2
+ c92:	4610      	mov	r0, r2
+ c94:	4770      	bx	lr
+ c96:	e7ff      	b.n	c98 <__aeabi_uidiv+0x100>
+ c98:	b501      	push	{r0, lr}
+ c9a:	2000      	movs	r0, #0
+ c9c:	f000 f80c 	bl	cb8 <__aeabi_idiv0>
+ ca0:	bd02      	pop	{r1, pc}
+ ca2:	46c0      	nop			; (mov r8, r8)
+
+00000ca4 <__aeabi_uidivmod>:
+__aeabi_uidivmod():
+ ca4:	2900      	cmp	r1, #0
+ ca6:	d0f7      	beq.n	c98 <__aeabi_uidiv+0x100>
+ ca8:	b503      	push	{r0, r1, lr}
+ caa:	f7ff ff75 	bl	b98 <__aeabi_uidiv>
+ cae:	bc0e      	pop	{r1, r2, r3}
+ cb0:	4342      	muls	r2, r0
+ cb2:	1a89      	subs	r1, r1, r2
+ cb4:	4718      	bx	r3
+ cb6:	46c0      	nop			; (mov r8, r8)
+
+00000cb8 <__aeabi_idiv0>:
+__aeabi_ldiv0():
+ cb8:	4770      	bx	lr
+ cba:	46c0      	nop			; (mov r8, r8)
+
+00000cbc <wdtOSCRate.lto_priv.51>:
+$d():
+ cbc:	0000 0000 27c0 0009 0590 0010 5cc0 0015     .....'.......\..
+ ccc:	b3f0 001a 0b20 0020 9f00 0024 32e0 0029     .... . ...$..2).
+ cdc:	c6c0 002d 9750 0031 67e0 0035 3870 0039     ..-.P.1..g5.p89.
+ cec:	0900 003d 1640 0040 2380 0043 30c0 0046     ..=.@.@..#C..0F.
+
+00000cfc <pinmuxing>:
+ cfc:	0104 0000 0107 0000 010c 0000 010d 0000     ................
+ d0c:	0118 0000 0119 0000 011d 0000 0129 0000     ............)...
+ d1c:	012a 0000 011c 0000                         *.......
+
+00000d24 <OscRateIn>:
+ d24:	1b00 00b7                                   ....

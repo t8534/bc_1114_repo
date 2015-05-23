@@ -365,6 +365,33 @@ Or should be compiled to for non-debug and upload in any non-debug flash way.
 Also maybe should be compiled in no nano options ?
 Also check rom and ram size at bc_1114_Debug_mem.ld
 
+----------------------------------------------------------------------------
+
+[150523]
+
+Working on HW. This is git rev. 3b90a4c.
+
+To analyze is something interesting in the listing files.
+
+Compare 
+
+./doc/src_list_make_150523.lst  
+./doc/src_list_xpresso_150523.lst
+
+In the make one, at data_init() there is strange code from RingBuffer ???
+But this is working.
+And optimisation is disabled in both cases.
+
+TODO:
+Compare and analyse source files.
+
+Make buiding .o inside of ./build, in place of temporary outside of the project.
+
+ 
+
+
+
+
 
 
 
