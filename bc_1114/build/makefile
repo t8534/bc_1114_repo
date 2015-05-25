@@ -2,28 +2,23 @@
 # Notes:
 #
 # 1.
-# Example is from launchpad.net gcc ARM compiler examples.
+# This is finally working and updated makefile. Also HW is working correctly.
+# There are two option to choose below:
+#
+# Object files are generated in the ./build subdir.
+# 
+# or
+#
+# Object files are generated in the system temporary subdir.
+#
+# Both are working correctly.
+#
+#
 #
 # 2.
-# Instead of building objects in another directory, you could try building
-# objects from sources in another directory: put your makefile in the directory
-# where the objects are going to be and tell make to look for sources elsewhere
-# using VPATH. This works best if all object files are supposed to end up in
-# the same directory.
+# Source listing.
 #
-# 3.
-# Options:
-#
-# -nostartfiles
-# -nodefaultlibs
-# -nostdlib
-# -pie
-# -Wl option
-# -Xlinker option
-#
-#
-# 4.
-# Generate source listing, c and asm
+# Asm:
 #
 # -Wa,-adhln -g
 #
@@ -37,30 +32,107 @@
 #  h: include high-level source
 #  l: include assembly
 #
+# C mixed with asm:
 #
-# Or another approach:
-# We know that -S option makes gcc output assembly code in a .s file so we
-# can examine. I'd like to know can I have gcc generate .s file with
-# original C/C++ source code listed side by side(but in comment blocks)
-# with assembly code. The benefit for this is the reader can easily know
-# which  C/C++ statement corresponds to which assembly(assembler) code.
-# 
-# Is there any options to enable this? If yes, since what version of gcc
-# is it supported?
+# -g during compile time is enough to get C source listing by objdump.
 #
-#All of them.
+# SRC_LIST = -g
+# and than call objdump:
+# C:\arm\launchpad\bin\arm-none-eabi-objdump.exe -Srl bc_1114.axf > src_list.lst
 #
-#-g -Wa,-adhls
+#
+#
+# 3.
+# Options:
+#
+# For launchpad.net compiler:
+#
+# -nostartfiles
+# -nodefaultlibs
+# -nostdlib
+# -pie
+# -Wl option
+# -Xlinker option
+#
+#
+#
+# For references, from LPCXpresso blinky project:
+#
+# Summary MCU C compiler:
+#
+# -D__REDLIB__
+# -DDEBUG
+# -D__CODE_RED
+# -D__USE_LPCOPEN
+# -DCORE_M0
+#
+# -O0
+# -g3
+# -Wall
+# -c
+# -fmessage-length=0
+#
+# -fno-builtin
+# -ffunction-sections
+# -fdata-sections
+# -mcpu=cortex-m0
+# -mthumb
+# -D__REDLIB__
+# -specs=redlib.specs
+#
+#
+# Summary MCU Assembler:
+#
+# -c
+# -x assembler-with-cpp
+# -D__REDLIB__
+# -DDEBUG
+# -D__CODE_RED
+# -g3
+# -mcpu=cortex-m0
+# -mthumb
+# -D__REDLIB__
+# -specs=redlib.specs
+#
+#
+# Summary MCU Linker:
+#
+# -nostdlib
+# -Xlinker
+# -Map="nxp_lpcxpresso_11c24_periph_blinky.map"
+# -Xlinker --gc-sections
+# -mcpu=cortex-m0
+# -mthumb
+# -T"nxp_lpcxpresso_11c24_periph_blinky_Debug.ld"
 #
 
 
 # TODO
 #
 # 1.
+# [150525]
+# The whole is working on HW, but please check for future:
+#
 # Maybe you have to add 
 # STARTUP_DEFS=-D__STARTUP_CLEAR_BSS -D__START=main
 # if use standard lib or init srcipts ?
-
+#
+#
+# 2.
+# [150525]
+# The whole is working on HW, but please check for future:
+# 
+# The options from launchpad.net compiler, and check options from
+# LPCXpresso blinky led above:
+#
+# -nostartfiles
+# -nodefaultlibs
+# -nostdlib
+# -pie
+# -Wl option
+# -Xlinker option
+#
+#
 
 IDIRS = -I. -I../src -I../src/sys -I../src/lpc_chip_11cxx_library/inc -I../src/lpcexpresso_11c24_board_library/inc
 
@@ -83,7 +155,6 @@ SRCS_CHIP =    adc_11xx.c            \
                uart_11xx.c           \
                wwdt_11xx.c           
                
-
 SRCS_BOARD =   board_sysinit.c       \
                board.c               
 
@@ -92,10 +163,9 @@ SRCS_SYS =     cr_startup_lpc11xx.c  \
                sysinit.c               
 
 
-# maybe not needed, because .o are build in ./build
-#OBJ_DIR = . 
-#
-#OBJ_CHIP =     adc_11xx.o            \
+
+
+OBJ_CHIP =     adc_11xx.o            \
                chip_11xx.o           \
                clock_11xx.o          \
                gpio_11xx_1.o         \
@@ -112,73 +182,22 @@ SRCS_SYS =     cr_startup_lpc11xx.c  \
                timer_11xx.o          \
                uart_11xx.o           \
                wwdt_11xx.o           
-               
 
-#OBJ_BOARD =    board_sysinit.o       \
+OBJ_BOARD =    board_sysinit.o       \
                board.o               
 
-#OBJ_SYS =      cr_startup_lpc11xx.o  \
+OBJ_SYS =      cr_startup_lpc11xx.o  \
                crp.o                 \
                sysinit.o                
 
 
 VPATH = ../src ../src/sys ../src/lpc_chip_11cxx_library/src ../src/lpcexpresso_11c24_board_library/src  
 
-
 # Flags specified for LPCXpresso code.
 #
-
-# For references, from orig blinky project
 #
-#Summary MCU C compiler:
-#
-#-D__REDLIB__
-#-DDEBUG
-#-D__CODE_RED
-#-D__USE_LPCOPEN
-#-DCORE_M0
-#
-#-O0
-#-g3
-#-Wall
-#-c
-#-fmessage-length=0
-#
-#-fno-builtin
-#-ffunction-sections
-#-fdata-sections
-#-mcpu=cortex-m0
-#-mthumb
-#-D__REDLIB__
-#-specs=redlib.specs
-
-#Summary MCU Assembler:
-#
-#-c
-#-x assembler-with-cpp
-#-D__REDLIB__
-#-DDEBUG
-#-D__CODE_RED
-#-g3
-#-mcpu=cortex-m0
-#-mthumb
-#-D__REDLIB__
-#-specs=redlib.specs
-
-#Summary MCU Linker:
-#
-#-nostdlib
-#-Xlinker
-#-Map="nxp_lpcxpresso_11c24_periph_blinky.map"
-#-Xlinker --gc-sections
-#-mcpu=cortex-m0
-#-mthumb
-#-T"nxp_lpcxpresso_11c24_periph_blinky_Debug.ld"
-
-
-
 # -D__CODE_RED - Use bool redefinition and open to use "Enable Code Read Protect"
-
+#
 # -DCORE_M0 - only warns in LPC code that M0 is not set for compiler.
 #             Set here for keep compatibility.
 #
@@ -194,12 +213,11 @@ LPC_FLAGS = -DCORE_M0 -D__USE_LPCOPEN
 
 
 # Soruce listing
-#SRC_LIST = -Wa,-adhln -g
-#SRC_LIST = -Wa,-adhln -g
-# -g to get C source listing by objdump.
+# -g is enough to get C source listing by objdump.
+# C:\arm\launchpad\bin\arm-none-eabi-objdump.exe -Srl bc_1114.axf > src_list.lst
+#
 #SRC_LIST = -g
 SRC_LIST = -g3
-
 
 # Selecting Core
 CORTEX_M=0
@@ -224,8 +242,6 @@ USE_NANO=
 USE_SEMIHOST=
 USE_NOHOST=
 
-
-
 # -nostartfiles
 # -nodefaultlibs
 # -nostdlib
@@ -234,7 +250,6 @@ USE_NOHOST=
 # USE_NO = -nostdlib # undefined reference to `__aeabi_uidiv'
 # USE_NO = -nodefaultlibs # undefined reference to `__aeabi_uidiv'
 USE_NO =
-
 
 CORE=CM$(CORTEX_M)
 BASE=.
@@ -246,13 +261,6 @@ CXX=C:\arm\launchpad\bin\arm-none-eabi-g++
 # Options for specific architecture
 ARCH_FLAGS=-mthumb -mcpu=cortex-m$(CORTEX_M)
 
-#todo arek probably to remove
-# Startup code
-# STARTUP=$(BASE)/startup/startup_ARM$(CORE).S
-
-# -Os -flto -ffunction-sections -fdata-sections to compile for code size
-#CFLAGS=$(ARCH_FLAGS) $(STARTUP_DEFS) $(IDIRS) $(LPC_FLAGS) -Os -flto -ffunction-sections -fdata-sections
-# No $(STARTUP_DEFS)
 CFLAGS=$(ARCH_FLAGS) $(IDIRS) $(LPC_FLAGS) $(SRC_LIST) -flto -ffunction-sections -fdata-sections
 CXXFLAGS=$(CFLAGS)
 
@@ -262,67 +270,43 @@ GC=-Wl,--gc-sections
 # Create map file
 MAP=-Wl,-Map=$(NAME).map
 
-
-
 NAME=bc_1114
 
 # After analize seems to be not necessary. This is specific for launchpad
 # examples initialization.
 #STARTUP_DEFS=-D__STARTUP_CLEAR_BSS -D__START=main
-
-#LDSCRIPTS=-L. -L$(BASE)/ldscripts -T nokeep.ld
 LDSCRIPTS=-L. -L$(BASE)/ldscripts -T bc_1114_Debug.ld
-# works: LFLAGS=$(USE_NANO) $(USE_NOHOST) $(LDSCRIPTS) $(GC) $(MAP) 
 LFLAGS=$(USE_NANO) $(USE_NOHOST) $(USE_NO) $(LDSCRIPTS) $(GC) $(MAP)
 
 
+
+# Working
+#
+# Object files are generated in the ./build subdir.
+#
 # This is original launchpad approach. from .c to .axf without
-# specify .o files.
+# specify .o files. And .o files are located in temporary subdir.
 #
-#$(NAME)-$(CORE).axf: $(NAME).c $(STARTUP)
+# There is no separate .o visible.
+#all : $(NAME).axf
+
+#$(NAME).axf: $(NAME).c $(SRCS_SYS) $(SRCS_CHIP) $(SRCS_BOARD)
 #	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
+
+
+
+# Working
 #
-# Working. There is no separate .o visible.
+# Object files are generated in the system temporary subdir.
+#
+# With separate line for .o .The .o files are located at ./build
 all : $(NAME).axf
-#
-$(NAME).axf: $(NAME).c $(SRCS_SYS) $(SRCS_CHIP) $(SRCS_BOARD)
+
+%.o: %.c 
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+$(NAME).axf: $(NAME).o $(OBJ_SYS) $(OBJ_CHIP) $(OBJ_BOARD) 
 	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
-
-
-
-
-
-
-
-
-# Try separate line for .o
-#all : $(NAME).axf
-#
-#%.o: %.c 
-#	$(CC) $(CFLAGS) -o $@ -c $<
-#
-#%.o: $(SRCS_SYS) $(SRCS_BOARD) $(SRCS_CHIP) $(NAME).c 
-#	$(CC) $(CFLAGS) -c $<
-#
-#$(NAME).axf: $(NAME).o $(OBJ_CHIP) $(OBJ_BOARD) $(OBJ_SYS) 
-#	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
-
-
-
-
-# bc_pc_emu_c make based approach
-#all : $(NAME).axf
-
-#%.o: %.c 
-#	$(CC) $(CFLAGS) -o $@ -c $<
-
-#%.o: $(NAME).c $(SRCS_CHIP) $(SRCS_BOARD) $(SRCS_SYS)
-#	$(CC) $(CFLAGS) -c $<
-
-#$(NAME).axf: $(NAME).o $(OBJ_CHIP) $(OBJ_BOARD) $(OBJ_SYS) 
-#	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
-
-
 
 
 
