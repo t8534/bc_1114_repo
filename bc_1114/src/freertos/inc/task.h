@@ -1279,6 +1279,7 @@ signed portBASE_TYPE xTaskRemoveFromEventList( const xList * const pxEventList )
  */
 void vTaskSwitchContext( void ) PRIVILEGED_FUNCTION;
 
+
 /*
  * Return the handle of the calling task.
  */

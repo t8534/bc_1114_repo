@@ -134,7 +134,7 @@
 #
 #
 
-IDIRS = -I. -I../src -I../src/sys -I../src/lpc_chip_11cxx_library/inc -I../src/lpcexpresso_11c24_board_library/inc  -I../src/freertos/inc 
+IDIRS = -I. -I../src/freertos/inc -I../src -I../src/sys -I../src/lpc_chip_11cxx_library/inc -I../src/lpcexpresso_11c24_board_library/inc  
 
 
 SRCS_CHIP =    adc_11xx.c            \
@@ -162,13 +162,13 @@ SRCS_SYS =     cr_startup_lpc11xx.c  \
                crp.c                 \
                sysinit.c               
 
-SRCS_FREERTOS = croutine.c            \
+SRCS_FREERTOS = tasks.c               \
+                port.c                \
                 FreeRTOSCommonHooks.c \
                 heap_1.c              \
                 list.c                \
-                port.c                \
                 queue.c               \
-                tasks.c               \
+                croutine.c            \
                 timers.c
 
 
@@ -198,18 +198,18 @@ OBJ_SYS =      cr_startup_lpc11xx.o  \
                sysinit.o                
 
 
-OBJ_FREERTOS = croutine.o            \
+OBJ_FREERTOS = tasks.o               \
+               port.o                \
                FreeRTOSCommonHooks.o \
                heap_1.o              \
                list.o                \
-               port.o                \
                queue.o               \
-               tasks.o               \
+               croutine.o            \
                timers.o
 
 
 
-VPATH = ../src ../src/sys ../src/lpc_chip_11cxx_library/src ../src/lpcexpresso_11c24_board_library/src ../src/freertos/src   
+VPATH = ../src/freertos/src ../src ../src/sys ../src/lpc_chip_11cxx_library/src ../src/lpcexpresso_11c24_board_library/src    
 
 # Flags specified for LPCXpresso code.
 #
@@ -242,8 +242,8 @@ CORTEX_M=0
 
 # Use newlib-nano. To disable it, specify USE_NANO=
 # arek: seems to be use or not nano change nothing if you not use call to nano.
-#USE_NANO=--specs=nano.specs
-USE_NANO=
+USE_NANO=--specs=nano.specs
+#USE_NANO=
 
 # Use seimhosting or not
 # Users can choose to use or not use semihosting by following instructions.
@@ -324,7 +324,7 @@ all : $(NAME).axf
 %.o: %.c 
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(NAME).axf: $(NAME).o $(OBJ_SYS) $(OBJ_CHIP) $(OBJ_BOARD) 
+$(NAME).axf: $(NAME).o $(OBJ_SYS) $(OBJ_CHIP) $(OBJ_BOARD) $(OBJ_FREERTOS) 
 	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
 
 

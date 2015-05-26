@@ -1,0 +1,30 @@
+Build FreeRTOS.
+===============
+
+Description for FreeRTOS V8.2.1:
+http://www.freertos.org/FreeRTOS-for-Cortex-M0-LPC1114-LPCXpresso.html
+
+NOTES:
+
+1#
+
+The file:
+
+lpcopen_v2_00a_lpcxpresso_nxp_lpcxpresso_11c24.zip
+
+contains example from LPCXpresso board.
+This is FreeRTOS V7.4.2
+
+
+2#
+There is last version FreeRTOS V8.2.1 from on FreeRTOS website,
+at the file:
+
+CORTEX_M0_LPC1114_LPCXpresso.zip
+
+
+
+
+
+
+TODO:
