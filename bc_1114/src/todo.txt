@@ -37,4 +37,7 @@ This is at cr_startup_lp11xx.c
 Probably names are different in linker scripts.
 Compare linker scripts.
 
+5.
+Add the size tool to calculate size after make.
+
 
