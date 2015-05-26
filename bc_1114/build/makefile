@@ -134,7 +134,7 @@
 #
 #
 
-IDIRS = -I. -I../src -I../src/sys -I../src/lpc_chip_11cxx_library/inc -I../src/lpcexpresso_11c24_board_library/inc
+IDIRS = -I. -I../src -I../src/sys -I../src/lpc_chip_11cxx_library/inc -I../src/lpcexpresso_11c24_board_library/inc  -I../src/freertos/inc 
 
 
 SRCS_CHIP =    adc_11xx.c            \
@@ -162,7 +162,14 @@ SRCS_SYS =     cr_startup_lpc11xx.c  \
                crp.c                 \
                sysinit.c               
 
-
+SRCS_FREERTOS = croutine.c            \
+                FreeRTOSCommonHooks.c \
+                heap_1.c              \
+                list.c                \
+                port.c                \
+                queue.c               \
+                tasks.c               \
+                timers.c
 
 
 OBJ_CHIP =     adc_11xx.o            \
@@ -191,7 +198,18 @@ OBJ_SYS =      cr_startup_lpc11xx.o  \
                sysinit.o                
 
 
-VPATH = ../src ../src/sys ../src/lpc_chip_11cxx_library/src ../src/lpcexpresso_11c24_board_library/src  
+OBJ_FREERTOS = croutine.o            \
+               FreeRTOSCommonHooks.o \
+               heap_1.o              \
+               list.o                \
+               port.o                \
+               queue.o               \
+               tasks.o               \
+               timers.o
+
+
+
+VPATH = ../src ../src/sys ../src/lpc_chip_11cxx_library/src ../src/lpcexpresso_11c24_board_library/src ../src/freertos/src   
 
 # Flags specified for LPCXpresso code.
 #
@@ -270,7 +288,8 @@ GC=-Wl,--gc-sections
 # Create map file
 MAP=-Wl,-Map=$(NAME).map
 
-NAME=bc_1114
+#NAME=bc_1114
+NAME=freertos_blinky
 
 # After analize seems to be not necessary. This is specific for launchpad
 # examples initialization.
