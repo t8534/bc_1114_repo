@@ -24,8 +24,16 @@ CORTEX_M0_LPC1114_LPCXpresso.zip
 
 
 
-
-
-
-
 TODO:
+
+
+
+CHANGELOG:
+
+[150527]
+FreeRTOS V7.4.2 and push as a tag.
+
+Start to build FreeRTOS V8.2.1.
+The base is example ported to LPC1114 LPCXpresso
+
+

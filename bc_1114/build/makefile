@@ -134,7 +134,22 @@
 #
 #
 
-IDIRS = -I. -I../src/freertos/inc -I../src -I../src/sys -I../src/lpc_chip_11cxx_library/inc -I../src/lpcexpresso_11c24_board_library/inc  
+# FreeRTOS V7.4.2
+#
+#IDIRS = -I. -I../src/freertos/inc -I../src -I../src/sys -I../src/lpc_chip_11cxx_library/inc -I../src/lpcexpresso_11c24_board_library/inc  
+
+# FreeRTOS V8.2.1.
+#
+IDIRS = -I. -I../src/FreeRTOS_Common_Demo_Tasks/             \
+            -I../src/FreeRTOS_Common_Demo_Tasks/include/     \
+            -I../src/FreeRTOS_Source/                        \
+            -I../src/FreeRTOS_Source/include/                \
+            -I../src/FreeRTOS_Source/portable/GCC/ARM_CM0/   \
+            -I../src/FreeRTOS_Source/portable/MemMang/       \
+            -I../src                                         \ 
+            -I../src/sys                                     \
+            -I../src/lpc_chip_11cxx_library/inc              \
+            -I../src/lpcexpresso_11c24_board_library/inc  
 
 
 SRCS_CHIP =    adc_11xx.c            \
@@ -162,7 +177,9 @@ SRCS_SYS =     cr_startup_lpc11xx.c  \
                crp.c                 \
                sysinit.c               
 
-SRCS_FREERTOS = tasks.c               \
+# FreeRTOS V7.4.2
+#
+#SRCS_FREERTOS = tasks.c               \
                 port.c                \
                 FreeRTOSCommonHooks.c \
                 heap_1.c              \
@@ -171,6 +188,24 @@ SRCS_FREERTOS = tasks.c               \
                 croutine.c            \
                 timers.c
 
+# FreeRTOS V8.2.1.
+#
+SRCS_FREERTOS = tasks.c               \
+                port.c                \
+                heap_1.c              \
+                list.c                \
+                queue.c               \
+                timers.c
+
+SRCS_DEMO = blocktim.c                \
+            countsem.c                \
+            IntQueue.c                \
+            recmutex.c                \
+            IntQueueTimer.c           \
+            RegTest.c                 \
+            main-blinky.c             \            
+            main-full.c               \
+            
 
 OBJ_CHIP =     adc_11xx.o            \
                chip_11xx.o           \
@@ -198,7 +233,9 @@ OBJ_SYS =      cr_startup_lpc11xx.o  \
                sysinit.o                
 
 
-OBJ_FREERTOS = tasks.o               \
+# FreeRTOS V7.4.2
+#
+#OBJ_FREERTOS = tasks.o               \
                port.o                \
                FreeRTOSCommonHooks.o \
                heap_1.o              \
@@ -207,9 +244,22 @@ OBJ_FREERTOS = tasks.o               \
                croutine.o            \
                timers.o
 
+# FreeRTOS V8.2.1.
+#
+OBJ_FREERTOS = tasks.o               \
 
 
-VPATH = ../src/freertos/src ../src ../src/sys ../src/lpc_chip_11cxx_library/src ../src/lpcexpresso_11c24_board_library/src    
+
+
+VPATH = ../src/FreeRTOS_Common_Demo_Tasks               \
+        ../src/FreeRTOS_Source                          \
+        ../src/FreeRTOS_Source/portable/GCC/ARM_CM0/    \
+        ../src/FreeRTOS_Source/portable/MemMang/        \
+        ../src                                          \ 
+        ../src/sys                                      \
+        ../src/lpc_chip_11cxx_library/src               \ 
+        ../src/lpcexpresso_11c24_board_library/src      \    
+
 
 # Flags specified for LPCXpresso code.
 #
@@ -324,7 +374,7 @@ all : $(NAME).axf
 %.o: %.c 
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(NAME).axf: $(NAME).o $(OBJ_SYS) $(OBJ_CHIP) $(OBJ_BOARD) $(OBJ_FREERTOS) 
+$(NAME).axf: $(NAME).o $(OBJ_SYS) $(OBJ_CHIP) $(OBJ_BOARD) $(OBJ_FREERTOS) $(SRCS_DEMO)
 	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
 
 
