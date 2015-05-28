@@ -191,7 +191,13 @@ void vMainToggleLED( void )
 
 static void prvSetupHardware( void )
 {
-extern unsigned long _vStackTop[], _pvHeapStart[];
+//extern unsigned long _vStackTop[], _pvHeapStart[];  //arek - orig, error
+    extern void _vStackTop(void);
+    //extern unsigned long _pvHeapStart[];   //arek todo, check why [], and what happens if a standard variable
+                                           // this is from linker script PROVIDE
+    extern unsigned long _pvHeapStart;
+
+
 unsigned long ulInterruptStackSize;
 
     // arek: old
@@ -215,8 +221,9 @@ unsigned long ulInterruptStackSize;
 	configCHECK_FOR_STACK_OVERFLOW is not 0 in FreeRTOSConfig.h - but the stack
 	used by interrupts is not.  Reducing the conifgTOTAL_HEAP_SIZE setting will
 	increase the stack available to main() and interrupts. */
-	ulInterruptStackSize = ( ( unsigned long ) _vStackTop ) - ( ( unsigned long ) _pvHeapStart );
-	configASSERT( ulInterruptStackSize > 350UL );
+//	ulInterruptStackSize = ( ( unsigned long ) _vStackTop ) - ( ( unsigned long ) _pvHeapStart );  //arek orig, erro
+    ulInterruptStackSize = ( ( unsigned long ) &_vStackTop ) - ( ( unsigned long ) _pvHeapStart ); //arek new
+    configASSERT( ulInterruptStackSize > 350UL );
 
 	/* Fill the stack used by main() and interrupts to a known value, so its
 	use can be manually checked. */
@@ -271,7 +278,8 @@ void vApplicationStackOverflowHook( TaskHandle_t pxTask, char *pcTaskName )
 void vApplicationTickHook( void )
 {
 #if mainCHECK_INTERRUPT_STACK == 1
-extern unsigned long _pvHeapStart[];
+//extern unsigned long _pvHeapStart[];  //arek orig, but why []
+extern unsigned long _pvHeapStart;
 
 	/* This function will be called by each tick interrupt if
 	configUSE_TICK_HOOK is set to 1 in FreeRTOSConfig.h.  User code can be
@@ -283,7 +291,7 @@ extern unsigned long _pvHeapStart[];
 	have not been overwritten.  Note - the task stacks are automatically
 	checked for overflow if configCHECK_FOR_STACK_OVERFLOW is set to 1 or 2
 	in FreeRTOSConifg.h, but the interrupt stack is not. */
-	configASSERT( memcmp( ( void * ) _pvHeapStart, ucExpectedInterruptStackValues, sizeof( ucExpectedInterruptStackValues ) ) == 0U );
+	configASSERT( memcmp( ( void * ) _pvHeapStart, ucExpectedInterruptStackValues, sizeof( ucExpectedInterruptStackValues ) ) == 0U );  //arek orig, error
 #endif /* mainCHECK_INTERRUPT_STACK */
 }
 /*-----------------------------------------------------------*/

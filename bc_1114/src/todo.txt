@@ -41,3 +41,38 @@ Compare linker scripts.
 Add the size tool to calculate size after make.
 
 
+6.
+At FreeRTOS 8.2.1 at main.c check with debugger why if we have label
+defined at the linker script as:
+
+    PROVIDE(_pvHeapStart = DEFINED(__user_heap_base) ? __user_heap_base : .);
+    
+And default this is used as:
+
+extern unsigned long _pvHeapStart[];
+    
+but also is compilable as:
+
+extern unsigned long _pvHeapStart;
+
+This is used for get value of address where Heap start.
+
+Similary to get address of memory where Stack start, we use
+
+extern void _vStackTop(void);
+ulInterruptStackSize = ( ( unsigned long ) &_vStackTop ) - ( ( unsigned long ) _pvHeapStart );
+
+And this is my hack, before originally it was:
+
+extern unsigned long _vStackTop[], _pvHeapStart[];
+ulInterruptStackSize = ( ( unsigned long ) _vStackTop ) - ( ( unsigned long ) _pvHeapStart );
+
+But it was not compilable.
+I use pointer to function, because this is previously used at cr_startup_lpc11xx.c.
+
+
+
+
+
+    
+
