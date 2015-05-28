@@ -91,7 +91,9 @@
 #include "task.h"
 
 /* Hardware specific includes. */
-#include "lpc11xx.h"
+//#include "lpc11xx.h"
+#include "board.h"
+
 
 /* Set mainCREATE_SIMPLE_BLINKY_DEMO_ONLY to one to run the simple blinky demo,
 or 0 to run the more comprehensive test and demo application. */
@@ -132,8 +134,9 @@ void main_full( void );
 
 /*-----------------------------------------------------------*/
 
+//arek: old
 /* The GPIO port to which the LED is attached. */
-static LPC_GPIO_TypeDef * const xGPIO0 = LPC_GPIO0;
+//static LPC_GPIO_TypeDef * const xGPIO0 = LPC_GPIO0;
 
 /*-----------------------------------------------------------*/
 int main( void )
@@ -159,7 +162,15 @@ int main( void )
 
 void vMainToggleLED( void )
 {
-static unsigned long ulLEDState = 0UL;
+    //arek: new
+	bool LedState = false;
+
+	Board_LED_Set(0, LedState);
+	LedState = (bool) !LedState;
+
+	/*
+	// arek old
+    static unsigned long ulLEDState = 0UL;
 
 	if( ulLEDState == 0UL )
 	{
@@ -169,8 +180,9 @@ static unsigned long ulLEDState = 0UL;
 	{
 		xGPIO0->MASKED_ACCESS[ mainLED_BIT ] = mainLED_BIT;
 	}
-
 	ulLEDState = !ulLEDState;
+    */
+
 }
 /*-----------------------------------------------------------*/
 
@@ -179,11 +191,16 @@ static void prvSetupHardware( void )
 extern unsigned long _vStackTop[], _pvHeapStart[];
 unsigned long ulInterruptStackSize;
 
+    // arek: old
 	/* Enable AHB clock for GPIO. */
-	LPC_SYSCON->SYSAHBCLKCTRL |= ( 1 << 6 );
-
+	//LPC_SYSCON->SYSAHBCLKCTRL |= ( 1 << 6 );
 	/* Configure GPIO for LED output. */
-	xGPIO0->DIR |= mainLED_BIT;
+	//xGPIO0->DIR |= mainLED_BIT;
+
+    //arek: new
+    SystemCoreClockUpdate();
+    Board_Init();
+
 
 	/* The size of the stack used by main and interrupts is not defined in
 	the linker, but just uses whatever RAM is left.  Calculate the amount of

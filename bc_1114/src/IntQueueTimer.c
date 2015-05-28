@@ -76,7 +76,8 @@
 #include "IntQueue.h"
 
 /* Hardware includes. */
-#include "lpc11xx.h"
+//#include "lpc11xx.h"  //arek: old
+// TODO replace this file contents with using drivers.
 
 /* The two timer frequencies. */
 #define tmrTIMER_2_FREQUENCY	( 2000UL )

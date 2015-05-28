@@ -140,14 +140,14 @@
 
 # FreeRTOS V8.2.1.
 #
-IDIRS = -I. -I../src/FreeRTOS_Common_Demo_Tasks/             \
-            -I../src/FreeRTOS_Common_Demo_Tasks/include/     \
-            -I../src/FreeRTOS_Source/                        \
-            -I../src/FreeRTOS_Source/include/                \
-            -I../src/FreeRTOS_Source/portable/GCC/ARM_CM0/   \
-            -I../src/FreeRTOS_Source/portable/MemMang/       \
-            -I../src                                         \ 
-            -I../src/sys                                     \
+IDIRS = -I. -I../src/FreeRTOS_Common_Demo_Tasks              \
+            -I../src/FreeRTOS_Common_Demo_Tasks/include      \
+            -I../src/FreeRTOS_Source                         \
+            -I../src/FreeRTOS_Source/include                 \
+            -I../src/FreeRTOS_Source/portable/GCC/ARM_CM0    \
+            -I../src/FreeRTOS_Source/portable/MemMang        \
+            -I../src                                         \
+            -I../src/sys -I../src/lpc_chip_11cxx_library/inc \
             -I../src/lpc_chip_11cxx_library/inc              \
             -I../src/lpcexpresso_11c24_board_library/inc  
 
@@ -203,8 +203,8 @@ SRCS_DEMO = blocktim.c                \
             recmutex.c                \
             IntQueueTimer.c           \
             RegTest.c                 \
-            main-blinky.c             \            
-            main-full.c               \
+            main-blinky.c             \
+            main-full.c               
             
 
 OBJ_CHIP =     adc_11xx.o            \
@@ -247,6 +247,22 @@ OBJ_SYS =      cr_startup_lpc11xx.o  \
 # FreeRTOS V8.2.1.
 #
 OBJ_FREERTOS = tasks.o               \
+               port.o                \
+               heap_1.o              \
+               list.o                \
+               queue.o               \
+               timers.o
+
+OBJ_DEMO = blocktim.o                \
+           countsem.o                \
+           IntQueue.o                \
+           recmutex.o                \
+           IntQueueTimer.o           \
+           RegTest.o                 \
+           main-blinky.o             \
+           main-full.o               
+            
+
 
 
 
@@ -255,10 +271,9 @@ VPATH = ../src/FreeRTOS_Common_Demo_Tasks               \
         ../src/FreeRTOS_Source                          \
         ../src/FreeRTOS_Source/portable/GCC/ARM_CM0/    \
         ../src/FreeRTOS_Source/portable/MemMang/        \
-        ../src                                          \ 
-        ../src/sys                                      \
-        ../src/lpc_chip_11cxx_library/src               \ 
-        ../src/lpcexpresso_11c24_board_library/src      \    
+        ../src ../src/sys                               \
+        ../src/lpc_chip_11cxx_library/src               \
+        ../src/lpcexpresso_11c24_board_library/src    
 
 
 # Flags specified for LPCXpresso code.
@@ -339,7 +354,8 @@ GC=-Wl,--gc-sections
 MAP=-Wl,-Map=$(NAME).map
 
 #NAME=bc_1114
-NAME=freertos_blinky
+#NAME=freertos_blinky
+NAME=main
 
 # After analize seems to be not necessary. This is specific for launchpad
 # examples initialization.
@@ -359,7 +375,7 @@ LFLAGS=$(USE_NANO) $(USE_NOHOST) $(USE_NO) $(LDSCRIPTS) $(GC) $(MAP)
 # There is no separate .o visible.
 #all : $(NAME).axf
 
-#$(NAME).axf: $(NAME).c $(SRCS_SYS) $(SRCS_CHIP) $(SRCS_BOARD)
+#$(NAME).axf: $(NAME).c $(SRCS_SYS) $(SRCS_CHIP) $(SRCS_BOARD) $(SRCS_FREERTOS) $(SRCS_DEMO)
 #	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
 
 
@@ -374,7 +390,7 @@ all : $(NAME).axf
 %.o: %.c 
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(NAME).axf: $(NAME).o $(OBJ_SYS) $(OBJ_CHIP) $(OBJ_BOARD) $(OBJ_FREERTOS) $(SRCS_DEMO)
+$(NAME).axf: $(NAME).o $(OBJ_SYS) $(OBJ_CHIP) $(OBJ_BOARD) $(OBJ_FREERTOS) $(OBJ_DEMO)
 	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $@
 
 
