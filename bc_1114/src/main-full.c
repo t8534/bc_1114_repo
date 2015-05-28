@@ -128,7 +128,8 @@
 #include "IntQueue.h"
 
 /* Hardware specific includes. */
-#include "lpc11xx.h"
+//arek old
+//#include "lpc11xx.h"
 
 /* The period after which the check timer will expire provided no errors have
 been reported by any of the standard demo tasks.  ms are converted to the

@@ -110,7 +110,9 @@
 #include "queue.h"
 
 /* Hardware specific includes. */
-#include "lpc11xx.h"
+//arek: old
+//#include "lpc11xx.h"
+
 
 /* Priorities at which the tasks are created. */
 #define mainQUEUE_RECEIVE_TASK_PRIORITY		( tskIDLE_PRIORITY + 2 )

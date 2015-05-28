@@ -40,3 +40,20 @@ The base is example ported to LPC1114 LPCXpresso
 Makefile finished, not compilable, 
 This is to replace IntQueueTimer.c content with timer driver based.
 
+
+Problem during compilation
+
+C:\arm\launchpad\bin\arm-none-eabi-gcc main.o cr_startup_lpc11xx.o crp.o sysinit.o adc_11xx.o chip_11xx.o clock_11xx.o gpio_11xx_1.o gpio_11xx_2.o gpiogroup_11xx.o i2c_11xx.o iocon_11xx.o pinint_11xx.o pmu_11xx.o ring_buffer.o ssp_11xx.o sysctl_11xx.o sysinit_11xx.o timer_11xx.o uart_11xx.o wwdt_11xx.o board_sysinit.o board.o tasks.o port.o heap_1.o list.o queue.o timers.o blocktim.o countsem.o IntQueue.o recmutex.o IntQueueTimer.o RegTest.o main-blinky.o main-full.o -mthumb -mcpu=cortex-m0 -I. -I../src/FreeRTOS_Common_Demo_Tasks -I../src/FreeRTOS_Common_Demo_Tasks/include -I../src/FreeRTOS_Source -I../src/FreeRTOS_Source/include -I../src/FreeRTOS_Source/portable/GCC/ARM_CM0 -I../src/FreeRTOS_Source/portable/MemMang -I../src -I../src/sys -I../src/lpc_chip_11cxx_library/inc -I../src/lpc_chip_11cxx_library/inc -I../src/lpcexpresso_11c24_board_library/inc   -DCORE_M0 -D__USE_LPCOPEN  -g3 -flto -ffunction-sections -fdata-sections --specs=nano.specs   -L. -L./ldscripts -T bc_1114_Debug.ld -Wl,--gc-sections -Wl,-Map=main.map -o main.axf
+../src/main.c:191:22: error: function '_vStackTop' redeclared as variable
+ extern unsigned long _vStackTop[], _pvHeapStart[];
+                      ^
+../src/sys/cr_startup_lpc11xx.c:119:13: note: previously declared here
+ extern void _vStackTop(void);
+             ^
+lto1.exe: fatal error: errors during merging of translation units
+compilation terminated.
+lto-wrapper: C:\arm\launchpad\bin\arm-none-eabi-gcc returned 1 exit status
+c:/arm/launchpad/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/bin/ld.exe: lto-wrapper failed
+collect2.exe: error: ld returned 1 exit status
+mingw32-make: *** [main.axf] Error 1
+
